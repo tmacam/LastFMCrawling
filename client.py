@@ -96,7 +96,7 @@ class ObstinatedRetriever(object):
             try:
                 retries += 1
                 request = urllib2.urlopen(url)
-                print "get_url", url # DEBUG DEBUG
+                logging.debug("get_url : %s"url)
                 page = request.read()
                 self.validate(page)
                 return page
@@ -143,7 +143,7 @@ class FindUsersRetriver(ObstinatedRetriever):
             a set with the users found.
         """
         found_users = set()
-        for page in range(start_page, start_page + FINDUSERS_PAGE_COUNT + 1):
+        for page in range(start_page, start_page + FINDUSERS_PAGE_COUNT):
             for user in self.get_users_from_search_page(gender, page):
                 found_users.add(user.strip())
         return found_users
