@@ -85,7 +85,7 @@ class FindUsersController(GdbmBaseControler):
         return self.scheduler.renderPing(client_id, just_ping=True)
 
     @classmethod
-    def initializeListOfPages(cls, store_path, n_male, n_female):
+    def initializeListOfPages(cls, prefix, n_male, n_female):
         """Setup the list of pending pages to be crawled -- probably for the
         first time.
 
@@ -96,9 +96,13 @@ class FindUsersController(GdbmBaseControler):
         check the request agains pages in the DONE, ERROR or even already in
         the PENDING queue.
         """
-        queue_store_path = store_path + cls.PREFIX_BASE + "/queue.gdbm"
-        step = FINDUSERS_PAGE_COUNT # ask this many pages in a single command
+        # Prepare the store
+        store_path = prefix + "/" + cls.PREFIX_BASE
+        if not os.path.isdir(store_path):
+            os.makedirs(store_path)
+        queue_store_path = store_path + "/queue.gdbm"
         # Interleave searches for male users w/ searches for female users
+        step = FINDUSERS_PAGE_COUNT # ask this many pages in a single command
         male_pages = ("m%i" % page for page in range(1, n_male + 1, step))
         female_pages = ("f%i" % page for page in range(1, n_female + 1, step))
         pages = roundrobin(male_pages, female_pages)
