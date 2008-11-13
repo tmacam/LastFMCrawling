@@ -13,6 +13,7 @@ __license__ = "X11"
 import sys
 import os
 import urllib2
+import httplib
 import time
 import logging
 from socket import gethostname
@@ -27,13 +28,6 @@ from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR, \
 
 
 articleretriever_version = "unk-aret-ver"
-
-
-# TODO(macambira): perhaps python has a nice logging framework now
-# TODO(macambira): perhaps python has a nice logging framework now
-# TODO(macambira): perhaps python has a nice logging framework now
-# TODO(macambira): perhaps python has a nice logging framework now
-log = sys.stdout
 
 
 ######################################################################
@@ -96,12 +90,13 @@ class ObstinatedRetriever(object):
             try:
                 retries += 1
                 request = urllib2.urlopen(url)
-                logging.debug("get_url : %s"url)
+                logging.debug("get_url : %s", url)
                 page = request.read()
                 self.validate(page)
                 return page
             except (InvalidPage, urllib2.URLError, urllib2.HTTPError,
-                    ValueError):
+                    ValueError, httplib.HTTPException):
+                logging.info("Error getting url, retring.")
                 if retries > self.MAX_RETRIES:
                     raise
 
@@ -147,9 +142,6 @@ class FindUsersRetriver(ObstinatedRetriever):
             for user in self.get_users_from_search_page(gender, page):
                 found_users.add(user.strip())
         return found_users
-
-
-        
 
 
 ######################################################################
@@ -209,16 +201,18 @@ class LastFMClient(BaseClient):
         self._handleCommand(command, do_sleep=True)
 
 
+######################################################################
+# MAIN
+######################################################################
+
 
 #TODO(macambira): move main out of this module or refactor it into a set of small helper functions
 
 
 def main(base_url, store_dir):
     """Setup enviroment and run client."""
-    global log
 
-    # FIXME Remove global log, use logging package
-    # FIXME Merge as much of this code as possible with __main__
+    # TODO Merge as much of this code as possible with __main__
 
     hostname = gethostname()
 
@@ -229,44 +223,40 @@ def main(base_url, store_dir):
     # Setup logging, client id
     client_id = getUUID(id_filename)
     logging.basicConfig(filename=log_filename,
-                        level=logging.INFO,
+                        level=logging.DEBUG,
                         flushlevel=logging.NOTSET)
-    # FIXME DEPRECATED Redirecting log from output to file
-    log = open(out_filename, 'a', 0)
 
     cli = LastFMClient(client_id, base_url=base_url, store_dir=store_dir)
-    sys.stderr.write("\nStarting Client...\n")
-    log.write("STARTED %s \n" % time.asctime())
     logging.info("STARTED %s", time.asctime())
 
     cli.run()
 
 
 if __name__ == '__main__':
-    #BASE_URL = 'http://www.speed.dcc.ufmg.br/lastfm'
-    BASE_URL = 'http://localhost:8700'
+    BASE_URL = 'http://www.speed.dcc.ufmg.br/lastfm'
+    #BASE_URL = 'http://localhost:8700'
     STORE_DIR = os.getcwd()  # "." loses its meaning as soon as we deamonize
     LOG_FILENAME = STORE_DIR + "/lastfmclient.log"
     STDOUT_REDIR_FILENAME = STORE_DIR + "/daemon.out"
 
+    # TODO Merge as much of this code as possible with main()
     # Dettach the current proceess from the terminal and became 
     # a daemon
     print "Becoming a daemon"
-    #res = createDaemon()
+    res = createDaemon()
     # We closed all stdio and redirected them for /dev/null
     # Just in case we need them back, let's reconfigure stdout and stderr
-    #reconfigStdout(STDOUT_REDIR_FILENAME)
-    log = sys.stdout # we closed the old file descriptor, get the new one.
+    reconfigStdout(STDOUT_REDIR_FILENAME)
     print "Became a daemon"
     
     try:
         main(BASE_URL, STORE_DIR)
     except urllib2.HTTPError, e:
-        logging.exception("Exception caught in __main__.")
-        #log_urllib2_exception(e) # FIXME - use logging facility
+        log_urllib2_exception(e)
         raise
     except:
-        #log_backtrace()
+        log_backtrace()
         raise
- 
+
+
 # vim: set ai tw=80 et sw=4 sts=4 fileencoding=utf-8 :
