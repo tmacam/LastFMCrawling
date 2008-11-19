@@ -10,7 +10,7 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 
-import os
+import datetime
 import urllib2
 import httplib
 import logging
@@ -21,6 +21,9 @@ from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR, \
         FINDUSERS_PAGE_COUNT, FINDUSERS_URL_TEMPLATE
 
 
+# FIXME add logging information through retrievers
+
+
 ######################################################################
 # CONSTANTS
 ######################################################################
@@ -28,11 +31,19 @@ from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR, \
 
 APIKEY = "f4ddd94913e516288a1ede7fa75f9bd5"
 
+MONTHS_TO_NUM = {'Jan':1, 'Fev':2, 'Mar':3, 'Abr':4, 'Mai':5, 'Jun':6, 'Jul':7, 'Ago':8, 'Set':9, 'Out':10, 'Nov':11, 'Dez':12}
+
 
 ######################################################################
 # AUX. CLASSES
 ######################################################################
 
+
+def takeComma(name):
+    if name.endswith(","):
+        return name[:-1]
+    else:
+        return name
 
 class InvalidPage(Exception):
     """Used by ObstinatedRetriever to notify that a given page has not
@@ -250,6 +261,127 @@ class FriendsRetriever(ObstinatedRetriever):
         return friends_list
 
 
+class UserInfoRetriever(ObstinatedRetriever):
+
+    USER_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/"
+
+    def validate(self, data):
+        soup = BeautifulSoup(data)
+        if not soup.find('div', 'clearit user vcard') and \
+           not soup.find('div', 'clearit subscriber vcard'):
+            raise InvalidPage()
+
+    def get_user(self, username):
+
+        url = self.USER_URL_TEMPLATE % (username)
+        html = self.get_url(url)
+        soup = BeautifulSoup(html)
+
+        details = soup.find('div', 'clearit user vcard')
+
+        if not details:
+            details = soup.find('div', 'clearit subscriber vcard')
+        if not details:
+            raise InvalidPage() # we should NOT get here 'cuz of validate
+
+        # User's name
+        name = ""
+        try:
+            name = details.find('strong', 'fn').contents[0]
+        except AttributeError:
+            pass
+
+        m_e = details.find('span', 'userPlays') 
+        # average play count per day
+        average = m_e.attrs[1][1].split()[2] 
+        # User since... (user_since)
+        d_m_a = m_e.find('small').contents[0]
+        dia = int(d_m_a.split()[1])
+        mes = int(MONTHS_TO_NUM[d_m_a.split()[2]])
+        ano = int(d_m_a.split()[3])
+        user_since = datetime.date(ano,mes,dia).isoformat()
+        # Executions
+        flips = m_e.findAll('span', 'flip')
+        digits = []
+        for d in flips:
+            digits.append(d.contents[0])
+        executions = "".join(digits)
+        # Homepage
+        homepage = ""
+        h = details.find('a', 'url homepage')
+        if h:
+            homepage = h.contents[0]
+        # Sex, age
+        mais_detalhes = details.find("p", "userInfo adr")
+        if not name and len(mais_detalhes.contents) > 1:
+            aux = mais_detalhes.contents[0].split()
+            if len(aux) == 2:
+                idade, sexo = aux
+                sexo = takeComma(sexo)
+                idade = takeComma(idade)
+            else:
+                sexo = aux[0]
+                idade = ''
+        else:
+            if len(mais_detalhes.contents) > 1:
+                aux = mais_detalhes.contents[1].split()
+                if len(aux) == 3:
+                    _, idade, sexo = aux
+                    sexo = takeComma(sexo)
+                    idade = takeComma(idade)
+                elif len(aux) == 2:
+                    _, sexo = aux
+                    sexo = takeComma(sexo)
+                    idade = ''
+            else:
+                aux = mais_detalhes.contents[0].split()
+                if len(aux) == 1:
+                    sexo = aux[0]
+                    idade = ''
+                else:
+                    idade, sexo = aux
+                    sexo = takeComma(sexo)
+                    idade = takeComma(idade)
+        # Country
+        pais = ''
+        pais_html = mais_detalhes.find("span", "country-name")
+        if pais_html:
+            pais = pais_html.contents[0]
+
+        return (username, name, idade, sexo, pais, executions, average,
+                homepage, user_since )
+
+
+def retrieve_full_user_profile(username):
+    """Get the full user profile from a LastFM user.
+    
+    Returns:
+        a dict contaning each of the aspects we are interested on of the user's
+        profile
+    """
+    # We are not performing "retries" here as this is done for more
+    # then enought times by each of the specialized retrievers
+    info = UserInfoRetriever().get_user(user)
+    groups = GroupRetrievers().get_user_groups(user)
+    friends = FriendsRetriever().get_friends(user)
+    tracks = TracksRetriever().get_tracks(user)
+
+    return {"info" : info, "groups" : groups, "friends" : friends,
+            "tracks" : tracks }
+
+
+def get_user_encoded_profile(username):
+    """Get the full user profile information serialized and compressed.
+
+    The returned user profile dada will be in a format suitable for upload
+    to the crawling server.
+    """
+    # FIXME parei aqui
+    # FIXME parei aqui
+    # FIXME parei aqui
+    # FIXME parei aqui
+
+
 
 
 ######################################################################
@@ -266,13 +398,14 @@ if __name__ == '__main__':
 #    print "Groups (%i)\n\t" % len(groups),
 #    print "\n\t".join(groups)
 
-#    tracks = TracksRetriever().get_tracks(user)
-#    print "Tracks (%i)\n\t" % len(tracks),
-#    print "\n\t".join("%i:%s:%s" % t for t in tracks)
+    tracks = TracksRetriever().get_tracks(user)
+    print "Tracks (%i)\n\t" % len(tracks),
+    print "\n\t".join("%i:%s:%s" % t for t in tracks)
 
-    friends = FriendsRetriever().get_friends(user)
-    print "Tracks (%i)\n\t" % len(friends),
-    print "\n\t".join(friends)
+#    friends = FriendsRetriever().get_friends(user)
+#    print "Tracks (%i)\n\t" % len(friends),
+#    print "\n\t".join(friends)
 
+#    print UserInfoRetriever().get_user(user)
 
 # vim: set ai tw=80 et sw=4 sts=4 fileencoding=utf-8 :
