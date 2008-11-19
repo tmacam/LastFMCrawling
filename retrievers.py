@@ -130,9 +130,9 @@ class FindUsersRetriver(ObstinatedRetriever):
         except:
             raise InvalidPage()
 
-    def get_users_from_search_page(self, gender, page):
+    def get_users_from_search_page(self, sex, page):
         "Returns a list whith the users found in a search page."
-        page_url = FINDUSERS_URL_TEMPLATE % (gender, page)
+        page_url = FINDUSERS_URL_TEMPLATE % (sex, page)
         data = self.get_url(page_url)
         soup = BeautifulSoup(data)
         # Each user has a vcard whose first and only Anchor tag is a
@@ -143,7 +143,7 @@ class FindUsersRetriver(ObstinatedRetriever):
         users = [vcard.a['href'].split('/')[-1] for vcard in users_vcards]
         return users
 
-    def get_users_from_pages(self, gender, start_page):
+    def get_users_from_pages(self, sex, start_page):
         """Get the list of users from a range search pages.
         
         Get the users from FINDUSERS_PAGE_COUNT user search pages,
@@ -154,7 +154,7 @@ class FindUsersRetriver(ObstinatedRetriever):
         """
         found_users = set()
         for page in range(start_page, start_page + FINDUSERS_PAGE_COUNT):
-            for user in self.get_users_from_search_page(gender, page):
+            for user in self.get_users_from_search_page(sex, page):
                 found_users.add(user.strip())
         return found_users
 
@@ -263,6 +263,12 @@ class FriendsRetriever(ObstinatedRetriever):
 
 class UserInfoRetriever(ObstinatedRetriever):
 
+
+    """    
+    User info is returned as a tuple (username, name, age, sex, country, executions, average,
+                                        homepage, user_since ).
+    """
+
     USER_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/"
 
     def validate(self, data):
@@ -291,64 +297,73 @@ class UserInfoRetriever(ObstinatedRetriever):
         except AttributeError:
             pass
 
-        m_e = details.find('span', 'userPlays') 
+        # get html code with the average play count, user since 
+        # and total executions informations
+        details_html = details.find('span', 'userPlays') 
+
         # average play count per day
-        average = m_e.attrs[1][1].split()[2] 
+        average = details_html.attrs[1][1].split()[2] 
+
         # User since... (user_since)
-        d_m_a = m_e.find('small').contents[0]
-        dia = int(d_m_a.split()[1])
-        mes = int(MONTHS_TO_NUM[d_m_a.split()[2]])
-        ano = int(d_m_a.split()[3])
-        user_since = datetime.date(ano,mes,dia).isoformat()
+        day_month_year = details_html.find('small').contents[0]
+        day = int(day_month_year.split()[1])
+        month = int(MONTHS_TO_NUM[day_month_year.split()[2]])
+        year = int(day_month_year.split()[3])
+        user_since = datetime.date(year, month, day).isoformat()
+
         # Executions
-        flips = m_e.findAll('span', 'flip')
+        flips = details_html.findAll('span', 'flip')
         digits = []
         for d in flips:
             digits.append(d.contents[0])
         executions = "".join(digits)
+
         # Homepage
         homepage = ""
-        h = details.find('a', 'url homepage')
-        if h:
-            homepage = h.contents[0]
-        # Sex, age
-        mais_detalhes = details.find("p", "userInfo adr")
-        if not name and len(mais_detalhes.contents) > 1:
-            aux = mais_detalhes.contents[0].split()
-            if len(aux) == 2:
-                idade, sexo = aux
-                sexo = takeComma(sexo)
-                idade = takeComma(idade)
-            else:
-                sexo = aux[0]
-                idade = ''
-        else:
-            if len(mais_detalhes.contents) > 1:
-                aux = mais_detalhes.contents[1].split()
-                if len(aux) == 3:
-                    _, idade, sexo = aux
-                    sexo = takeComma(sexo)
-                    idade = takeComma(idade)
-                elif len(aux) == 2:
-                    _, sexo = aux
-                    sexo = takeComma(sexo)
-                    idade = ''
-            else:
-                aux = mais_detalhes.contents[0].split()
-                if len(aux) == 1:
-                    sexo = aux[0]
-                    idade = ''
-                else:
-                    idade, sexo = aux
-                    sexo = takeComma(sexo)
-                    idade = takeComma(idade)
-        # Country
-        pais = ''
-        pais_html = mais_detalhes.find("span", "country-name")
-        if pais_html:
-            pais = pais_html.contents[0]
+        homepage_html = details.find('a', 'url homepage')
+        if homepage_html:
+            homepage = homepage_html.contents[0]
 
-        return (username, name, idade, sexo, pais, executions, average,
+        # Sex, age
+        extra_details = details.find("p", "userInfo adr")
+
+        #check the existence of sex and age
+        if not name and len(extra_details.contents) > 1:
+            aux = extra_details.contents[0].split()
+            if len(aux) == 2:
+                age, sex = aux
+                sex = takeComma(sex)
+                age = takeComma(age)
+            else:
+                sex = aux[0]
+                age = ''
+        else:
+            if len(extra_details.contents) > 1:
+                aux = extra_details.contents[1].split()
+                if len(aux) == 3:
+                    _, age, sex = aux
+                    sex = takeComma(sex)
+                    age = takeComma(age)
+                elif len(aux) == 2:
+                    _, sex = aux
+                    sex = takeComma(sex)
+                    age = ''
+            else:
+                aux = extra_details.contents[0].split()
+                if len(aux) == 1:
+                    sex = aux[0]
+                    age = ''
+                else:
+                    age, sex = aux
+                    sex = takeComma(sex)
+                    age = takeComma(age)
+        # Country
+        country = ''
+        country_html = extra_details.find("span", "country-name")
+        if country_html:
+            country = country_html.contents[0]
+
+        return (username, name, age, sex, country, executions, average,
                 homepage, user_since )
 
 
@@ -373,7 +388,7 @@ def retrieve_full_user_profile(username):
 def get_user_encoded_profile(username):
     """Get the full user profile information serialized and compressed.
 
-    The returned user profile dada will be in a format suitable for upload
+    The returned user profile data will be in a format suitable for upload
     to the crawling server.
     """
     # FIXME parei aqui
@@ -394,18 +409,21 @@ if __name__ == '__main__':
     user = sys.argv[1]
     print "User:", user
 
-#    groups = GroupRetrievers().get_user_groups(user)
-#    print "Groups (%i)\n\t" % len(groups),
-#    print "\n\t".join(groups)
+    print retrieve_full_user_profile(user)
 
-    tracks = TracksRetriever().get_tracks(user)
-    print "Tracks (%i)\n\t" % len(tracks),
-    print "\n\t".join("%i:%s:%s" % t for t in tracks)
+    #print UserInfoRetriever().get_user(user)
 
-#    friends = FriendsRetriever().get_friends(user)
-#    print "Tracks (%i)\n\t" % len(friends),
-#    print "\n\t".join(friends)
+    #groups = GroupRetrievers().get_user_groups(user)
+    #print "Groups (%i)\n\t" % len(groups),
+    #print "\n\t".join(groups)
 
-#    print UserInfoRetriever().get_user(user)
+    #tracks = TracksRetriever().get_tracks(user)
+    #print "Tracks (%i)\n\t" % len(tracks),
+    #print "\n\t".join("%i:%s:%s" % t for t in tracks)
+
+    #friends = FriendsRetriever().get_friends(user)
+    #print "Tracks (%i)\n\t" % len(friends),
+    #print "\n\t".join(friends)
+
 
 # vim: set ai tw=80 et sw=4 sts=4 fileencoding=utf-8 :
