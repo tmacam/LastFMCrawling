@@ -3,7 +3,7 @@
 
 """Retrievers for LastFM resources."""
 
-__version__ = "0.4.lastfm" + "$Version$"
+__version__ = "0.4.lastfm-" + "$Revision$".split()[1]
 __date__ = "2008-11-17"
 __author__ = "Tiago Alves Macambira & Rafael Sachetto"
 __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
