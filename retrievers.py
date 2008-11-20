@@ -3,7 +3,7 @@
 
 """Retrievers for LastFM resources."""
 
-__version__ = "0.4.lastfm"
+__version__ = "0.4.lastfm" + "$Version$"
 __date__ = "2008-11-17"
 __author__ = "Tiago Alves Macambira & Rafael Sachetto"
 __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
@@ -14,6 +14,8 @@ import datetime
 import urllib2
 import httplib
 import logging
+import cPickle
+import zlib
 from socket import gethostname
 from DistributedCrawler.client.BeautifulSoup import BeautifulSoup, \
         BeautifulStoneSoup
@@ -172,17 +174,20 @@ class GroupRetrievers(ObstinatedRetriever):
         cur_page = 1
         lastpage = 1
         groups = []
+        log = logging.getLogger("GroupRetrievers")
         # the usernames were extracted from the anchor tags from the
         # user search html pages -- those usernames are already
         # percent-encoded.
         while cur_page <= lastpage:
+            log.info("Retrieving page %i of %i", cur_page, lastpage)
             url = self.GROUP_URL_TEMPLATE % (user, cur_page)
             data = self.get_url(url)
             soup = BeautifulSoup(data)
             groups_html = soup.findAll("div","groupContainer")
             if groups_html:
                 for group in groups_html:
-                    groups.append(group.find("a")['href'].split('/')[-1])
+                    group_name = group.find("a")['href'].split('/')[-1]
+                    groups.append(group_name.encode("utf-8"))
                 # Group information can be splited across several pages
                 # Get the number of pages
                 if cur_page == 1:
@@ -198,7 +203,7 @@ class GroupRetrievers(ObstinatedRetriever):
 class TracksRetriever(ObstinatedRetriever):
     """Track information is returned percent-encoded.
     
-    Track listings are returned as list of (playcount, artist, track name)
+    Track listings are returned as list of (artist, track name, playcount)
     tuples.
     """
 
@@ -213,9 +218,10 @@ class TracksRetriever(ObstinatedRetriever):
         cur_page = 1
         lastpage = 1
         track_list = []
+        log = logging.getLogger("TracksRetriever")
 
         while cur_page <= lastpage:
-            print "\tPage:", cur_page, "of", lastpage # FIXME
+            log.info("Retrieving page %i of %i", cur_page, lastpage)
             url = self.GET_TRACKS_URL_TEMPLATE % (user, APIKEY, cur_page)
             xml = self.get_url(url)
             soup = BeautifulStoneSoup(xml).find("tracks")
@@ -223,15 +229,19 @@ class TracksRetriever(ObstinatedRetriever):
 
             for track in tracks:
                 playcount = int(track.find("playcount").contents[0])
-                track_url = track.find("url").contents[0]
+                # LastFM are percent encoded, no need to encode to UTF-8
+                track_url = str(track.find("url").contents[0])
                 artist, _, name = track_url.split("/")[-3:]
-                track_list.append((playcount, artist, name))
+                track_list.append((artist, name, playcount))
             # Track information can be splitted across several pages.
             # Get the number of pages.
             if cur_page == 1:
                 lastpage = int(soup.attrs[-1][1])
 
             cur_page += 1
+
+        # Sort the list in-place -- just in case, and to help compression
+        track_list.sort()
 
         return track_list
 
@@ -247,6 +257,8 @@ class FriendsRetriever(ObstinatedRetriever):
 
     def get_friends(self, user):
         friends_list = []
+        log = logging.getLogger("FriendsRetriever")
+        log.info("Retrieving friends list.")
 
         url = self.GET_USER_FRIENDS_TEMPLATE % (user, APIKEY)
         xml = self.get_url(url)
@@ -256,17 +268,17 @@ class FriendsRetriever(ObstinatedRetriever):
 
         for f_url in friends_urls:
             friend_name = f_url.contents[0].split("/")[-1]
-            friends_list.append(friend_name)
+            friends_list.append(friend_name.encode("utf8"))
 
         return friends_list
 
 
 class UserInfoRetriever(ObstinatedRetriever):
-
-
     """    
-    User info is returned as a tuple (username, name, age, sex, country, executions, average,
-                                        homepage, user_since ).
+    User info is returned as a tuple (username, name, age, sex, country,
+    executions, average, homepage, user_since ).
+
+    Strings are returned percent-encoded in plain ASCII.
     """
 
     USER_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/"
@@ -278,10 +290,12 @@ class UserInfoRetriever(ObstinatedRetriever):
             raise InvalidPage()
 
     def get_user(self, username):
-
         url = self.USER_URL_TEMPLATE % (username)
         html = self.get_url(url)
         soup = BeautifulSoup(html)
+
+        log = logging.getLogger("UserInfoRetriever")
+        log.info("BEGIN")
 
         details = soup.find('div', 'clearit user vcard')
 
@@ -363,8 +377,12 @@ class UserInfoRetriever(ObstinatedRetriever):
         if country_html:
             country = country_html.contents[0]
 
-        return (username, name, age, sex, country, executions, average,
+        # convert everything to plain strings -- every "odd" data is percent
+        # encoded...
+        log.info("END")
+        res = (username, name, age, sex, country, executions, average,
                 homepage, user_since )
+        return tuple([str(i) for i in res])
 
 
 def retrieve_full_user_profile(username):
@@ -376,40 +394,45 @@ def retrieve_full_user_profile(username):
     """
     # We are not performing "retries" here as this is done for more
     # then enought times by each of the specialized retrievers
-    info = UserInfoRetriever().get_user(user)
-    groups = GroupRetrievers().get_user_groups(user)
-    friends = FriendsRetriever().get_friends(user)
-    tracks = TracksRetriever().get_tracks(user)
+    info = UserInfoRetriever().get_user(username)
+    groups = GroupRetrievers().get_user_groups(username)
+    friends = FriendsRetriever().get_friends(username)
+    tracks = TracksRetriever().get_tracks(username)
 
     return {"info" : info, "groups" : groups, "friends" : friends,
-            "tracks" : tracks }
+            "tracks" : tracks}
 
 
 def get_user_encoded_profile(username):
     """Get the full user profile information serialized and compressed.
 
     The returned user profile data will be in a format suitable for upload
-    to the crawling server.
+    to the crawling server, i.e., pickled and compressed with zlib.
+
+    Along with the encoded profile information we return the user's friend
+    list.
+
+    Returns:
+        a tuple in the format (encoded user profile, user's friend lists)
     """
-    # FIXME parei aqui
-    # FIXME parei aqui
-    # FIXME parei aqui
-    # FIXME parei aqui
+    data = retrieve_full_user_profile(username)
+    friends = data['friends']
+    serialized = cPickle.dumps(data)
+    compressed = zlib.compress(serialized, 9)
 
-
+    return (compressed, friends)
 
 
 ######################################################################
 # MAIN
 ######################################################################
 
-
-if __name__ == '__main__':
-    import sys
-    user = sys.argv[1]
+def main(user):
+    logging.basicConfig(level=logging.DEBUG, flushlevel=logging.NOTSET)
     print "User:", user
 
-    print retrieve_full_user_profile(user)
+    #print retrieve_full_user_profile(user)
+    get_user_encoded_profile(user)
 
     #print UserInfoRetriever().get_user(user)
 
@@ -425,5 +448,10 @@ if __name__ == '__main__':
     #print "Tracks (%i)\n\t" % len(friends),
     #print "\n\t".join(friends)
 
+
+
+if __name__ == '__main__':
+    import sys
+    main(sys.argv[1])
 
 # vim: set ai tw=80 et sw=4 sts=4 fileencoding=utf-8 :

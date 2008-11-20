@@ -10,138 +10,19 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 
-import sys
 import os
 import urllib2
-import httplib
 import time
 import logging
 from socket import gethostname
 from DistributedCrawler.client import upload_aux
 from DistributedCrawler.client import BaseClient, getUUID, log_backtrace, log_urllib2_exception
 from DistributedCrawler.client.daemonize import createDaemon, reconfigStdout
-from DistributedCrawler.client.BeautifulSoup import BeautifulSoup
 #from digg_article_retriever import ArticleRetriever, \
 #        __version__ as articleretriever_version
-from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR, \
-        FINDUSERS_PAGE_COUNT, FINDUSERS_URL_TEMPLATE
-
-
-articleretriever_version = "unk-aret-ver"
-
-
-######################################################################
-# AUX. CLASSES
-######################################################################
-
-
-class InvalidPage(Exception):
-    """Used by ObstinatedRetriever to notify that a given page has not
-    passed (some) sanity test.
-    """
-    pass
-
-
-class ObstinatedRetriever(object):
-    """A simple downloader that "Never give up, never surrender[s]".
-
-    Download a page and validate it's content's. If any of those fail, tries
-    again for MAX_RETRIES.
-
-    Descendents SHOULD re-implement validate().
-    """
-    # FIXME Should Deal with retries, validation, compression
-    #       and appearing as valid client. 
-    # FIXME  We should refactor this into or onto ArticleRetriver
-
-    MAX_RETRIES = 5
-
-    def validate(self, data):
-        """Verifies if a download page has the right content.
-        
-        Args:
-            data: download content, as a string. No assumption is made
-                about the nature of such content such as whether it is HTML or
-                binary data.
-
-        Returns:
-            None
-
-        Raises:
-            Raises InvalidPage if the content is not valid.
-        """
-        pass
-
-    def get_url(self, url):
-        """Retrieves the content of the URL url IFF it is valid.
-        
-        At least MAX_RETRIES are done if the download or if the content
-        of the page is found not to be valid.
-
-        Returns:
-            The content of the URL as a string.
-
-        Raises:
-            Can raise InvalidPage and any exception raised by
-            urllib2.urlopen().
-        """
-        retries = 0
-        while True:
-            try:
-                retries += 1
-                request = urllib2.urlopen(url)
-                logging.debug("get_url : %s", url)
-                page = request.read()
-                self.validate(page)
-                return page
-            except (InvalidPage, urllib2.URLError, urllib2.HTTPError,
-                    ValueError, httplib.HTTPException):
-                logging.info("Error getting url, retring.")
-                if retries > self.MAX_RETRIES:
-                    raise
-
-
-class FindUsersRetriver(ObstinatedRetriever):
-    "Retrieves users from LastFM's User Search page."
-
-    def validate(self, page):
-        "Check if this search result has any user at all."
-        soup = BeautifulSoup(page)
-        try:
-            users_vcards = soup.find("ul", "usersMedium").findAll("div","vcard")
-            users = [vcard.a['href'].split('/')[-1] for vcard in users_vcards]
-            if not users:
-                raise InvalidPage()
-        except:
-            raise InvalidPage()
-
-    def get_users_from_search_page(self, gender, page):
-        "Returns a list whith the users found in a search page."
-        page_url = FINDUSERS_URL_TEMPLATE % (gender, page)
-        data = self.get_url(page_url)
-        soup = BeautifulSoup(data)
-        # Each user has a vcard whose first and only Anchor tag is a
-        # link for the user profile in LastFM, in the form
-        # http://www.lastfm.com.br/user/USERNAME. All we want is the USERNAME
-        # part of such links.
-        users_vcards = soup.find("ul", "usersMedium").findAll("div","vcard")
-        users = [vcard.a['href'].split('/')[-1] for vcard in users_vcards]
-        return users
-
-    def get_users_from_pages(self, gender, start_page):
-        """Get the list of users from a range search pages.
-        
-        Get the users from FINDUSERS_PAGE_COUNT user search pages,
-        starting at start_page.
-
-        Returns:
-            a set with the users found.
-        """
-        found_users = set()
-        for page in range(start_page, start_page + FINDUSERS_PAGE_COUNT):
-            for user in self.get_users_from_search_page(gender, page):
-                found_users.add(user.strip())
-        return found_users
+from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR 
+from retrievers import FindUsersRetriver, get_user_encoded_profile, \
+    __version__ as articleretriever_version
 
 
 ######################################################################
@@ -160,6 +41,7 @@ class LastFMClient(BaseClient):
         self.headers["client-arver"] =  articleretriever_version
         # Registering Command Handlers
         self.handlers["FINDUSERS"] = self.findusers
+        self.handlers["GETPROFILE"] = self.getprofile
 
     def _write_to_store(self, article_id, data):
         """Write a (compressed) article to store.
@@ -199,6 +81,35 @@ class LastFMClient(BaseClient):
         # Command MUST be SLEEP. We will sleep for at least self.MIN_SLEEP
         command = response.read()
         self._handleCommand(command, do_sleep=True)
+
+    def getprofile(self, params):
+        """Retrieve user profile and send it to the server."""
+        log = logging.getLogger("GETPROFILE")
+        # The only parameter we get is the user name
+        username = params
+        # Download search result pages
+        log.info("BEGIN %s", params)
+        profile, friends = get_user_encoded_profile(username)
+        log.info("GOT PROFILE FOR USER %s", username)
+        # Setup form and headers
+        #    Although we used "upload" code, this is a plain POST
+        upload_headers = dict(self.headers)
+        form_data = {'username' : username,
+                     'profile' : profile, 
+                     'friends-list'  : FINDUSERS_SEPARATOR.join(friends),
+                     'friends-list-count'  : str(len(friends)),
+                     'client-id'    : self.id}
+        # Upload the article
+        logging.info("UPLOADING TO SERVER %s", params)
+        upload_url = self.base_url + '/getprofile/' + username
+        response = upload_aux.upload_form(upload_url, form_data, upload_headers)
+        logging.info("END %s", params)
+        # Ok. Command, handled. Now what?
+        # Do what the server told us to.
+        # Command MUST be SLEEP. We will sleep for at least self.MIN_SLEEP
+        command = response.read()
+        self._handleCommand(command, do_sleep=True)
+
 
 
 ######################################################################

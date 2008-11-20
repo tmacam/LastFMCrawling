@@ -117,6 +117,53 @@ class FindUsersController(GdbmBaseControler):
         # garanteed to be preserved. Oh! boy, too late.
 
 
+
+class GetProfileController(GdbmBaseControler):
+    """Retrieve user profile information.
+    
+    Remember: we are NOT CONNECTED to FindUsersController. This mean you must
+    manually add clients from FindUsersController.user_db to this controller.
+    """
+    ACTION_NAME = "GETPROFILE"
+    PREFIX_BASE = "getprofile"
+
+    def __init__(self, sched, prefix, client_reg, profile_db):
+        """Constructor.
+
+        Args:
+            sched: Scheduler instance being used by the server.
+            prefix: location where all DBs are kept.
+            client_reg: ClientRegistry instance being used by the server.
+            profile_db: GDBM file where the list of discovered users is kept.
+        """
+        GdbmBaseControler.__init__(self, sched, prefix, client_reg)
+        # Setup a GDBM file where we store discovered users.
+        # It is opened for synchronized R/W and created if it doesn't exist.
+        self.profile_db = gdbm.open(profile_db, "cs")
+
+    def render_POST(self, request):
+        """Process the user profile data returned by a client."""
+        client_id = self.client_reg.updateClientStats(request)
+        # get the profile identification and the list of users found
+        username = request.args['username'][0]
+        profile_data = request.args['profile'][0]
+        friends_data = request.args['friends-list'][0]
+        friends_count = int(request.args['friends-list-count'][0])
+        # Process list of friends
+        friends = []
+        if friends_count:
+            friends = friends_data.split(FINDUSERS_SEPARATOR)
+        assert len(friends) == friends_count
+        for f in friends:
+            self.addJob(f)
+        # Save user profile
+        self.profile_db[username] = profile_data
+        # Job done
+        self.markJobAsDone(username)
+        log.msg("GETPROFILE %s done by client %s." % (username, client_id))
+        return self.scheduler.renderPing(client_id, just_ping=True)
+
+
 def main():
     print "\nIniciando server...\n"
 
@@ -125,19 +172,29 @@ def main():
     INTERVAL = 60
 
     FINDUSERS_DB = PREFIX + '/users.db'
+    GETPROFILE_DB = PREFIX + '/profiles.gdbm'
 
     # Setup logging
     logfile = DailyLogFile('lastfmcrawler.log', '.')
     log.startLogging(logfile)
 
     server = BaseDistributedCrawlingServer(PORT, PREFIX, INTERVAL)
+    # Seting controllers up
     findusers_controller = FindUsersController(server.getScheduler(),
                                                PREFIX,
                                                server.getClientRegistry(),
                                                FINDUSERS_DB)
+    getprofile_controller = GetProfileController(server.getScheduler(),
+                                                 PREFIX,
+                                                 server.getClientRegistry(),
+                                                 GETPROFILE_DB)
+    # Registering Controllers
     server.registerTaskController(findusers_controller,
                                  'findusers',
                                  'FindUsers')
+    server.registerTaskController(getprofile_controller,
+                                 'getprofile',
+                                 'Profiles')
     server.run()
     
     
