@@ -10,6 +10,7 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 
+import re
 import datetime
 import urllib2
 import httplib
@@ -283,6 +284,8 @@ class UserInfoRetriever(ObstinatedRetriever):
 
     USER_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/"
 
+    AGE_GENDER_RE = re.compile(r"(\d+)?\s*(M\w+|F\w+)?")
+
     def validate(self, data):
         soup = BeautifulSoup(data)
         if not soup.find('div', 'clearit user vcard') and \
@@ -290,9 +293,14 @@ class UserInfoRetriever(ObstinatedRetriever):
             raise InvalidPage()
 
     def get_user(self, username):
+        "Get the parsed user profile page."
         url = self.USER_URL_TEMPLATE % (username)
         html = self.get_url(url)
-        soup = BeautifulSoup(html)
+        return self.parse_user_data(username, html)
+
+    def parse_user_data(self,username, data):
+        "Parse the user profile page."
+        soup = BeautifulSoup(data)
 
         log = logging.getLogger("UserInfoRetriever")
         log.info("BEGIN")
@@ -338,49 +346,34 @@ class UserInfoRetriever(ObstinatedRetriever):
         if homepage_html:
             homepage = homepage_html.contents[0]
 
-        # Sex, age
         extra_details = details.find("p", "userInfo adr")
-
-        #check the existence of sex and age
-        if not name and len(extra_details.contents) > 1:
-            aux = extra_details.contents[0].split()
-            if len(aux) == 2:
-                age, sex = aux
-                sex = takeComma(sex)
-                age = takeComma(age)
-            else:
-                sex = aux[0]
-                age = ''
-        else:
-            if len(extra_details.contents) > 1:
-                aux = extra_details.contents[1].split()
-                if len(aux) == 3:
-                    _, age, sex = aux
-                    sex = takeComma(sex)
-                    age = takeComma(age)
-                elif len(aux) == 2:
-                    _, sex = aux
-                    sex = takeComma(sex)
-                    age = ''
-            else:
-                aux = extra_details.contents[0].split()
-                if len(aux) == 1:
-                    sex = aux[0]
-                    age = ''
-                else:
-                    age, sex = aux
-                    sex = takeComma(sex)
-                    age = takeComma(age)
         # Country
         country = ''
         country_html = extra_details.find("span", "country-name")
         if country_html:
             country = country_html.contents[0]
+        # Gender and age
+        # Remove all children tags - get only gender and age text, if it exists
+        # NOTICE: this modifies the page structure, should be the last step...
+        for child in extra_details.findAll():
+            child.extract()
+        if not extra_details.contents:
+            age, gender = "", ""
+        else:
+            # Get gender and age using regular expressions...
+            gender_age_text = extra_details.contents[0]
+            gender_age_text = gender_age_text.replace(",", "").strip()
+            res = self.AGE_GENDER_RE.match(gender_age_text)
+            age, gender = res.groups()
+            if not gender:
+                gender = ""
+            if not age:
+                age = ""
 
         # convert everything to plain strings -- every "odd" data is percent
         # encoded...
         log.info("END")
-        res = (username, name, age, sex, country, executions, average,
+        res = (username, name, age, gender, country, executions, average,
                 homepage, user_since )
         return tuple([str(i) for i in res])
 
