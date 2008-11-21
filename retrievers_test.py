@@ -17,6 +17,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
     PROFILE_AGE_GENDER = "retrievers_test_profile_2.data"
     PROFILE_GENDER_NO_AGE = "retrievers_test_profile_3.data"
     PROFILE_NO_GENDER_AGE = "retrievers_test_profile_4.data"
+    PROFILE_NO_USER_INFO = "retrievers_test_profile_5.data"
 
     def testProfileWithoutGenderAndAge(self):
         "Tests if we get information from a profile w/o Gender and Gender."
@@ -50,6 +51,14 @@ class UserInfoRetrieverTest(unittest.TestCase):
         username = "xadai"
         expected =  (username, 'Pedro Marques', '21', '', 'Brasil', '36639',
                 '23', 'pedroxadai.blogspot.com', '2004-08-08')
+        returned = UserInfoRetriever().parse_user_data(username, data)
+        self.assertEqual(expected, returned)
+
+    def testProfileWithoutUserInfo(self):
+        "Tests if we get information from a profile w/o user-info"
+        data = open(self.PROFILE_NO_USER_INFO, 'r')
+        username = "sensimilla88"
+        expected =  (username, '', '', '', '', '86', '0', '', '2006-11-28')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 

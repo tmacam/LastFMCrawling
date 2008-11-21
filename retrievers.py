@@ -346,29 +346,31 @@ class UserInfoRetriever(ObstinatedRetriever):
         if homepage_html:
             homepage = homepage_html.contents[0]
 
+        # Get user info -- Country, Age, Gender
+        country, age, gender = "", "", ""
         extra_details = details.find("p", "userInfo adr")
-        # Country
-        country = ''
-        country_html = extra_details.find("span", "country-name")
-        if country_html:
-            country = country_html.contents[0]
-        # Gender and age
-        # Remove all children tags - get only gender and age text, if it exists
-        # NOTICE: this modifies the page structure, should be the last step...
-        for child in extra_details.findAll():
-            child.extract()
-        if not extra_details.contents:
-            age, gender = "", ""
-        else:
-            # Get gender and age using regular expressions...
-            gender_age_text = extra_details.contents[0]
-            gender_age_text = gender_age_text.replace(",", "").strip()
-            res = self.AGE_GENDER_RE.match(gender_age_text)
-            age, gender = res.groups()
-            if not gender:
-                gender = ""
-            if not age:
-                age = ""
+        if extra_details:
+            # Country
+            country = ''
+            country_html = extra_details.find("span", "country-name")
+            if country_html:
+                country = country_html.contents[0]
+            # Gender and age -- Remove all children tags - get only gender
+            # and age text, if it exists
+            # NOTICE: this modifies the page structure,
+            #         should be the last step...
+            for child in extra_details.findAll():
+                child.extract()
+            if extra_details.contents:
+                # Get gender and age using regular expressions...
+                gender_age_text = extra_details.contents[0]
+                gender_age_text = gender_age_text.replace(",", "").strip()
+                res = self.AGE_GENDER_RE.match(gender_age_text)
+                age, gender = res.groups()
+                if not gender:
+                    gender = ""
+                if not age:
+                    age = ""
 
         # convert everything to plain strings -- every "odd" data is percent
         # encoded...
