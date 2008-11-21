@@ -165,7 +165,7 @@ class GetProfileController(GdbmBaseControler):
 
 
 def main():
-    print "\nIniciando server...\n"
+    print "\nInitializing server...\n"
 
     PORT = 8700
     PREFIX = './db/'
@@ -195,6 +195,10 @@ def main():
     server.registerTaskController(getprofile_controller,
                                  'getprofile',
                                  'Profiles')
+
+    print "\nServer setup done.\n"
+    log.msg("Server setup done.")
+
     server.run()
     
     
