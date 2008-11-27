@@ -9,7 +9,7 @@ __author__ = "Tiago Alves Macambira & Rafael Sachetto"
 __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
-
+from optparse import OptionParser
 import os
 import urllib2
 import time
@@ -32,6 +32,8 @@ from retrievers import FindUsersRetriver, get_user_encoded_profile, \
 
 class LastFMClient(BaseClient):
     """Client for crawling digg articles."""
+
+    MIN_SLEEP = 120
 
     def __init__(self, client_id, base_url, store_dir=None):
         """LastFMClient Constructor."""
@@ -127,8 +129,8 @@ def main(base_url, store_dir):
 
     hostname = gethostname()
 
-    id_filename = store_dir + "/" + hostname + '.id'
-    log_filename = store_dir + "/" + hostname + '.log'
+    id_filename = store_dir + "/" + hostname + '.id'    
+    log_filename = store_dir + "/" + hostname + '.log'    
     out_filename = store_dir + "/" + hostname + '.out' # FIXME DEPRECATED!!!!
 
     # Setup logging, client id
@@ -143,25 +145,51 @@ def main(base_url, store_dir):
     cli.run()
 
 
+def parse_command_line():
+
+    parser = OptionParser()
+
+    parser.add_option("-d", "--outdir", dest="store_dir", default=None,
+                      help="log reports to DIR. Default is the current directory", 
+                      metavar="DIR")
+    
+    parser.add_option("-f", "--foreground",
+                      action="store_true", dest="foreground", default=False,
+                                        help="runs the client in foreground")
+
+    (options, args) = parser.parse_args()
+
+    return options, args
+
 if __name__ == '__main__':
+
     BASE_URL = 'http://www.speed.dcc.ufmg.br/lastfm'
     #BASE_URL = 'http://localhost:8700'
-    STORE_DIR = os.getcwd()  # "." loses its meaning as soon as we deamonize
-    LOG_FILENAME = STORE_DIR + "/lastfmclient.log"
-    STDOUT_REDIR_FILENAME = STORE_DIR + "/daemon.out"
+    BASE_DIR = os.getcwd()  # "." loses its meaning as soon as we deamonize
+    STDOUT_REDIR_FILENAME = BASE_DIR + "/daemon.out"
+
+    options, args = parse_command_line()
+
+    store_dir = BASE_DIR
+
+    if options.store_dir:
+        store_dir = os.path.join(BASE_DIR, options.store_dir)
+        if not os.path.isdir(store_dir):
+            os.makedirs(store_dir)
 
     # TODO Merge as much of this code as possible with main()
     # Dettach the current proceess from the terminal and became 
     # a daemon
-    print "Becoming a daemon"
-    res = createDaemon()
-    # We closed all stdio and redirected them for /dev/null
-    # Just in case we need them back, let's reconfigure stdout and stderr
-    reconfigStdout(STDOUT_REDIR_FILENAME)
-    print "Became a daemon"
+    if not options.foreground:
+        print "Becoming a daemon"
+        res = createDaemon()
+        # We closed all stdio and redirected them for /dev/null
+        # Just in case we need them back, let's reconfigure stdout and stderr
+        reconfigStdout(STDOUT_REDIR_FILENAME)
+        print "Became a daemon"
     
     try:
-        main(BASE_URL, STORE_DIR)
+        main(BASE_URL, store_dir)
     except urllib2.HTTPError, e:
         log_urllib2_exception(e)
         raise
