@@ -327,10 +327,19 @@ class UserInfoRetriever(ObstinatedRetriever):
         average = details_html.attrs[1][1].split()[2] 
 
         # User since... (user_since)
-        day_month_year = details_html.find('small').contents[0]
-        day = int(day_month_year.split()[1])
-        month = int(MONTHS_TO_NUM[day_month_year.split()[2]])
-        year = int(day_month_year.split()[3])
+        if details_html.find('small'):
+            # Usuário já escutou alguma coisa...
+            # desde dd mon YYYY
+            day_month_year_text = details_html.find('small').contents[0]
+        else:
+            # Usuário apenas se registrou, nao postou nenhuma música
+            # Registrado em: dd mon YYYY
+            day_month_year_text = details_html.contents[0]
+        # Get only the "dd mon YYYY"
+        day_text, month_text, year_text = day_month_year_text.split()[-3:]
+        day = int(day_text)
+        month = int(MONTHS_TO_NUM[month_text])
+        year = int(year_text)
         user_since = datetime.date(year, month, day).isoformat()
 
         # Executions

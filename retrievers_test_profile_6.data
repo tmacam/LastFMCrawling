@@ -1,0 +1,820 @@
+     
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head profile="http://purl.org/uF/2008/03/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                        <title>Perfil musical de SweeetTangerine – Usuários na Last.fm</title>                
+        <link rel="search" type="application/opensearchdescription+xml" href="http://cdn.last.fm/opensearch_desc.xml" title="Last.fm" />
+        <meta name="description" content="A maior plataforma social de música do mundo. Mostre suas preferências, veja o que seus amigos estão ouvindo, ouça músicas novas e ganhe uma rádio pessoal com recomendações, tudo isso gratuitamente."/>
+        <meta http-equiv="content-language" content="pt" />
+                            <link rel="icon" href="http://cdn.last.fm/flatness/favicon.2.ico" />
+            <link rel="icon" type="image/png" href="http://cdn.last.fm/flatness/nice_favicon.2.png" />
+            <link rel="apple-touch-icon" href="http://cdn.last.fm/flatness/apple-touch-icon.png" />
+            
+                
+                <link type="text/html" rel="alternate" hreflang="en" href="http://www.last.fm/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="de" href="http://www.lastfm.de/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="es" href="http://www.lastfm.es/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="fr" href="http://www.lastfm.fr/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="it" href="http://www.lastfm.it/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="ja" href="http://www.lastfm.jp/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="pl" href="http://www.lastfm.pl/user/SweeetTangerine" />
+                                                <link type="text/html" rel="alternate" hreflang="" href="http://www.lastfm.ru/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="sv" href="http://www.lastfm.se/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="tr" href="http://www.lastfm.com.tr/user/SweeetTangerine" />
+                                <link type="text/html" rel="alternate" hreflang="cn" href="http://cn.last.fm/user/SweeetTangerine" />
+                        
+        
+            <!--[if LT IE 7]>
+        <style type="text/css">
+        .transparent_png {
+        	behavior: url('/pngbehavior2.htc');
+        }
+        </style>
+        <![endif]-->
+                                    <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/user/overview.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/main.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/components.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/dialog.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/form/typeahead.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/dev/console.css" type="text/css" />
+                                    
+                    <!-- The libraries—thank God for those! -->
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/lib/prototype.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/lib/scriptaculous.js"></script>
+        
+        <!-- Create our namespace -->
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/LFM.js"></script>
+        
+                
+        <script type="text/javascript">
+                    LFM.set("ParentResource", {"id":"9198588","type":4,"name":"SweeetTangerine","url":"\/user\/SweeetTangerine","image":{"small":"http:\/\/userserve-ak.last.fm\/serve\/34\/4125689.jpg","smallsquare":"http:\/\/userserve-ak.last.fm\/serve\/34s\/4125689.jpg","medium":"http:\/\/userserve-ak.last.fm\/serve\/64\/4125689.jpg","mediumsquare":"http:\/\/userserve-ak.last.fm\/serve\/64s\/4125689.jpg","large":"http:\/\/userserve-ak.last.fm\/serve\/126\/4125689.jpg","largesquare":"http:\/\/userserve-ak.last.fm\/serve\/126s\/4125689.jpg","mega":"http:\/\/userserve-ak.last.fm\/serve\/252\/4125689.jpg","fixed":"http:\/\/userserve-ak.last.fm\/serve\/fixed\/4125689.jpg","original":"http:\/\/userserve-ak.last.fm\/serve\/_\/4125689.jpg"}});
+                LFM.set("String", {
+            toRedStr: "Barão Vermelho",
+            toBlackStr: "Fuscão Preto",
+            
+            okText: "OK",
+            cancelText: "Cancelar",
+            clickToEditText: "Clique para editar",
+            savingText: "Salvando…",
+            loadingText: "Carregando…",
+            deletingText: "Excluindo…",
+            thereWasAnError: "Ocorreu um erro.",
+            dialogLoadError: "Ocorreu um erro ao carregar esta caixa de diálogo.",
+            fileTooBig: "Desculpe, o arquivo é muito grande.",
+            noFile: "Escolha um arquivo.",
+            uploadCancelled: "Upload cancelado.",
+            deleteMessageTitle: "Excluir mensagem",
+            deleteMessagePrompt: "Tem certeza de que deseja excluir esta mensagem?",
+            deleteFriendPrompt: "Tem certeza de que deseja excluir este amigo?",
+            deleteImage: "Tem certeza de que deseja excluir esta imagem?",
+            deleteButtonText: "Excluir",
+            done: "Concluído",
+            // the following ones maybe shouldn’t be in here:
+            backText: "Retornar",
+            
+            yesText: "Sim",
+            noText: "Não",
+            
+            saveText: "Salvar",
+            saveTitle: "Adicionar ao perfil",
+            
+            sendText: "Enviar",
+            sendTitle: "Recomendar a amigos",
+            
+            addTitle: "Adicionar à biblioteca",
+            
+            tagTitle: "Adicionar tags",
+            
+            playlistTitle: "Adicionar à lista",
+            
+            obsessionTitle: "Personalize sua obsessão",
+            
+            befriendTitle: "Adicionar um amigo",
+            
+            joinTitle: "Juntar-se a este grupo",
+            
+            loved: "Favorito",
+            
+            RemoveFromLibraryTitle: "Remover da biblioteca",
+            
+            uploadImageTitle: "Carregar imagem",
+            uploadVideoTitle: "Carregar vídeo",
+            
+            usernoteTitle: "Add a note",
+            
+            flageventTitle: "Sinalizar para revisão",
+            
+            setLocationTitle: "Defina sua localização",
+            
+            moderationVoteTitle: "O que está errado?",
+            
+                                                
+            uploadMessages: {
+                mayTakeLonger: "Desculpe, isso poderá levar mais tempo do que o habitual. Aguarde alguns segundos.",
+                uploading: "Carregando…",
+                endUploading: "Concluído",
+                progressDisplay: "PERCENTUPLOADED% concluído (TRANSFERRATE kb/s) – TIMEREMAINING segundos restantes",
+                progressComplete: "100% concluído",
+                failedRetrying: "Falha ao recuperar upload, descartado.",
+                processingMedia: "Processando mídia…",
+                unsupportedFormat: "Desculpe, o arquivo que você carregou não está codificado em um formato compatível. Tente novamente.",
+                uploadError: "Ocorreu um erro ao carregar o vídeo, por favor verifique se o arquivo que você está carregando não é muito grande ou está em um formato incorreto e tente novamente."
+            }
+        });
+        LFM.set("Session", {
+            cookieHost: ".lastfm.com.br",
+            host: "www.lastfm.com.br",
+            staticHost: "http://cdn.last.fm",
+                            loggedIn: false,
+                        formtoken: "2bcd67b944b9e63a7fd1b2c0c95a8d55947c66b3",
+            location: "br",
+            language: "en"
+        });
+                                        LFM.set("Element", {
+            icon_loved_indicator: "<img class=\"loved_indicator_icon transparent_png\" width=\"11\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_loved_indicator.2.png\" \/>",
+            icon_tag: "<img class=\"tag_icon transparent_png\" width=\"15\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_tag.png\" \/>",
+            icon_dismiss: "<img class=\"dismiss_icon transparent_png\" width=\"13\" height=\"13\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_delete.2.png\" \/>",
+            icon_play: "<img class=\"play_icon transparent_png\" width=\"17\" height=\"17\" alt=\"Tocar\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_play.png\" \/>"
+        });
+                </script>
+        
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/user/overview.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/components.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/flash.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/dialog.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/form/typeahead.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/dev/console.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/lib/ufo.js"></script>
+                
+        <script type="text/javascript">
+
+document.observe("dom:loaded", function () {
+    if (typeof ieHover != 'undefined') {
+        ieHover.setUp();
+    }
+});
+
+        </script>
+    </head>
+
+
+<body class="r-user a-overview">
+                
+    
+            
+<!-- SiteCatalyst code version: H.16.
+Copyright 1997-2008 Omniture, Inc. More info available at
+http://www.omniture.com -->
+
+<script>var s = false, s_gi = false;</script>
+<script src="http://cdn.last.fm/omniture/9/omniture-core.js"></script>
+<script>
+
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+if (s) {
+s.pageName="User/Overview/";
+s.server="";
+s.channel="";
+s.pageType="other";
+
+s.prop1="user";       // namespace
+s.prop2="overview";       // controller
+s.prop3="";       // action
+
+
+
+s.prop10="Anonymous";       // logged in/out
+
+s.prop12="lastfm.com.br";        // url extension
+
+s.prop13="";        // Member user id
+
+s.prop14="";        // Ad source
+s.prop15="";        // Ad id
+s.prop16="";        // Ad size
+s.prop18=s.getTimeParting('h',0,2008);     // Set hour
+s.prop19=s.getTimeParting('d',0,2008);     // Set day
+
+
+
+
+
+s.prop32 = ""; // TODO: 1st day of visit
+s.prop33 = "pt";
+
+
+
+/* Success Events */
+s.events="";
+
+/* E-commerce Variables */
+// s.campaign="";
+s.state="";
+s.zip="";
+s.products="";
+s.purchaseID="";
+s.eVar1="";
+s.eVar2 = s.pageName; // Page name
+s.eVar3="";
+
+
+s.eVar10="Anonymous";       // logged in/out
+
+
+
+
+
+s.eVar26=""; // OnClick Location
+s.eVar27=""; // Download Platform
+s.eVar28=""; // Buy/Download Location
+
+s.eVar29=""; // TODO: 1st day of visit
+s.eVar30=s.prop12;        // url extension
+
+s.eVar31=s.getNewRepeat();          // new/repeat visitor
+s.eVar32=s.getDaysSinceLastVisit(); // Days since last visit
+
+s.eVar33="";        // Ad source
+s.eVar34="";        // Ad id
+s.eVar35="";        // Ad size
+
+s.eVar36=""; // Member user id
+
+s.eVar37=s.prop33; // User language
+
+
+
+// Set vars to pass with exit/download/custom links called by s.tl()
+// * Click location
+s.linkTrackVars="eVar26";
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code = s.t(); if (s_code) document.write(s_code);
+}
+
+</script>
+<script type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.11. -->
+        
+        <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">
+
+    var _qoptions = {
+        labels: "LastFM"
+    };
+    var _qacct="p-51jhoCdjGFIVU";
+    quantserve();
+
+</script>
+<noscript>
+    <a href="http://www.quantcast.com/p-51jhoCdjGFIVU" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-51jhoCdjGFIVU.gif?labels=LastFM" height="1" width="1" alt="" /></a>
+</noscript>        
+            <div id="page" class="                     altHeadings ">
+        <div class="fiflufi">
+                
+<!-- Includes needed for this app only -->
+<!-- Includes needed everywhere -->
+
+
+    <script type="text/javascript">var dartORD = Math.round(Math.random()*100000000);function writeTop(){};function writeTopRight(){ 
+google_ad_client = "pub-8364350995539875";
+google_ad_width = 300;
+google_ad_height = 250;
+var rand = Math.random() * 100000;
+google_alternate_ad_url = "http://www.last.fm/show_ads.php?house=true&type=MPU&y=" + rand;
+google_ad_format = "300x250_as_new";
+google_ad_type = "text_image";
+//2007-02-02: catalogue-overview, tag-overview, label-overview
+google_ad_channel = "4073027658+4417879899+0718013740";
+google_color_border = "E9EBEF";
+google_color_bg = "E9EBEF";
+google_color_link = "D01F3C";
+google_color_text = "605C5B";
+google_color_url = "605C5B";
+document.write('<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"><\/script>');
+};function writeSkyscraperRight(){};function writeTopTopRight(){};function writeTopTopTopRight(){};function writeMid(){ google_hints = "music CD MP3 scrobbling ipod social blog wiki web2.0 ajax live event concert community streaming radio charts t-shirt ticket dvd last.fm player album record audiophile memorabilia chat im hifi gadgets game mobile broadband video";
+google_ad_client = "pub-8364350995539875";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as_new";
+var rand = Math.random() * 100000;
+google_alternate_ad_url = "http://www.last.fm/show_ads.php?house=true&y=" + rand;
+google_ad_type = "text_image";
+google_ad_channel ="0968078817";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "D01F3C";
+google_color_url = "564B42";
+google_color_text = "564B42";
+google_ad_output = "html";
+document.write('<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"><\/script>');};function writeTopLeaderboard(){};function writeFooter1(){ document.write('<a href="http://www.last.fm/delivery.php?id=2602&zoneId=128" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2327/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter2(){ document.write('<a href="http://www.last.fm/delivery.php?id=2257&zoneId=129" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/1965/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter3(){ document.write('<a href="http://www.last.fm/delivery.php?id=2376&zoneId=130" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2065/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter4(){ document.write('<a href="http://www.last.fm/delivery.php?id=2998&zoneId=131" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2707/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeSkin(){};;var aZoneCreativeTypeAssoc={"11":"468x60","9":"300x250","128":"192x64","129":"192x64","130":"192x64","131":"192x64"};</script>
+
+
+    <div id="header" class="clearit">
+        <div id="headerWrapper">
+                        <h1><a href="/" id="lastfmLogo">
+                                    <img src="http://cdn.last.fm/flatness/logo.6.png" width="103" height="50" alt="Last.fm" />
+                    <img src="http://cdn.last.fm/flatness/logo_black.3.png" width="103" height="50" style="display: none;" alt="Last.fm" />
+                                <span>Last.fm</span>
+            </a></h1>
+            <ul id="primaryNav" class="clearit">
+                <li id="musicNav">
+                    <a href="/music">Músicas</a>
+                </li>
+                <li id="videosNav">
+                    <a href="/videos">Vídeos</a>
+                </li>
+                <li id="listenNav">
+                    <a href="/listen">Rádio</a>
+                </li>
+                <li id="eventsNav">
+                    <a href="/events">Eventos</a>
+                </li>
+                <li id="chartsNav">
+                    <a href="/charts">Tabelas</a>
+                </li>
+                <li>
+                    <form id="siteSearch" method="get" action="/search">
+                    
+                        <select name="m" id="siteSearchSelect">
+                            <option value="all">Música</option>
+                                                        <option value="event">Evento</option>
+                            <option value="tag">Tag</option>
+                                                        <option value="user">Usuário</option>
+                            <option value="group">Grupo</option>
+                            <option value="label">Gravadora</option>
+                        </select>
+                        <input id="siteSearchBox" placeholder="Procurar" type="text" autosave="fm.last.searchhistory" results="5" name="q" size="16" />
+                        
+                        <input class="submit" type="submit" value="" title="Enviar" />
+                    </form>
+                </li>
+            </ul>
+            
+            <div id="idBadger">
+                                    <a href="/login">Fazer login</a> | <a href="/join">Inscrever-se</a>
+                              </div>
+             <div id="headLinks">
+                <p>
+                                        <a href="/help">Ajuda</a>
+                                        |
+        <img src="http://cdn.last.fm/depth/flags/mini/pt.gif" id="langToggleFlag" alt="Alterar idioma" />
+    <a href="/user/SweeetTangerine?change=language" title="Clique aqui para alterar o idioma" rel="nofollow" id="headerLangToggle">Português</a>
+    
+                </p>
+            </div>
+        </div><!-- #headerWrapper -->
+    </div>
+
+    <script>
+    LFM.Display.setupHeader();    new LFM.Activityfeed.DeleteListener();
+</script>
+<!-- Adserving start -->
+
+                                                    <div id="LastAd_Skin" class="LastAd"><div align="center">
+            <script type="text/javascript">
+                                if(typeof writeSkin == 'function') writeSkin();
+                            </script>
+            </div></div>
+                            <script>
+                    $("LastAd_Skin").hide();
+                </script>
+                        <!-- Adserving end -->
+<!-- Adserving start -->
+    
+                                                    <div id="LastAd_Top" class="LastAd"><div align="center">
+            <script type="text/javascript">
+                                if(typeof writeTop == 'function') writeTop();
+                            </script>
+            </div></div>
+                            <script>
+                    $("LastAd_Top").hide();
+                </script>
+                        <!-- Adserving end -->
+<div id="content">
+    <div><!-- This containing div fixes an IE bug where the absolutely positioned element disappears randomly. Don’t ask me why. -->
+    <div id="secondaryNavigation">
+                                            <ul>
+        <li class=" current  first "><a href="/user/SweeetTangerine">Perfil</a></li>    <li><a href="/user/SweeetTangerine/library">Biblioteca</a></li>        <li><a href="/user/SweeetTangerine/charts">Tabelas</a></li>    <li><a href="/user/SweeetTangerine/events">Eventos</a></li>    <li><a href="/user/SweeetTangerine/friends">Amigos</a></li>        <li><a href="/user/SweeetTangerine/neighbours">Vizinhos</a></li>    <li><a href="/user/SweeetTangerine/groups">Grupos</a></li>    <li><a href="/user/SweeetTangerine/journal">Blog</a></li>    <li><a href="/user/SweeetTangerine/library/tags">Tags</a></li>    
+</ul>                                </div>
+</div>    <div class="leftCol">
+        <div class="leftColWrapper">
+                                                                                                                                                    
+            <div id="userBadge" class="clearit user vcard" id="hcard-SweeetTangerine">
+                <div class="badgeAvatar">
+                                            <span class="userImage"><img class="photo" width="126" alt="" src="http://userserve-ak.last.fm/serve/126/4125689.jpg" /></span>                                                        </div>
+                <div class="badgeHead">
+                    <h1>SweeetTangerine</h1>
+                                    </div>
+                <div class="badgeInfo">
+                    <p class="userInfo adr"><strong class="fn">Alyssa</strong>, 19, Feminino, <span class="country-name">Estados Unidos</span><small class="userLastseen">Última visita: janeiro de 2008</small></p>
+                    
+                    <div class="userData">
+                                                <span class="userPlays" title="Média de 0 faixas por dia">Registrado em: 29 Jan 2008</span><p class="userActivity"><a href="/user/SweeetTangerine/library/loved" title="">0 Faixas preferidas</a> | <a href="/user/SweeetTangerine/grapevine" title="">0 Posts</a> | <a href="/user/SweeetTangerine/playlists" title="">1 Lista</a> | <span class="shoutCount" title="Há uma mensagem">
+
+    <a href="#shoutbox" id="shoutBoxLink" onclick="if (s) { s.eVar26 = 'shoutsBtn'; }" class="icon">
+        <img class="comment_icon transparent_png" width="13" height="11" src="http://cdn.last.fm/flatness/global/icon_comment.png" /><span>1 mensagem</span>
+    </a>
+</span></p>
+                     </div><!--.userData-->
+                </div><!--.badgeInfo-->
+            </div><!--.profileBadge-->
+            
+                        <div class="profileOptions clearit">
+                <div class="options">
+                    <ul class="buttons">
+                        <li>
+                                                    <a href="/user/SweeetTangerine" id="button1" class="lfmButton lfmBigButton lfmBefriendButton" title="Alyssa, 19, Feminino, Estados Unidos"><strong><img class="addtofriends_icon transparent_png" width="17" height="17" src="http://cdn.last.fm/flatness/icons/profile/addtofriends.png" /><span>Adicionar</span></strong></a>
+    <script>
+(function () {
+    function showDialog () {
+        LFM.Befriend({"id":"9198588","type":4,"name":"SweeetTangerine","url":"\/user\/SweeetTangerine","image":{"small":"http:\/\/userserve-ak.last.fm\/serve\/34\/4125689.jpg","smallsquare":"http:\/\/userserve-ak.last.fm\/serve\/34s\/4125689.jpg","medium":"http:\/\/userserve-ak.last.fm\/serve\/64\/4125689.jpg","mediumsquare":"http:\/\/userserve-ak.last.fm\/serve\/64s\/4125689.jpg","large":"http:\/\/userserve-ak.last.fm\/serve\/126\/4125689.jpg","largesquare":"http:\/\/userserve-ak.last.fm\/serve\/126s\/4125689.jpg","mega":"http:\/\/userserve-ak.last.fm\/serve\/252\/4125689.jpg","fixed":"http:\/\/userserve-ak.last.fm\/serve\/fixed\/4125689.jpg","original":"http:\/\/userserve-ak.last.fm\/serve\/_\/4125689.jpg"}}, {
+            parameters: {
+                            }        });
+    }
+        $("button1").observe("click", function (e) {
+        e.stop();
+                showDialog();
+    });
+})()
+    </script>                                                </li>
+                        <li>
+                            <a href="/inbox/compose?to=SweeetTangerine" class="icon lfmMailButton"><img class="mailuser_icon transparent_png" width="17" height="17" src="http://cdn.last.fm/flatness/icons/profile/sendmsg.png" /><span>Enviar mensagem</span></a>
+                        </li>
+                                                <li>
+                            <a href="#shoutbox" class="icon lfmShoutboxButton" onclick="if (s) { s.eVar26 = 'shoutsBtn'; }"><img class="comment_icon transparent_png" width="13" height="11" src="http://cdn.last.fm/flatness/global/icon_comment.png" /><span>Deixar recado</span></a>
+                        </li>
+                                            </ul>
+                </div>
+                
+                <div id="tasteometer">
+                    <p>
+                        Seu grau de compatibilidade musical com <strong>SweeetTangerine</strong> é <strong class="reading">Desconhecido</strong>
+                    </p>
+                    <span class="bar">
+                        <span style="width: 0;"></span>
+                    </span>
+                                            <form action="/user/SweeetTangerine/tasteomatic" method="get" id="tasteometerform" style="display: none; visibility: hidden;">                            <p>
+                                <strong><label for="tastyartists">Digite o nome de algumas bandas ou artistas de que você goste, separados por vírgulas:</label></strong>
+                            </p>
+                        
+                            <p class="textarea">
+                                <textarea name="tastyartists" id="tastyartists" rows="2" cols="40"></textarea>
+                            </p>
+                        
+                            <p class="input">
+                                <input type="submit" class="confirmButton" name="comparetaste" value="Compare!" id="comparetaste" />
+                            </p>
+                        </form>                    
+                        <span class="moduleOptions" id="tasteometertoggle" style="display: none; visibility:hidden;"><a href="#">Compare seu gosto musical</a></span>
+                    
+                        <span class="moduleOptions" id="tasteometerjoin"><a href="/join">Crie seu próprio perfil musical</a></span>
+                                         </p>
+                </div>
+                
+                <script>
+                    LFM.set("Page", {
+                        TasteometerCalibrating: "Calibrando o Taste-o-meter…",
+                        TasteometerURL: "/user/SweeetTangerine/tasteomatic"
+                    });
+                    LFM.Page.compareTaste();
+                </script>
+            </div>
+                        
+                                    
+                                                                
+                        
+
+        <div id="taste" class="clearit module modulelibrary">
+                        
+        
+        <div class="module-body">
+            <div class="libraryStation">
+                                
+            </div><!-- .libraryStation -->
+            
+                                            <div class="infoMessage messageBox
+">
+            <strong class="messageWrapper">SweeetTangerine ainda não adicionou nenhuma música à sua biblioteca.</strong>
+    </div>                    </div>
+        </div><!-- #taste -->
+            
+            
+            
+                                        <div class="module">
+    <h2 id="shoutbox" class="heading"><span class="h2Wrapper"><a href="/user/SweeetTangerine/shoutbox" title="">Caixa de mensagens</a></span></h2>    <div id="shoutboxContainer">
+                                    <div class="shoutboxInput">
+
+                    
+            <div class="infoMessage messageBox
+">
+            <strong class="messageWrapper">                <strong>Deixe um comentário.</strong>
+                <a href="/login/">Faça login na Last.fm</a> ou <a href="/join/">cadastre-se agora</a> (é gratuito).
+            </strong>
+    </div>            
+            </div>                                        <ul debug="1" class="shouts" id="shoutList">    <li class=" first last clearit" id="r72_112042026_1381835179">
+            <strong class="author staff">
+                            <a href="/user/LAST.HQ" title="The Team, 6, Reino Unido">                    <span class="userImage"><img width="64" alt="" src="http://userserve-ak.last.fm/serve/64/615839.jpg" /><img class="staff_icon transparent_png" width="6" height="6" src="http://cdn.last.fm/flatness/global/user/icon_staff_m.png" /></span>                    LAST.HQ                </a>                        escreveu:
+        </strong>
+        
+        <div class="meta">
+            <span class="date">
+                                                                    janeiro de 2008
+                            </span>
+                    </div>
+        
+        <blockquote>
+                            Welcome aboard, SweeetTangerine! Happy listening.
+                    </blockquote>
+        
+                    <p class="actions">
+                <a href="/user/LAST.HQ" title="The Team, 6, Reino Unido">Exibir perfil</a> | 
+                <a href="/user/LAST.HQ#shoutbox" title="The Team, 6, Reino Unido">                                                Responder
+                                        </a>            </p>
+                </li>
+</ul>                                            
+
+            </div></div>
+                                    
+        </div><!-- .leftColWrapper -->
+    </div><!-- .leftCol -->
+    
+    <div class="rightCol">
+                <div id="player">
+        <div id="flashContainer">
+            <div id="lfmPlayer_container">
+<noscript>
+<object type="application/x-shockwave-flash" data="http://cdn.last.fm/webclient/s12n/s/3/lfmPlayer.swf" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+        id="lfmPlayer" name="lfmPlayer" align="middle"
+        width="300" height="221">
+    <param name="movie" value="http://cdn.last.fm/webclient/s12n/s/3/lfmPlayer.swf" />
+    <param name="flashvars" value="lang=pt&amp;lfmMode=playlist&amp;FOD=true&amp;resourceID=9198588&amp;resname=SweeetTangerine&amp;restype=user" />
+    <param name="allowScriptAccess" value="always" />
+    <param name="allowNetworking" value="all" />
+    <param name="allowFullScreen" value="true" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="fff" />
+    <param name="wmode" value="transparent" />
+    <param name="menu" value="true" />
+</object></noscript>
+</div>
+
+
+<script>
+var lfmPlayer_params = {"movie":"http:\/\/cdn.last.fm\/webclient\/s12n\/s\/3\/lfmPlayer.swf","flashvars":"lang=pt&lfmMode=playlist&FOD=true&resourceID=9198588&resname=SweeetTangerine&restype=user","width":300,"height":221,"majorversion":7,"build":"0","allowscriptaccess":"always","allownetworking":"all","allowfullscreen":"true","quality":"high","bgcolor":"#fff","wmode":"transparent","menu":"true","id":"lfmPlayer","setcontainercss":false,"swliveconnect":"true","name":"lfmPlayer","align":"middle"};
+UFO.create(lfmPlayer_params, "lfmPlayer_container");
+</script>        </div>
+    </div>                <!-- Adserving start -->
+
+                                                    <div id="LastAd_TopRight" class="LastAd"><div align="center">
+            <script type="text/javascript">
+                                if(typeof writeTopRight == 'function') writeTopRight();
+                            </script>
+            </div></div>
+                        <!-- Adserving end -->        
+        
+                                        
+                
+        
+        
+                        <div class="module">
+        <h2 class="heading"><span class="h2Wrapper"><a href="/user/SweeetTangerine/friends" title="">Amigos</a></span></h2>                    <div class="infoMessage messageBox
+">
+            <strong class="messageWrapper">Veja o que seus amigos estão ouvindo. <a href="/users">Encontrar pessoas na Last.fm</a></strong>
+    </div>            </div>
+
+        
+                
+        
+                
+        
+                            
+        
+            </div><!-- .rightCol -->
+        <!-- Adserving start -->
+
+                                                    <div id="LastAd_Mid" class="LastAd"><div align="center">
+            <script type="text/javascript">
+                                if(typeof writeMid == 'function') writeMid();
+                            </script>
+            </div></div>
+                        <!-- Adserving end -->    </div><!-- #content -->
+
+<div id="LastFooter">
+     
+    <div id="footer_ads" style="display: none;" class="clearit">
+        <div class="footer_ad_wrapper">
+            
+            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer1" class="LastAd"><div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter1 == 'function') writeFooter1();
+                            </script>
+            </div></div>
+                        <!-- Adserving end -->            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer2" class="LastAd"><div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter2 == 'function') writeFooter2();
+                            </script>
+            </div></div>
+                        <!-- Adserving end -->            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer3" class="LastAd"><div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter3 == 'function') writeFooter3();
+                            </script>
+            </div></div>
+                        <!-- Adserving end -->            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer4" class="LastAd last"><div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter4 == 'function') writeFooter4();
+                            </script>
+            </div></div>
+                        <!-- Adserving end -->            
+        </div><!-- .footer_ad_wrapper -->
+    </div><!-- #footer_ads --> 
+        
+    <ul id="footerStuff" class="clearit">
+        <li></li>
+
+        <li><p id="uploadYourMusic">
+            <strong>Você faz música? Carregue-a aqui!</strong><br /><a href="/uploadmusic?accountType=artist">Artistas</a> ou <a href="/uploadmusic?accountType=label">Gravadoras</a>
+        </p></li>
+    </ul><!-- #footerStuff -->
+
+    <div id="footer_content">
+        <ul id="footerLinks" class="clearit">
+            <li class="first">
+                <dl>
+                    <dt>Saiba quem somos</dt>
+                    <dd><a href="/about/contact">Contato</a></dd>
+                    <dd><a href="/about">Sobre nós</a></dd>
+                    <dd><a href="/about/team">Equipe</a></dd>
+                    <dd><a href="/about/jobs">Vagas de emprego</a></dd>
+                    <dd><a href="/resources">Kit de mídia</a></dd>
+                    <dd><a href="/advertise">Anuncie</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>Obter ajuda</dt>
+                    <dd><a href="/help/faq">Perguntas freqüentes</a></dd>
+                    <dd><a href="/forum/85186">Suporte ao site</a></dd>
+                    <dd><a href="/forum/85187">Suporte ao scrobbler</a></dd>
+                    <dd><a href="/group/Last.fm+for+iPhone+and+iPod+Touch">Suporte a iPod &amp; iPhone</a></dd>
+                </dl>
+            </li>
+        
+            <li>
+                <dl>
+                    <dt>Associar-se</dt>
+                    <dd><a href="/join">Inscrever-se</a></dd>                    <dd><a href="/users">Encontrar pessoas</a></dd>
+                    <dd><a href="/users/groups">Encontrar grupos</a></dd>
+                    <dd><a href="/forum">Fóruns</a></dd>
+                    <dd><a href="/help/guidelines">Diretrizes da comunidade</a></dd>
+                    <dd><a href="/about/moderators">Moderadores</a></dd>
+                    <dd><a href="/promotions">Concursos &amp; Promoções</a></dd>
+                </dl>
+            </li>
+            <li class="last">
+                <dl>
+                    <dt>Mais</dt>
+                    <dd><a href="/download">Scrobbler da Last.fm</a></dd>
+                    <dd><a href="/download#content_ipod">Scrobbler de iPod </a></dd>
+                    <dd><a href="/download#content_iphone">Aplicativo iPhone </a></dd>
+                    <dd><a href="http://build.last.fm">Outros aplicativos</a></dd>
+                    <dd><a href="/hardware">Hardware</a></dd>
+                    <dd><a href="/widgets">Widgets</a></dd>                    <dd><a href="/tools/charts">Imagens de tabelas</a></dd>
+                    <dd><a href="/subscribe">Assinatura</a></dd>
+                    
+                </dl>
+            </li>
+        </ul><!-- #footerLinks -->
+        
+        <div id="justCantGetEnough" class="clearit">
+            <blockquote>“If You Want To Get Ahead, Get a Last.fm.”</blockquote>
+            <p>
+            <strong>Outros sites da Last.fm: </strong> <a href="http://blog.last.fm/">Blog</a> | <a href="http://musicmanager.last.fm">Music Manager</a> | <a href="http://build.last.fm">Build Last.fm</a> | <a href="http://playground.last.fm">Playground</a> | <a href="/api">API</a>
+            </p>
+        </div>
+        
+        <div id="legalities">
+                            <p id="copy">
+                    &copy; 2008 Last.fm Ltd. | 
+                    <a href="/legal/terms" target="_blank">Termos de uso</a> 
+                    e <a href="/legal/privacy" target="_blank">Política de privacidade</a> | <span class="date">Atualizado em agosto de 2008</span><br />
+                        
+                                    </p>
+        </div><!-- #legalities -->
+        
+                    </div>
+</div><!-- #LastFooter -->
+
+    <ul id="langSelector" style="display: none; visibility: hidden;" class="nojs">
+            
+        <li><a href="http://www.last.fm/user/SweeetTangerine?setlang=en" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/uk.gif" /> <span>English</span></a></li>
+        
+                <li><a href="http://www.lastfm.de/user/SweeetTangerine?setlang=de" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/de.gif" /> <span>Deutsch</span></a></li>
+                    <li><a href="http://www.lastfm.es/user/SweeetTangerine?setlang=es" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/es.gif" /> <span>Español</span></a></li>
+                    <li><a href="http://www.lastfm.fr/user/SweeetTangerine?setlang=fr" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/fr.gif" /> <span>Français</span></a></li>
+                    <li><a href="http://www.lastfm.it/user/SweeetTangerine?setlang=it" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/it.gif" /> <span>Italiano</span></a></li>
+                    <li><a href="http://www.lastfm.jp/user/SweeetTangerine?setlang=jp" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/jp.gif" /> <span>日本語</span></a></li>
+                    <li><a href="http://www.lastfm.pl/user/SweeetTangerine?setlang=pl" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/pl.gif" /> <span>Polski</span></a></li>
+                            <li><a href="http://www.lastfm.ru/user/SweeetTangerine?setlang=ru" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/ru.gif" /> <span>Руccкий</span></a></li>
+                    <li><a href="http://www.lastfm.se/user/SweeetTangerine?setlang=sv" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/se.gif" /> <span>Svenska</span></a></li>
+                    <li><a href="http://www.lastfm.com.tr/user/SweeetTangerine?setlang=tr" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/tr.gif" /> <span>Türkçe</span></a></li>
+                    <li><a href="http://cn.last.fm/user/SweeetTangerine?setlang=zh" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/zh.gif" /> <span>简体中文</span></a></li>
+        
+</ul>
+
+<script>
+
+    $("langSelector").className = "js";
+    LFM.set("Page", {
+        navDropDown: new LFM.Display.DropDown(
+            "headerLangToggle",
+            "headerLangToggle",
+            "langSelector",
+            {
+                align: "right",
+                onShow: function (dropdown) {
+                    dropdown.ddbody.setStyle({
+                        top: (dropdown.ddbody.getStyle("top").toPixels() + 3) + "px"
+                    });
+                }
+            }
+        )
+    });
+
+</script>
+<div id="multiButtonMenu" style="display: none; visibility: hidden;">
+    <div>
+        <ul class="lfmDropDownBody">
+            <li class="mAddToLibrary"><a href="#">Adicionar à minha biblioteca</a></li>
+            <li class="mAddToFriends"><a href="#">Adicionar a amigos</a></li>
+            
+            <!-- <li class="save"><a href="#">Marcar</a></li> -->
+            <li class="mSend"><a href="#">Recomendar</a></li>
+            
+            <li class="mLove"><a href="#">Adicionar como favorita</a></li>
+            <li class="mUnlove"><a href="#">Remover das favoritas</a></li>
+            <li class="mBan"><a href="#">Banir faixa</a></li>
+            <li class="mUnban"><a href="#">Cancelar exclusão da faixa</a></li>
+
+                                    
+            <li class="mAddTags"><a href="#">Adicionar tags</a></li>
+            <li class="mAddToPlaylist"><a href="#">Adicionar à lista</a></li>
+                        <li class="mMessage"><a href="#">Enviar mensagem</a></li>
+                        <li class="mEditDetails"><a href="#">Editar detalhes</a></li>
+            <li class="mMessageAll"><a href="#">Enviar mensagem a todos os usuários</a></li>
+            <li class="mEditPermissions"><a href="#">Editar permissões</a></li>
+            <li class="mAbdicate"><a href="#">Abdicar</a></li>
+            <li class="mLeave"><a href="#">Sair do grupo</a></li>
+            
+            <li class="mRemoveFromLibrary"><a href="#">Excluir da biblioteca</a></li>
+            
+            <li class="mLoading"><a href="#">&nbsp;</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="http://dw.com.com/js/dw.js"></script>
+<script type="text/javascript">
+    DW.pageParams = {
+        siteId: '196'
+    };
+    DW.clear();
+</script>
+<noscript>
+    <img src="http://dw.com.com/clear/c.gif?ts=1227828031&amp;sid=196" />
+</noscript>
+
+
+<script>
+
+    LFM.Button.MultiButton.setup();
+    LFM.Display.setMinHeight();
+
+</script>
+
+
+        </div>
+    </div>
+            </body>
+</html>
