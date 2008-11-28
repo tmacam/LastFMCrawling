@@ -22,7 +22,7 @@ from DistributedCrawler.client.daemonize import createDaemon, reconfigStdout
 #        __version__ as articleretriever_version
 from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR 
 from retrievers import FindUsersRetriver, get_user_encoded_profile, \
-    __version__ as articleretriever_version
+    PageNotFound, __version__ as articleretriever_version
 
 
 ######################################################################
@@ -91,26 +91,40 @@ class LastFMClient(BaseClient):
         username = params
         # Download search result pages
         log.info("BEGIN %s", params)
-        profile, friends = get_user_encoded_profile(username)
-        log.info("GOT PROFILE FOR USER %s", username)
-        # Setup form and headers
-        #    Although we used "upload" code, this is a plain POST
-        upload_headers = dict(self.headers)
-        form_data = {'username' : username,
-                     'profile' : profile, 
-                     'friends-list'  : FINDUSERS_SEPARATOR.join(friends),
-                     'friends-list-count'  : str(len(friends)),
-                     'client-id'    : self.id}
-        # Upload the article
-        logging.info("UPLOADING TO SERVER %s", params)
-        upload_url = self.base_url + '/getprofile/' + username
-        response = upload_aux.upload_form(upload_url, form_data, upload_headers)
+        try:
+            profile, friends = get_user_encoded_profile(username)
+            log.info("GOT PROFILE FOR USER %s", username)
+            # Setup form and headers
+            #    Although we used "upload" code, this is a plain POST
+            upload_headers = dict(self.headers)
+            form_data = {'username' : username,
+                         'profile' : profile, 
+                         'friends-list'  : FINDUSERS_SEPARATOR.join(friends),
+                         'friends-list-count'  : str(len(friends)),
+                         'client-id'    : self.id}
+            # Upload the article
+            logging.info("UPLOADING TO SERVER %s", params)
+            upload_url = self.base_url + '/getprofile/' + username
+            response = upload_aux.upload_form(upload_url, form_data,
+                                              upload_headers)
+        except PageNotFound:
+            response = self.report_not_found_user(username, log)
         logging.info("END %s", params)
         # Ok. Command, handled. Now what?
         # Do what the server told us to.
         # Command MUST be SLEEP. We will sleep for at least self.MIN_SLEEP
         command = response.read()
         self._handleCommand(command, do_sleep=True)
+
+    def report_not_found_user(self, username, log):
+        log.info("REPORTING 404 ERROR BACK TO SERVER FOR USER '%s'", username)
+        req = urllib2.Request(self.base_url + '/notfound/' + \
+                                    username, headers=self.headers)
+        response = urllib2.urlopen(req)
+
+        return response
+
+
 
 
 
@@ -122,22 +136,24 @@ class LastFMClient(BaseClient):
 #TODO(macambira): move main out of this module or refactor it into a set of small helper functions
 
 
-def main(base_url, store_dir):
+def main(base_url, store_dir, log_to_screen=False):
     """Setup enviroment and run client."""
 
     # TODO Merge as much of this code as possible with __main__
 
     hostname = gethostname()
 
-    id_filename = store_dir + "/" + hostname + '.id'    
-    log_filename = store_dir + "/" + hostname + '.log'    
+    id_filename = store_dir + "/" + hostname + '.id'
+    log_filename = store_dir + "/" + hostname + '.log'
     out_filename = store_dir + "/" + hostname + '.out' # FIXME DEPRECATED!!!!
 
-    # Setup logging, client id
+    # Setup logging
+    extra_log_options = {"level" : logging.DEBUG, "flushlevel": logging.NOTSET}
+    if not log_to_screen:
+        extra_log_options['filename'] = log_filename
+    logging.basicConfig( **extra_log_options )
+    # Setup client id
     client_id = getUUID(id_filename)
-    logging.basicConfig(filename=log_filename,
-                        level=logging.DEBUG,
-                        flushlevel=logging.NOTSET)
 
     cli = LastFMClient(client_id, base_url=base_url, store_dir=store_dir)
     logging.info("STARTED %s", time.asctime())
@@ -146,23 +162,27 @@ def main(base_url, store_dir):
 
 
 def parse_command_line():
-
+    """As the name says, parses the command line."""
     parser = OptionParser()
 
     parser.add_option("-d", "--outdir", dest="store_dir", default=None,
-                      help="log reports to DIR. Default is the current directory", 
+                      help=("Write log reports and other files to DIR. "
+                            "Defaults to the current directory."), 
                       metavar="DIR")
-    
     parser.add_option("-f", "--foreground",
                       action="store_true", dest="foreground", default=False,
-                                        help="runs the client in foreground")
+                      help="runs the client in foreground")
+    parser.add_option("-l", "--log-to-screen", dest="toscreen", default=False,
+                      action="store_true",
+                      help=("Log to stdout instead of to log file. "
+                            "Defaults to False"))
 
     (options, args) = parser.parse_args()
 
     return options, args
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     BASE_URL = 'http://www.speed.dcc.ufmg.br/lastfm'
     #BASE_URL = 'http://localhost:8700'
     BASE_DIR = os.getcwd()  # "." loses its meaning as soon as we deamonize
@@ -171,7 +191,6 @@ if __name__ == '__main__':
     options, args = parse_command_line()
 
     store_dir = BASE_DIR
-
     if options.store_dir:
         store_dir = os.path.join(BASE_DIR, options.store_dir)
         if not os.path.isdir(store_dir):
@@ -189,7 +208,7 @@ if __name__ == '__main__':
         print "Became a daemon"
     
     try:
-        main(BASE_URL, store_dir)
+        main(BASE_URL, store_dir, options.toscreen)
     except urllib2.HTTPError, e:
         log_urllib2_exception(e)
         raise

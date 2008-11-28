@@ -17,6 +17,7 @@ from DistributedCrawler.server import GdbmBaseControler, \
         BaseDistributedCrawlingServer
 from twisted.python import log
 from twisted.python.logfile import DailyLogFile
+from twisted.web import resource
 from common import FINDUSERS_PAGE_COUNT, FINDUSERS_SEPARATOR
 
 
@@ -81,6 +82,7 @@ class FindUsersController(GdbmBaseControler):
             self.users_db[u] = '1'
         # Ok! List of found users saved
         self.markJobAsDone(page_id)
+        self.client_reg.updateClientStats(request, job_done=True)
         log.msg("FINDUSERS %s done by client %s." % (page_id, client_id))
         return self.scheduler.renderPing(client_id, just_ping=True)
 
@@ -160,8 +162,40 @@ class GetProfileController(GdbmBaseControler):
         self.profile_db[username] = profile_data
         # Job done
         self.markJobAsDone(username)
+        self.client_reg.updateClientStats(request, job_done=True)
         log.msg("GETPROFILE %s done by client %s." % (username, client_id))
         return self.scheduler.renderPing(client_id, just_ping=True)
+
+    def render_notfound_error(self, request):
+        """@warning only to be called by PageNotFoundController.render()"""
+        client_id = self.client_reg.updateClientStats(request)
+        username = request.postpath[0]
+        self.markJobAsErroneus(username)
+        log.msg("GETPROFILE %s reported as erroneus by client %s." % (
+                                                    username, client_id))
+        self.client_reg.updateClientStats(request, job_done=True)
+        return self.scheduler.renderPing(client_id, just_ping=True)
+
+
+class PageNotFoundController(resource.Resource):
+    """Deals with "Nothing for you to see" error reports."""
+
+    isLeaf = True
+
+    def __init__(self, getprofile_controler):
+        """Constructor.
+
+        This controller only forwards error notifications to
+        GetProfileController -- and that's it.
+
+        @param scheduler A scheduler instance. Job will be added to it.
+        @param prefix the base path where the store will be created/read.
+        """
+        resource.Resource.__init__(self)
+        self.getprofile_controler = getprofile_controler
+
+    def render(self, request):
+        return self.getprofile_controler.render_notfound_error(request)
 
 
 def main():
@@ -188,6 +222,8 @@ def main():
                                                  PREFIX,
                                                  server.getClientRegistry(),
                                                  GETPROFILE_DB)
+    notfound_controller  = PageNotFoundController(getprofile_controller)
+
     # Registering Controllers
     server.registerTaskController(findusers_controller,
                                  'findusers',
@@ -195,6 +231,7 @@ def main():
     server.registerTaskController(getprofile_controller,
                                  'getprofile',
                                  'Profiles')
+    server.root.putChild('notfound', notfound_controller)
 
     print "\nServer setup done.\n"
     log.msg("Server setup done.")

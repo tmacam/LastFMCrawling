@@ -118,6 +118,8 @@ class ObstinatedRetriever(object):
 # LASTFM-SPECIFIC RETRIEVERS
 ######################################################################
 
+class PageNotFound(Exception):
+    """LastFM returned with 404. This may mean user expelled, not found etc"""
 
 class FindUsersRetriver(ObstinatedRetriever):
     "Retrieves users from LastFM's User Search page."
@@ -295,8 +297,23 @@ class UserInfoRetriever(ObstinatedRetriever):
     def get_user(self, username):
         "Get the parsed user profile page."
         url = self.USER_URL_TEMPLATE % (username)
-        html = self.get_url(url)
+        try:
+            html = self.get_url(url)
+        except urllib2.HTTPError, e:
+            if e.code == 404:
+                page = BeautifulSoup(e.read())
+                text = ""
+                try:
+                    text = str(page.find("div",{"id":"fourOhFour"}).h1)
+                except:
+                    pass
+                raise PageNotFound(text)
+            else:
+                # Propagate original error
+                raise
         return self.parse_user_data(username, html)
+
+    
 
     def parse_user_data(self,username, data):
         "Parse the user profile page."
