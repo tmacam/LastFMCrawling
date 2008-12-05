@@ -344,20 +344,26 @@ class UserInfoRetriever(ObstinatedRetriever):
         average = details_html.attrs[1][1].split()[2] 
 
         # User since... (user_since)
+        user_since = None
+        reseted_date = None
         if details_html.find('small'):
             # Usuário já escutou alguma coisa...
             # desde dd mon YYYY
-            day_month_year_text = details_html.find('small').contents[0]
+            day_month_year_text = details_html.find('small').contents[0].strip()
+            # Is this a "reseted" profile? If it is, it's got reseted and
+            # user_since data
+            if day_month_year_text[-1] == ")":
+                # Reset date is were we expected user_since date to be...
+                reseted_date_text = day_month_year_text[:-1]
+                reseted_date  = self.parse_registered_since(reseted_date_text)
+                # Get the "real" user since date
+                day_month_year_text = details_html.contents[0].strip()
         else:
             # Usuário apenas se registrou, nao postou nenhuma música
             # Registrado em: dd mon YYYY
             day_month_year_text = details_html.contents[0]
         # Get only the "dd mon YYYY"
-        day_text, month_text, year_text = day_month_year_text.split()[-3:]
-        day = int(day_text)
-        month = int(MONTHS_TO_NUM[month_text])
-        year = int(year_text)
-        user_since = datetime.date(year, month, day).isoformat()
+        user_since = self.parse_registered_since(day_month_year_text)
 
         # Executions
         flips = details_html.findAll('span', 'flip')
@@ -403,7 +409,18 @@ class UserInfoRetriever(ObstinatedRetriever):
         log.info("END")
         res = (username, name, age, gender, country, executions, average,
                 homepage, user_since )
+        if reseted_date:
+            res = (username, name, age, gender, country, executions, average,
+                    homepage, user_since, reseted_date)
         return tuple([str(i) for i in res])
+
+    def parse_registered_since(self, date_str):
+        day_text, month_text, year_text = date_str.split()[-3:]
+        day = int(day_text)
+        month = int(MONTHS_TO_NUM[month_text])
+        year = int(year_text)
+        return datetime.date(year, month, day).isoformat()
+
 
 
 def retrieve_full_user_profile(username):

@@ -69,7 +69,8 @@ class UserInfoRetrieverTest(unittest.TestCase):
         data = open(self.PROFILE_RESETED, 'r')
         username = "Fargaroth"
         expected =  (username, 'Faruk', '21', 'Masculino', 'Turquia',
-                     '', '0', '', '2008-01-29')
+                     '', '0', 'fargaroth.deviantart.com',
+                     '2006-02-27', '2008-02-05')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
