@@ -10,7 +10,35 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 import unittest
-from retrievers import UserInfoRetriever
+from retrievers import UserInfoRetriever, GroupRetrievers
+
+######################################################################
+# Helper Classes
+######################################################################
+
+
+class FakeGroupRetrievers(GroupRetrievers):
+    """A class that behave like a GroupRetrievers but that only returns
+    a pre-defined input.
+    """
+    def __init__(self, data):
+        """Constructor.
+        
+        Args:
+            data: Data to be returned by get_url.
+        """
+        self.fake_data = data
+
+    def get_url(self, *args, **kargs):
+        """Mocked or faked get_url."""
+        self.validate(self.fake_data)
+        return self.fake_data
+
+
+######################################################################
+# Test Cases
+######################################################################
+
 
 class UserInfoRetrieverTest(unittest.TestCase):
     PROFILE_NO_NOTHING = "retrievers_test_profile_1.data"
@@ -74,6 +102,17 @@ class UserInfoRetrieverTest(unittest.TestCase):
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
+
+class GroupRetrieverTest(unittest.TestCase):
+    GROUP_DATA_EMPTY_GROUP = "retrievers_test_groups_1.data"
+
+    def testEmptyGroup(self):
+        "Tests if we correctly ignore 'empty' groups."
+        fake_data = open(self.GROUP_DATA_EMPTY_GROUP, 'r').read()
+        retriever = FakeGroupRetrievers(fake_data)
+        returned = retriever.get_user_groups("FakeGroupRetrieversDontCare")
+        expected = ["New+Order"]
+        self.assertEqual(expected, returned)
 
 
 if __name__ == '__main__':

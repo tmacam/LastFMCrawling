@@ -189,8 +189,10 @@ class GroupRetrievers(ObstinatedRetriever):
             groups_html = soup.findAll("div","groupContainer")
             if groups_html:
                 for group in groups_html:
-                    group_name = group.find("a")['href'].split('/')[-1]
-                    groups.append(group_name.encode("utf-8"))
+                    group_link = group.find("a")
+                    if group_link:
+                        group_name = group_link['href'].split('/')[-1]
+                        groups.append(group_name.encode("utf-8"))
                 # Group information can be splited across several pages
                 # Get the number of pages
                 if cur_page == 1:
