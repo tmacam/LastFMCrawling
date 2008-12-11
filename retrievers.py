@@ -377,7 +377,7 @@ class UserInfoRetriever(ObstinatedRetriever):
         # Homepage
         homepage = ""
         homepage_html = details.find('a', 'url homepage')
-        if homepage_html:
+        if homepage_html and len(homepage_html.contents) > 0:
             homepage = homepage_html.contents[0]
 
         # Get user info -- Country, Age, Gender

@@ -48,6 +48,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
     PROFILE_NO_USER_INFO = "retrievers_test_profile_5.data"
     PROFILE_NO_EXECUTION = "retrievers_test_profile_6.data"
     PROFILE_RESETED = "retrievers_test_profile_7.data"
+    PROFILE_EMPTYHOMEPAGE = "retrievers_test_profile_8.data"
 
     def testProfileWithoutGenderAndAge(self):
         "Tests if we get information from a profile w/o Gender and Gender."
@@ -99,6 +100,15 @@ class UserInfoRetrieverTest(unittest.TestCase):
         expected =  (username, 'Faruk', '21', 'Masculino', 'Turquia',
                      '', '0', 'fargaroth.deviantart.com',
                      '2006-02-27', '2008-02-05')
+        returned = UserInfoRetriever().parse_user_data(username, data)
+        self.assertEqual(expected, returned)
+
+    def testEmptyHomepage(self):
+        "Tests if we correctly handle profiles w/ empty homepage"
+        data = open(self.PROFILE_EMPTYHOMEPAGE, 'r')
+        username = "supersupercri"
+        expected =  (username, 'Cristina', '23', 'Feminino', 'Itália',
+                     '126', '2', '', '2008-09-18')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
