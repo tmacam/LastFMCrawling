@@ -10,15 +10,15 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 import unittest
-from retrievers import UserInfoRetriever, GroupRetrievers
+from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever
 
 ######################################################################
 # Helper Classes
 ######################################################################
 
 
-class FakeGroupRetrievers(GroupRetrievers):
-    """A class that behave like a GroupRetrievers but that only returns
+class FakeRetrievers(ObstinatedRetriever):
+    """A class that behave like a ObstinatedRetriever but that only returns
     a pre-defined input.
     """
     def __init__(self, data):
@@ -35,6 +35,17 @@ class FakeGroupRetrievers(GroupRetrievers):
         return self.fake_data
 
 
+# TIP: Method resolution w/ multiple inheritance is from left, to right
+
+
+class FakeGroupRetrievers(FakeRetrievers, GroupRetrievers):
+    pass
+
+
+class FakeUserInfoRetriever(FakeRetrievers, UserInfoRetriever):
+    pass
+
+
 ######################################################################
 # Test Cases
 ######################################################################
@@ -49,6 +60,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
     PROFILE_NO_EXECUTION = "retrievers_test_profile_6.data"
     PROFILE_RESETED = "retrievers_test_profile_7.data"
     PROFILE_EMPTYHOMEPAGE = "retrievers_test_profile_8.data"
+    PROFILE_THOUGHTTOBEINVALIDPAGE = "retrievers_test_profile_9.data"
 
     def testProfileWithoutGenderAndAge(self):
         "Tests if we get information from a profile w/o Gender and Gender."
@@ -110,6 +122,16 @@ class UserInfoRetrieverTest(unittest.TestCase):
         expected =  (username, 'Cristina', '23', 'Feminino', 'Itália',
                      '126', '2', '', '2008-09-18')
         returned = UserInfoRetriever().parse_user_data(username, data)
+        self.assertEqual(expected, returned)
+
+    def testThoughtToBeInvalidPage(self):
+        "Tests if we correctly regocnize valid page as valid"
+        fake_data = open(self.PROFILE_THOUGHTTOBEINVALIDPAGE, 'r').read()
+        retriever = FakeUserInfoRetriever(fake_data)
+        username = "hannahdonovan"
+        expected =  (username, 'Hannah Donovan', '', 'Feminino', 'Reino Unido',
+                     '28578', '21', '', '2005-03-03')
+        returned = retriever.get_user(username)
         self.assertEqual(expected, returned)
 
 

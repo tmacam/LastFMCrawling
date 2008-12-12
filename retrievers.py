@@ -293,7 +293,8 @@ class UserInfoRetriever(ObstinatedRetriever):
     def validate(self, data):
         soup = BeautifulSoup(data)
         if not soup.find('div', 'clearit user vcard') and \
-           not soup.find('div', 'clearit subscriber vcard'):
+           not soup.find('div', 'clearit subscriber vcard') and \
+           not soup.find('div', 'clearit staff vcard'):
             raise InvalidPage()
 
     def get_user(self, username):
@@ -328,6 +329,8 @@ class UserInfoRetriever(ObstinatedRetriever):
 
         if not details:
             details = soup.find('div', 'clearit subscriber vcard')
+        if not details:
+            details = soup.find('div', 'clearit staff vcard')
         if not details:
             raise InvalidPage() # we should NOT get here 'cuz of validate
 
