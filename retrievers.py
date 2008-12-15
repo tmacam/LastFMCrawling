@@ -286,7 +286,7 @@ class UserInfoRetriever(ObstinatedRetriever):
     Strings are returned percent-encoded in plain ASCII.
     """
 
-    USER_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/"
+    USER_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s"
 
     AGE_GENDER_RE = re.compile(r"(\d+)?\s*(M\w+|F\w+)?")
 
