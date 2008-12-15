@@ -60,7 +60,9 @@ class UserInfoRetrieverTest(unittest.TestCase):
     PROFILE_NO_EXECUTION = "retrievers_test_profile_6.data"
     PROFILE_RESETED = "retrievers_test_profile_7.data"
     PROFILE_EMPTYHOMEPAGE = "retrievers_test_profile_8.data"
-    PROFILE_THOUGHTTOBEINVALIDPAGE = "retrievers_test_profile_9.data"
+    PROFILE_STAFFPROFILE = "retrievers_test_profile_9.data"
+    PROFILE_MODERATORPROFILE =  "retrievers_test_profile_10.data"
+
 
     def testProfileWithoutGenderAndAge(self):
         "Tests if we get information from a profile w/o Gender and Gender."
@@ -84,7 +86,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
         data = open(self.PROFILE_GENDER_NO_AGE, 'r')
         username = "susan"
         expected = (username, 'Susan', '', 'Feminino', '', '22', '0', '',
-                    '2002-10-29')
+                    '2002-10-29', '2007-06-16')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
@@ -124,9 +126,9 @@ class UserInfoRetrieverTest(unittest.TestCase):
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
-    def testThoughtToBeInvalidPage(self):
-        "Tests if we correctly regocnize valid page as valid"
-        fake_data = open(self.PROFILE_THOUGHTTOBEINVALIDPAGE, 'r').read()
+    def testStaffProfile(self):
+        "Tests if we correctly recognize valid page as valid"
+        fake_data = open(self.PROFILE_STAFFPROFILE, 'r').read()
         retriever = FakeUserInfoRetriever(fake_data)
         username = "hannahdonovan"
         expected =  (username, 'Hannah Donovan', '', 'Feminino', 'Reino Unido',
@@ -134,6 +136,15 @@ class UserInfoRetrieverTest(unittest.TestCase):
         returned = retriever.get_user(username)
         self.assertEqual(expected, returned)
 
+    def testModeratorProfile(self):
+        "Tests if this page is a Moderator profile"
+        fake_data = open(self.PROFILE_MODERATORPROFILE, 'r').read()
+        retriever = FakeUserInfoRetriever(fake_data)
+        username = "Kerensky97"
+        expected =  (username, 'Kenny Blankenship', '28', 'Masculino', 'Estados Unidos',
+                     '73810', '60', '', '2005-06-30', '2005-07-24')
+        returned = retriever.get_user(username)
+        self.assertEqual(expected, returned)
 
 class GroupRetrieverTest(unittest.TestCase):
     GROUP_DATA_EMPTY_GROUP = "retrievers_test_groups_1.data"

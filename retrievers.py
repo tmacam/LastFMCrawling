@@ -294,7 +294,8 @@ class UserInfoRetriever(ObstinatedRetriever):
         soup = BeautifulSoup(data)
         if not soup.find('div', 'clearit user vcard') and \
            not soup.find('div', 'clearit subscriber vcard') and \
-           not soup.find('div', 'clearit staff vcard'):
+           not soup.find('div', 'clearit staff vcard') and \
+           not soup.find('div', 'clearit moderator vcard'):
             raise InvalidPage()
 
     def get_user(self, username):
@@ -332,6 +333,8 @@ class UserInfoRetriever(ObstinatedRetriever):
         if not details:
             details = soup.find('div', 'clearit staff vcard')
         if not details:
+            details = soup.find('div', 'clearit moderator vcard')
+        if not details:
             raise InvalidPage() # we should NOT get here 'cuz of validate
 
         # User's name
@@ -351,18 +354,27 @@ class UserInfoRetriever(ObstinatedRetriever):
         # User since... (user_since)
         user_since = None
         reseted_date = None
-        if details_html.find('small'):
-            # Usuário já escutou alguma coisa...
-            # desde dd mon YYYY
-            day_month_year_text = details_html.find('small').contents[0].strip()
-            # Is this a "reseted" profile? If it is, it's got reseted and
-            # user_since data
-            if day_month_year_text[-1] == ")":
-                # Reset date is were we expected user_since date to be...
-                reseted_date_text = day_month_year_text[:-1]
+        dates = details_html.findAll('small')
+
+        if dates:
+            if len(dates) == 1:
+                # Usuário já escutou alguma coisa...
+                # desde dd mon YYYY
+                day_month_year_text = dates[0].contents[0].strip()
+                # Is this a "reseted" profile? If it is, it's got reseted and
+                # user_since data
+                if day_month_year_text[-1] == ")":
+                    # Reset date is were we expected user_since date to be...
+                    reseted_date_text = day_month_year_text[:-1]
+                    reseted_date  = self.parse_registered_since(reseted_date_text)
+                    # Get the "real" user since date
+                    day_month_year_text = details_html.contents[0].strip()
+            elif len(dates) == 2:
+                day_month_year_text = dates[0].contents[0].strip()
+                # Remove the parentesis from the text
+                reseted_date_text =  dates[1].contents[0].strip()[1:-1]
+                # Convert the date text to a python date object
                 reseted_date  = self.parse_registered_since(reseted_date_text)
-                # Get the "real" user since date
-                day_month_year_text = details_html.contents[0].strip()
         else:
             # Usuário apenas se registrou, nao postou nenhuma música
             # Registrado em: dd mon YYYY
@@ -475,7 +487,16 @@ def main(user):
     print "User:", user
 
     #print retrieve_full_user_profile(user)
-    get_user_encoded_profile(user)
+    p,_ = get_user_encoded_profile(user)
+
+    aux = {} 
+    aux[user] = p
+
+    f = open("sachetto.pickle","w")
+
+    cPickle.dump(aux,f)
+
+    f.close()
 
     #print UserInfoRetriever().get_user(user)
 
