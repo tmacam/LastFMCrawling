@@ -1,0 +1,41 @@
+package lastfm;
+
+message Group {
+  required string groupName = 1;
+}
+
+message Friend {
+  required string friendName = 1;
+}
+
+message Track {
+  required string artist = 1;
+  required string trackName = 2;
+  required int32 playcount = 3;
+}
+
+message User {
+  required string username = 1;
+  optional string name = 2;
+  optional int32 age = 3;
+  optional string country = 4;
+  optional int32 executions = 5;
+  optional float average = 6;
+  optional string homepage = 7;
+  optional string userSince = 8;
+  optional string resetedDate = 13;
+
+  enum Gender {
+    MALE = 0;
+    FEMALE = 1;
+  }
+
+  optional Gender gender = 9;
+  repeated Group groups = 10;
+  repeated Friend friends = 11;
+  repeated Track tracks = 12;
+
+}
+
+
+
