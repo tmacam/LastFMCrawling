@@ -77,7 +77,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
         data = open(self.PROFILE_AGE_GENDER, 'r')
         username = "tmacam"
         expected =  (username, 'Tiago Macambira', '27', 'Masculino',
-                'Brasil', '9320', '15', 'www.burocrata.org', '2007-03-22')
+                'Brasil', '10775', '16', 'www.burocrata.org', '2007-03-22')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
@@ -94,7 +94,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
         "Tests if we get information from a profile w/ Age but no Gender."
         data = open(self.PROFILE_NO_GENDER_AGE, 'r')
         username = "xadai"
-        expected =  (username, 'Pedro Marques', '21', '', 'Brasil', '36639',
+        expected =  (username, 'Pedro Marques', '22', '', 'Brasil', '38158',
                 '23', 'pedroxadai.blogspot.com', '2004-08-08')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
@@ -122,7 +122,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
         data = open(self.PROFILE_EMPTYHOMEPAGE, 'r')
         username = "supersupercri"
         expected =  (username, 'Cristina', '23', 'Feminino', 'Itália',
-                     '126', '2', '', '2008-09-18')
+                     '140', '1', '', '2008-09-18')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
@@ -132,7 +132,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
         retriever = FakeUserInfoRetriever(fake_data)
         username = "hannahdonovan"
         expected =  (username, 'Hannah Donovan', '', 'Feminino', 'Reino Unido',
-                     '28578', '21', '', '2005-03-03')
+                     '29583', '21', '', '2005-03-03')
         returned = retriever.get_user(username)
         self.assertEqual(expected, returned)
 
@@ -141,8 +141,8 @@ class UserInfoRetrieverTest(unittest.TestCase):
         fake_data = open(self.PROFILE_MODERATORPROFILE, 'r').read()
         retriever = FakeUserInfoRetriever(fake_data)
         username = "Kerensky97"
-        expected =  (username, 'Kenny Blankenship', '28', 'Masculino', 'Estados Unidos',
-                     '73810', '60', '', '2005-06-30', '2005-07-24')
+        expected =  (username, 'Joe Mama', '28', 'Masculino', 'Estados Unidos',
+                     '75825', '59', '', '2005-06-30', '2005-07-24')
         returned = retriever.get_user(username)
         self.assertEqual(expected, returned)
 
