@@ -508,7 +508,7 @@ def get_protobuffered_profile(user_data):
     if user_since:
         user.userSince = user_since
     if reseted_date:
-        user.reseted_date = reseted_date
+        user.resetedDate = reseted_date
 
     user_friends = user_data["friends"]
 
@@ -536,7 +536,8 @@ def get_user_encoded_profile(username):
     """Get the full user profile information serialized and compressed.
 
     The returned user profile data will be in a format suitable for upload
-    to the crawling server, i.e., pickled and compressed with zlib.
+    to the crawling server, i.e., using protocol buffers and compressed 
+    with zlib
 
     Along with the encoded profile information we return the user's friend
     list.

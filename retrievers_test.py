@@ -10,7 +10,8 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 import unittest
-from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever
+from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever, get_protobuffered_profile, lastfm_pb2
+
 
 ######################################################################
 # Helper Classes
@@ -72,6 +73,26 @@ class UserInfoRetrieverTest(unittest.TestCase):
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
+    def testProtobufferedProfileWithoutGenderAndAge(self):
+        "Tests if we get information from a profile w/o Gender and Gender."
+        data = open(self.PROFILE_NO_NOTHING, 'r')
+        username = "kalleke"       
+
+        userdata = UserInfoRetriever().parse_user_data(username, data)
+    
+        fake_data = {"info" : userdata, "groups" : (), "friends" : (), "tracks" : ()}
+
+        serialized = get_protobuffered_profile(fake_data)
+
+        user = lastfm_pb2.User()
+        user.ParseFromString(serialized)
+
+        self.assertEqual(user.username, username)
+        self.assertEqual(user.executions, 1073)
+        self.assertEqual(user.average, 1)
+        self.assertEqual(user.userSince, '2006-05-15')
+
+
     def testProfileWithAgeAndGender(self):
         "Tests if we get information from a profile w/ Age and Gender."
         data = open(self.PROFILE_AGE_GENDER, 'r')
@@ -81,6 +102,32 @@ class UserInfoRetrieverTest(unittest.TestCase):
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
 
+    def testProtobufferdProfileWithAgeAndGender(self):
+        "Tests if we get information from a profile w/ Age and Gender."
+
+        data = open(self.PROFILE_AGE_GENDER, 'r')
+        username = "tmacam"
+
+        userdata = UserInfoRetriever().parse_user_data(username, data)
+    
+        fake_data = {"info" : userdata, "groups" : (), "friends" : (), "tracks" : ()}
+
+        serialized = get_protobuffered_profile(fake_data)
+
+        user = lastfm_pb2.User()
+        user.ParseFromString(serialized)
+
+        self.assertEqual(user.username, username)
+        self.assertEqual(user.name, 'Tiago Macambira')
+        self.assertEqual(user.age, 27)
+        self.assertEqual(user.gender, lastfm_pb2.User.MALE)
+        self.assertEqual(user.country, 'Brasil')
+        self.assertEqual(user.executions, 10775)
+        self.assertEqual(user.average, 16)
+        self.assertEqual(user.homepage, 'www.burocrata.org')
+        self.assertEqual(user.userSince, '2007-03-22')
+        self.assertFalse(user.HasField('resetedDate'))
+
     def testProfileWithtGenderButNoAge(self):
         "Tests if we get information from a profile w/ Gender but w/o Age."
         data = open(self.PROFILE_GENDER_NO_AGE, 'r')
@@ -89,6 +136,34 @@ class UserInfoRetrieverTest(unittest.TestCase):
                     '2002-10-29', '2007-06-16')
         returned = UserInfoRetriever().parse_user_data(username, data)
         self.assertEqual(expected, returned)
+
+    def testProtubufferedProfileWithtGenderButNoAge(self):
+        "Tests if we get information from a profile w/ Gender but w/o Age."
+        data = open(self.PROFILE_GENDER_NO_AGE, 'r')
+        username = 'susan' 
+        expected = (username, 'Susan', '', 'Feminino', '', '22', '0', '',
+                    '2002-10-29', '2007-06-16')
+
+        userdata = UserInfoRetriever().parse_user_data(username, data)
+    
+        fake_data = {"info" : userdata, "groups" : (), "friends" : (), "tracks" : ()}
+
+        serialized = get_protobuffered_profile(fake_data)
+
+        user = lastfm_pb2.User()
+        user.ParseFromString(serialized)
+
+        self.assertEqual(user.username, username)
+        self.assertEqual(user.name, 'Susan')
+        self.assertFalse(user.HasField('country'))
+        self.assertEqual(user.gender, lastfm_pb2.User.FEMALE)
+        self.assertFalse(user.HasField('age'))
+        self.assertEqual(user.executions, 22)
+        self.assertEqual(user.average, 0)
+        self.assertFalse(user.HasField('homepage'))
+        self.assertEqual(user.userSince, '2002-10-29')
+        self.assertEqual(user.resetedDate, '2007-06-16')
+
 
     def testProfileWithAgeButNoGender(self):
         "Tests if we get information from a profile w/ Age but no Gender."
