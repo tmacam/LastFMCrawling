@@ -23,6 +23,9 @@ from DistributedCrawler.client.BeautifulSoup import BeautifulSoup, \
 from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR, \
         FINDUSERS_PAGE_COUNT, FINDUSERS_URL_TEMPLATE
 
+from urllib import unquote_plus
+
+import lastfm_pb2
 
 # FIXME add logging information through retrievers
 
@@ -234,9 +237,11 @@ class TracksRetriever(ObstinatedRetriever):
 
             for track in tracks:
                 playcount = int(track.find("playcount").contents[0])
-                # LastFM are percent encoded, no need to encode to UTF-8
+                # LastFM are percent encoded, but we want UTF-8
                 track_url = str(track.find("url").contents[0])
                 artist, _, name = track_url.split("/")[-3:]
+                artist = unicode(unquote_plus(artist), 'UTF-8')
+                name = unicode(unquote_plus(name), 'UTF-8')
                 track_list.append((artist, name, playcount))
             # Track information can be splitted across several pages.
             # Get the number of pages.
@@ -457,6 +462,75 @@ def retrieve_full_user_profile(username):
     return {"info" : info, "groups" : groups, "friends" : friends,
             "tracks" : tracks}
 
+def get_protobuffered_profile(user_data):
+    """Get the full user profile information serialized using Protobuffers.
+
+    The returned user profile data will be in a format suitable for processing
+    in Java, python or C++
+
+    Returns:
+        a string (the serialized user profile)
+    """
+
+    user = lastfm_pb2.User()
+
+    user_info = user_data["info"]
+    
+    reseted_date = None
+
+    if len(user_info) == 10:
+        (username, name, age, gender, country, executions,
+            average, homepage, user_since, reseted_date) = user_info 
+    else:
+        (username, name, age, gender, country, executions,
+            average, homepage, user_since) = user_info 
+
+    user.username = username
+
+    if name:
+        user.name = name
+    if age:
+        user.age = int(age)
+    if gender:
+        if gender[0] == 'M':
+            user.gender = lastfm_pb2.User.MALE
+        elif gender[0] == 'F':
+            user.gender = lastfm_pb2.User.FEMALE
+
+    if country:
+        user.country = country
+    if executions:
+        user.executions = int(executions)
+    if average:
+        user.average = float(average)
+    if homepage:
+        user.homepage = homepage
+    if user_since:
+        user.userSince = user_since
+    if reseted_date:
+        user.reseted_date = reseted_date
+
+    user_friends = user_data["friends"]
+
+    for friend in user_friends:
+        user.friends.add().friendName = friend
+
+    user_tracks = user_data["tracks"]
+
+    for track in user_tracks:
+        t = user.tracks.add()
+        t.artist = track[0]
+        t.trackName = track[1]
+        t.playcount = int(track[2])
+    
+    user_groups = user_data["groups"]
+
+    for group in user_groups:
+        user.groups.add().groupName = group
+
+    return user.SerializeToString()
+
+
 
 def get_user_encoded_profile(username):
     """Get the full user profile information serialized and compressed.
@@ -472,7 +546,7 @@ def get_user_encoded_profile(username):
     """
     data = retrieve_full_user_profile(username)
     friends = data['friends']
-    serialized = cPickle.dumps(data)
+    serialized = get_protobuffered_profile(data)
     compressed = zlib.compress(serialized, 9)
 
     return (compressed, friends)
@@ -489,14 +563,12 @@ def main(user):
     #print retrieve_full_user_profile(user)
     p,_ = get_user_encoded_profile(user)
 
-    aux = {} 
-    aux[user] = p
+    
+    user = lastfm_pb2.User()
 
-    f = open("sachetto.pickle","w")
+    user.ParseFromString(zlib.decompress(p))
 
-    cPickle.dump(aux,f)
-
-    f.close()
+    print user
 
     #print UserInfoRetriever().get_user(user)
 
