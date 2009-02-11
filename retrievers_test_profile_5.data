@@ -6,23 +6,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
 <head profile="http://purl.org/uF/2008/03/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                        <title>    Perfil musical de sensimilla88 – Usuários na Last.fm</title>                
+                        <title>Perfil musical de sensimilla88 – Usuários na Last.fm</title>                
         <link rel="search" type="application/opensearchdescription+xml" href="http://cdn.last.fm/opensearch_desc.xml" title="Last.fm" />
-        <meta name="description" content="Ouça a estação de rádio pessoal de sensimilla88 (86 faixas executadas).Artistas principais de sensimilla88: El-P, Jurassic 5, MF DOOM. Tags favoritas: sex. Crie seu próprio perfil na Last.fm, a maior plataforma social musical do mundo."/>
+                        <meta name="description" content="Ouça a estação de rádio pessoal de sensimilla88 (86 faixas executadas).Artistas principais de sensimilla88: El-P, Jurassic 5, MF DOOM. Tags favoritas: sex. Crie seu próprio perfil na Last.fm, a maior plataforma social musical do mundo."/>
         <meta http-equiv="content-language" content="pt" />
+                                <meta name="robots" content="NOODP" />
                             <link rel="icon" href="http://cdn.last.fm/flatness/favicon.2.ico" />
-            <link rel="icon" type="image/png" href="http://cdn.last.fm/flatness/nice_favicon.2.png" />
+            <link rel="icon" type="image/png" href="http://cdn.last.fm/flatness/favicon.2.png" />
             <link rel="apple-touch-icon" href="http://cdn.last.fm/flatness/apple-touch-icon.png" />
             
                 
-                <link type="text/html" rel="alternate" hreflang="en" href="http://www.last.fm/user/sensimilla88" />
+                        <link type="text/html" rel="alternate" hreflang="en" href="http://www.last.fm/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="de" href="http://www.lastfm.de/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="es" href="http://www.lastfm.es/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="fr" href="http://www.lastfm.fr/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="it" href="http://www.lastfm.it/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="ja" href="http://www.lastfm.jp/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="pl" href="http://www.lastfm.pl/user/sensimilla88" />
-                                                <link type="text/html" rel="alternate" hreflang="" href="http://www.lastfm.ru/user/sensimilla88" />
+                                                <link type="text/html" rel="alternate" hreflang="ru" href="http://www.lastfm.ru/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="sv" href="http://www.lastfm.se/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="tr" href="http://www.lastfm.com.tr/user/sensimilla88" />
                                 <link type="text/html" rel="alternate" hreflang="cn" href="http://cn.last.fm/user/sensimilla88" />
@@ -35,19 +36,20 @@
         }
         </style>
         <![endif]-->
-                                    <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/109346/user/overview.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/109346/main.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/109346/components.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/109346/dialog.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/109346/form/typeahead.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/109346/dev/console.css" type="text/css" />
+                                    <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/user/overview.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/main.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/components.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/dialog.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/form/typeahead.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/dev/console.css" type="text/css" />
                                     
                     <!-- The libraries—thank God for those! -->
-        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/lib/prototype.js"></script>
-        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/lib/scriptaculous.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/lib/prototype.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/lib/scriptaculous.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/lib/ufo.js"></script>
         
         <!-- Create our namespace -->
-        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/LFM.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/LFM.js"></script>
         
                 
         <script type="text/javascript">
@@ -110,8 +112,6 @@
             
             setLocationTitle: "Defina sua localização",
             
-            moderationVoteTitle: "O que está errado?",
-            
                                                 
             uploadMessages: {
                 mayTakeLonger: "Desculpe, isso poderá levar mais tempo do que o habitual. Aguarde alguns segundos.",
@@ -136,26 +136,27 @@
         });
                                         LFM.set("Element", {
             icon_loved_indicator: "<img class=\"loved_indicator_icon transparent_png\" width=\"11\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_loved_indicator.2.png\" \/>",
-            icon_tag: "<img class=\"tag_icon transparent_png\" width=\"15\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_tag.png\" \/>",
+            icon_tag: "<img class=\"tag_icon transparent_png\" width=\"14\" height=\"14\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_tag3.png\" \/>",
             icon_dismiss: "<img class=\"dismiss_icon transparent_png\" width=\"13\" height=\"13\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_delete.2.png\" \/>",
             icon_play: "<img class=\"play_icon transparent_png\" width=\"17\" height=\"17\" alt=\"Tocar\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_play.png\" \/>"
         });
                 </script>
         
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/user/overview.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/components.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/flash.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/dialog.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/form/typeahead.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/dev/console.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/109347/lib/ufo.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/user/overview.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/components.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/flash.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/dialog.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/form/typeahead.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/dev/console.js"></script>
                 
         <script type="text/javascript">
-            Event.observe(document, "dom:loaded", function () {
-                if(typeof isHover != 'undefined') {
-                    ieHover.setUp();
-                }
-            });
+
+document.observe("dom:loaded", function () {
+    if (typeof ieHover != 'undefined') {
+        ieHover.setUp();
+    }
+});
+
         </script>
     </head>
 
@@ -163,7 +164,7 @@
 <body class="r-user a-overview">
                 
     
-                        
+            
 <!-- SiteCatalyst code version: H.16.
 Copyright 1997-2008 Omniture, Inc. More info available at
 http://www.omniture.com -->
@@ -186,6 +187,7 @@ s.prop3="";       // action
 
 
 
+
 s.prop10="Anonymous";       // logged in/out
 
 s.prop12="lastfm.com.br";        // url extension
@@ -195,8 +197,8 @@ s.prop13="";        // Member user id
 s.prop14="";        // Ad source
 s.prop15="";        // Ad id
 s.prop16="";        // Ad size
-s.prop18=s.getTimeParting('h',0,2008);     // Set hour
-s.prop19=s.getTimeParting('d',0,2008);     // Set day
+s.prop18=s.getTimeParting('h',0,2009);     // Set hour
+s.prop19=s.getTimeParting('d',0,2009);     // Set day
 
 
 
@@ -256,20 +258,26 @@ var s_code = s.t(); if (s_code) document.write(s_code);
 }
 
 </script>
-<script language="JavaScript" type="text/javascript"><!--
+<script type="text/javascript"><!--
 if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
 //--></script>
 <!--/DO NOT REMOVE/-->
 <!-- End SiteCatalyst code version: H.11. -->
-                
-                    <!-- Start Quantcast tag -->
-<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
-<script type="text/javascript">_qoptions = { labels:"LastFM" }; _qacct="p-51jhoCdjGFIVU";quantserve();</script>
+        
+        <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">
+
+    var _qoptions = {
+        labels: "LastFM"
+    };
+    var _qacct="p-51jhoCdjGFIVU";
+    quantserve();
+
+</script>
 <noscript>
-<a href="http://www.quantcast.com/p-51jhoCdjGFIVU" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-51jhoCdjGFIVU.gif?labels=LastFM" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/></a>
-</noscript>
-<!-- End Quantcast tag -->                
-            <div id="page" class="                     altHeadings ">
+    <a href="http://www.quantcast.com/p-51jhoCdjGFIVU" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-51jhoCdjGFIVU.gif?labels=LastFM" height="1" width="1" alt="" /></a>
+</noscript>        
+            <div id="page" class="                ">
         <div class="fiflufi">
                 
 <!-- Includes needed for this app only -->
@@ -307,7 +315,9 @@ google_color_link = "D01F3C";
 google_color_url = "564B42";
 google_color_text = "564B42";
 google_ad_output = "html";
-document.write('<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"><\/script>');};function writeTopLeaderboard(){};function writeFooter1(){ document.write('<a href="http://www.last.fm/delivery.php?id=2602&zoneId=128" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2327/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" \/><\/a>');};function writeFooter2(){ document.write('<a href="http://www.last.fm/delivery.php?id=3028&zoneId=129" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2731/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" \/><\/a>');};function writeFooter3(){ document.write('<a href="http://www.last.fm/delivery.php?id=2376&zoneId=130" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2065/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" \/><\/a>');};function writeFooter4(){ document.write('<a href="http://www.last.fm/delivery.php?id=2998&zoneId=131" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2707/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" \/><\/a>');};function writeSkin(){};;var aZoneCreativeTypeAssoc={"11":"468x60","9":"300x250","128":"192x64","129":"192x64","130":"192x64","131":"192x64"};</script>
+document.write('<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"><\/script>');};function writeTopLeaderboard(){};function writeFooter1(){ document.write('<a href="http://www.last.fm/delivery.php?id=3698&zoneId=128" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3411/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter2(){ document.write('<a href="http://www.last.fm/delivery.php?id=3713&zoneId=129" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3429/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter3(){ document.write('<a href="http://www.last.fm/delivery.php?id=3715&zoneId=130" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3425/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter4(){ document.write('<a href="http://www.last.fm/delivery.php?id=3700&zoneId=131" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3415/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeSkin(){};;var aZoneCreativeTypeAssoc={"11":"468x60","9":"300x250","128":"192x64","129":"192x64","130":"192x64","131":"192x64"};</script>
+
+
 
 
     <div id="header" class="clearit">
@@ -346,7 +356,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                         </select>
                         <input id="siteSearchBox" placeholder="Procurar" type="text" autosave="fm.last.searchhistory" results="5" name="q" size="16" />
                         
-                        <input class="submit" type="submit" value="" title="Enviar" />
+                        <input class="submit" type="submit" value="" title="Enviar" id="siteSearchSubmit" />
                     </form>
                 </li>
             </ul>
@@ -371,7 +381,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
 </script>
 <!-- Adserving start -->
 
-                                                    <div id="LastAd_Skin" class="LastAd"><div class="wrapper">
+                                                    <div id="LastAd_Skin" class="LastAd"><div align="center">
             <script type="text/javascript">
                                 if(typeof writeSkin == 'function') writeSkin();
                             </script>
@@ -382,7 +392,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                         <!-- Adserving end -->
 <!-- Adserving start -->
     
-                                                    <div id="LastAd_Top" class="LastAd"><div class="wrapper">
+                                                    <div id="LastAd_Top" class="LastAd"><div align="center">
             <script type="text/javascript">
                                 if(typeof writeTop == 'function') writeTop();
                             </script>
@@ -395,7 +405,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
     <div><!-- This containing div fixes an IE bug where the absolutely positioned element disappears randomly. Don’t ask me why. -->
     <div id="secondaryNavigation">
                                             <ul>
-        <li class=" current  first "><a href="/user/sensimilla88">Perfil</a></li>    <li><a href="/user/sensimilla88/library">Biblioteca</a></li>        <li><a href="/user/sensimilla88/charts">Tabelas</a></li>    <li><a href="/user/sensimilla88/events">Eventos</a></li>    <li><a href="/user/sensimilla88/friends">Amigos</a></li>        <li><a href="/user/sensimilla88/neighbours">Vizinhos</a></li>    <li><a href="/user/sensimilla88/groups">Grupos</a></li>    <li><a href="/user/sensimilla88/journal">Blog</a></li>    
+        <li class=" current  first "><a href="/user/sensimilla88">Perfil</a></li>    <li><a href="/user/sensimilla88/library">Biblioteca</a></li>        <li><a href="/user/sensimilla88/charts">Tabelas</a></li>    <li><a href="/user/sensimilla88/events">Eventos</a></li>    <li><a href="/user/sensimilla88/friends">Amigos</a></li>        <li><a href="/user/sensimilla88/neighbours">Vizinhos</a></li>    <li><a href="/user/sensimilla88/groups">Grupos</a></li>    <li><a href="/user/sensimilla88/journal">Blog</a></li>    <li><a href="/user/sensimilla88/library/tags">Tags</a></li>    
 </ul>                                </div>
 </div>    <div class="leftCol">
         <div class="leftColWrapper">
@@ -501,199 +511,220 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
         <div class="recentTracksContainer">
         
     <table class="candyStriped tracklist withimages" id="recentTracks">
-            <tbody>        <tr class="first odd streamable" id="r9_2367_659288706">
-                                                                                            <td class="imageCell imageSmall">
-                                                <a href="/music/The+Presidents+of+the+United+States+of+America/_/Peaches+++++++++++++++++++++++"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/14787233.jpg" /></a>            </td>
+            <tbody>        <tr class="first odd streamable" id="r9_2367_1841290318">
+                                                                                                                    <td class="imageCell imageSmall ">
+                                                <a href="/music/The+Presidents+of+the+United+States+of+America/_/Peaches+++++++++++++++++++++++"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/21808711.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
+            <td class="playbuttonCell ">
                 <div><a class="playbutton" href="/music/The+Presidents+of+the+United+States+of+America/_/Peaches+++++++++++++++++++++++?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/The+Presidents+of+the+United+States+of+America">The Presidents of the United States of America</a> – <a href="/music/The+Presidents+of+the+United+States+of+America/_/Peaches+++++++++++++++++++++++">Peaches                       </a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/The+Presidents+of+the+United+States+of+America">The Presidents of the United States of America</a> – <a href="/music/The+Presidents+of+the+United+States+of+America/_/Peaches+++++++++++++++++++++++">Peaches                       </a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/The+Presidents+of+the+United+States+of+America/_/Peaches+++++++++++++++++++++++" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">16 Jan 2007</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/The+Presidents+of+the+United+States+of+America/_/Peaches+++++++++++++++++++++++" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">16 Jan 2007</span>
+                                    </td>
     
-                </tr><tr class="streamable" id="r9_3009056_1784588925">
-                                                                                            <td class="imageCell imageSmall">
+                </tr><tr class="streamable" id="r9_3009056_1044752462">
+                                                                                                                    <td class="imageCell imageSmall ">
                                                 <a href="/music/Sigur+R%C3%B3s/_/Mistur"><img height="34" width="34" alt="" src="http://images.amazon.com/images/P/B0006213H6.01._SCMZZZZZZZ_.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
+            <td class="playbuttonCell ">
                 <div><a class="playbutton" href="/music/Sigur+R%C3%B3s/_/Mistur?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/Sigur+R%C3%B3s">Sigur Rós</a> – <a href="/music/Sigur+R%C3%B3s/_/Mistur">Mistur</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/Sigur+R%C3%B3s">Sigur Rós</a> – <a href="/music/Sigur+R%C3%B3s/_/Mistur">Mistur</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/Sigur+R%C3%B3s/_/Mistur" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/Sigur+R%C3%B3s/_/Mistur" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="odd streamable" id="r9_3205226_252955945">
-                                                                                            <td class="imageCell imageSmall">
+                </tr><tr class="odd" id="r9_3205226_1658551789">
+                                                                                                                    <td class="imageCell imageSmall ">
                                                 <a href="/music/Madvillain/_/Bistro"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/14045335.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
-                <div><a class="playbutton" href="/music/Madvillain/_/Bistro?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
+            <td class="playbuttonCell ">
+                <div></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/Madvillain">Madvillain</a> – <a href="/music/Madvillain/_/Bistro">Bistro</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/Madvillain">Madvillain</a> – <a href="/music/Madvillain/_/Bistro">Bistro</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/Madvillain/_/Bistro" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/Madvillain/_/Bistro" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="streamable" id="r9_74304668_1401500236">
-                                                                                            <td class="imageCell imageSmall">
+                </tr><tr class="streamable" id="r9_74304668_423077175">
+                                                                                                                    <td class="imageCell imageSmall ">
                                                 <a href="/music/The+Arcade+Fire/_/Na%C3%83%C2%AFve+Melody"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/3517662.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
+            <td class="playbuttonCell ">
                 <div><a class="playbutton" href="/music/The+Arcade+Fire/_/Na%C3%83%C2%AFve+Melody?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/The+Arcade+Fire">The Arcade Fire</a> – <a href="/music/The+Arcade+Fire/_/Na%C3%83%C2%AFve+Melody">NaÃ¯ve Melody</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/+noredirect/The+Arcade+Fire">The Arcade Fire</a> – <a href="/music/The+Arcade+Fire/_/Na%C3%83%C2%AFve+Melody">NaÃ¯ve Melody</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/The+Arcade+Fire/_/Na%C3%83%C2%AFve+Melody" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/The+Arcade+Fire/_/Na%C3%83%C2%AFve+Melody" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="odd" id="r9_10247910_498492017">
-                                                                                            <td class="imageCell imageSmall">
-                                                                                    <a href="/music/El-P/_/Jukie+Skate+Rock"><img width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/73803.jpg" /></a>            </td>
+                </tr><tr class="odd" id="r9_10247910_1827208859">
+                                                                                                                    <td class="imageCell imageSmall ">
+                                                                                    <a href="/music/El-P/_/Jukie+Skate+Rock"><img width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/110029.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
+            <td class="playbuttonCell ">
                 <div></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/El-P">El-P</a> – <a href="/music/El-P/_/Jukie+Skate+Rock">Jukie Skate Rock</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/El-P">El-P</a> – <a href="/music/El-P/_/Jukie+Skate+Rock">Jukie Skate Rock</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/El-P/_/Jukie+Skate+Rock" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/El-P/_/Jukie+Skate+Rock" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="" id="r9_3457628_253810616">
-                                                                                            <td class="imageCell imageSmall">
+                </tr><tr class="" id="r9_3457628_443514984">
+                                                                                                                    <td class="imageCell imageSmall ">
                                                 <a href="/music/Bj%C3%B6rk/_/Bachelorette+%28radio+edit%29"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/8791027.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
+            <td class="playbuttonCell ">
                 <div></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/Bj%C3%B6rk">Björk</a> – <a href="/music/Bj%C3%B6rk/_/Bachelorette+%28radio+edit%29">Bachelorette (radio edit)</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/Bj%C3%B6rk">Björk</a> – <a href="/music/Bj%C3%B6rk/_/Bachelorette+%28radio+edit%29">Bachelorette (radio edit)</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/Bj%C3%B6rk/_/Bachelorette+%28radio+edit%29" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/Bj%C3%B6rk/_/Bachelorette+%28radio+edit%29" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="odd streamable" id="r9_3524_2129148997">
-                                                                                            <td class="imageCell imageSmall">
+                </tr><tr class="odd streamable" id="r9_3524_1837715342">
+                                                                                                                    <td class="imageCell imageSmall ">
                                                 <a href="/music/Boards+of+Canada/_/Olson"><img height="34" width="34" alt="" src="http://images.amazon.com/images/P/B000009VOM.01.THUMBZZZ.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
+            <td class="playbuttonCell ">
                 <div><a class="playbutton" href="/music/Boards+of+Canada/_/Olson?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/Boards+of+Canada">Boards of Canada</a> – <a href="/music/Boards+of+Canada/_/Olson">Olson</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/Boards+of+Canada">Boards of Canada</a> – <a href="/music/Boards+of+Canada/_/Olson">Olson</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/Boards+of+Canada/_/Olson" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/Boards+of+Canada/_/Olson" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="" id="r9_2943805_174107875">
-                                                                                            <td class="imageCell imageSmall">
+                </tr><tr class="" id="r9_2943805_396598529">
+                                                                                                                    <td class="imageCell imageSmall ">
                                                 <a href="/music/Sufjan+Stevens/_/Rice+Pudding"><img height="34" width="34" alt="" src="http://images.amazon.com/images/P/B0002C4J6W.01.MZZZZZZZ.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
+            <td class="playbuttonCell ">
                 <div></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/Sufjan+Stevens">Sufjan Stevens</a> – <a href="/music/Sufjan+Stevens/_/Rice+Pudding">Rice Pudding</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/Sufjan+Stevens">Sufjan Stevens</a> – <a href="/music/Sufjan+Stevens/_/Rice+Pudding">Rice Pudding</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/Sufjan+Stevens/_/Rice+Pudding" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/Sufjan+Stevens/_/Rice+Pudding" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="odd streamable flp" id="r9_30835887_1493498332">
-                                                                                            <td class="imageCell imageSmall">
-                                                <a href="/music/Death+From+Above+1979/_/Better+Off+Dead+%5BLa+Peste+Cover%5D"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/8755849.jpg" /></a>            </td>
+                </tr><tr class="odd" id="r9_13430862_1451993025">
+                                                                                                                    <td class="imageCell imageSmall ">
+                                                <a href="/music/Death+From+Above+1979/_/Better+Off+Dead"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/8755849.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
-                <div><a class="playbutton" href="/music/Death+From+Above+1979/_/Better+Off+Dead+%5BLa+Peste+Cover%5D?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
+            <td class="playbuttonCell ">
+                <div></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/Death+From+Above+1979">Death From Above 1979</a> – <a href="/music/Death+From+Above+1979/_/Better+Off+Dead+%5BLa+Peste+Cover%5D">Better Off Dead [La Peste Cover]</a> <small>faixa completa</small>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/Death+From+Above+1979">Death From Above 1979</a> – <a href="/music/Death+From+Above+1979/_/Better+Off+Dead">Better Off Dead</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/Death+From+Above+1979/_/Better+Off+Dead+%5BLa+Peste+Cover%5D" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/Death+From+Above+1979/_/Better+Off+Dead" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
-                </tr><tr class="last streamable" id="r9_4534132_1649832787">
-                                                                                            <td class="imageCell imageSmall">
-                                                                                    <a href="/music/RJD2/_/Let+the+Good+Times+Rool+Pt+2+%28Instrumenta%29"><img width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/300721.jpg" /></a>            </td>
+                </tr><tr class="last streamable" id="r9_21619089_1866178477">
+                                                                                                                    <td class="imageCell imageSmall ">
+                                                                                    <a href="/music/RJD2/_/let+the+good+times+roll+part+2"><img width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/84319.jpg" /></a>            </td>
             
-            <td class="playbuttonCell">
-                <div><a class="playbutton" href="/music/RJD2/_/Let+the+Good+Times+Rool+Pt+2+%28Instrumenta%29?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
+            <td class="playbuttonCell ">
+                <div><a class="playbutton" href="/music/RJD2/_/let+the+good+times+roll+part+2?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a></div>
             </td>
-                            <td class="subjectCell">
-            <a href="/music/RJD2">RJD2</a> – <a href="/music/RJD2/_/Let+the+Good+Times+Rool+Pt+2+%28Instrumenta%29">Let the Good Times Rool Pt 2 (Instrumenta)</a>
-        </td>
+                            <td class="subjectCell ">
+            <a href="/music/RJD2">RJD2</a> – <a href="/music/RJD2/_/let+the+good+times+roll+part+2">let the good times roll part 2</a>                                </td>
                                     <td class="lovedCell">
                     </td>
-        <td class="smallmultibuttonCell">
-                                                    <a href="/music/RJD2/_/Let+the+Good+Times+Rool+Pt+2+%28Instrumenta%29" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>        </td>                    
-                <td class="dateCell">
-                            <span class="date">7 Dez 2006</span>
-                    </td>
-            
+        <td class="smallmultibuttonCell ">
+                                                    <a href="/music/RJD2/_/let+the+good+times+roll+part+2" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>        </td>
+        <td class="dateCell ">
+                                                <span class="date">7 Dez 2006</span>
+                                    </td>
     
                 </tr>
         </tbody>
 </table>    
+        
         
         
     <span class="moduleOptions">
@@ -710,14 +741,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                 <h2 class="heading"><span class="h2Wrapper"><a href="/user/sensimilla88/library" title="">Biblioteca de sensimilla88 (74 artistas)</a></span></h2>                        
         
         <div class="module-body">
-            <div class="libraryStation">
-                <a class="stationbutton stationbuttonMedium3" title="Biblioteca de sensimilla88" href="/listen/user/sensimilla88/personal">
-    <span class="stationButtonWrapper">
-                                                                Executar biblioteca de sensimilla88                                    
-            </span>
-</a>                
-            </div><!-- .libraryStation -->
-            
+                        
                             
                 
 
@@ -725,28 +749,29 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
     <ul class="    libraryItems artistsLarge
                 ">
     <li  class=" first" id="r6_4922">
-                                            <a href="/music/El-P"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/73803.jpg" /></span><span class="overlay"></span></span><strong class="name">El-P</strong></a>                        <a href="/user/sensimilla88/library/music/El-P" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/El-P?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
+                                            <a href="/music/El-P"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/110029.jpg" /></span><span class="overlay"></span></span><strong class="name">El-P</strong></a>                        <a href="/user/sensimilla88/library/music/El-P" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/El-P?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li><li  id="r6_813">
                                             <a href="/music/Jurassic+5"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/269347.jpg" /></span><span class="overlay"></span></span><strong class="name">Jurassic 5</strong></a>                        <a href="/user/sensimilla88/library/music/Jurassic+5" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/Jurassic+5?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li><li  id="r6_1012991">
-                                            <a href="/music/MF+DOOM"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/62194.jpg" /></span><span class="overlay"></span></span><strong class="name">MF DOOM</strong></a>                        <a href="/user/sensimilla88/library/music/MF+DOOM" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/MF+DOOM?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
+                                            <a href="/music/MF+DOOM"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/35444.jpg" /></span><span class="overlay"></span></span><strong class="name">MF DOOM</strong></a>                        <a href="/user/sensimilla88/library/music/MF+DOOM" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/MF+DOOM?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li><li  id="r6_1009226">
-                                            <a href="/music/Sole"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/296352.jpg" /></span><span class="overlay"></span></span><strong class="name">Sole</strong></a>                        <a href="/user/sensimilla88/library/music/Sole" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/Sole?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
+                                            <a href="/music/Sole"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/5758.jpg" /></span><span class="overlay"></span></span><strong class="name">Sole</strong></a>                        <a href="/user/sensimilla88/library/music/Sole" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/Sole?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li><li  id="r6_1011818">
-                                            <a href="/music/A+Tribe+Called+Quest"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/10322843.png" /></span><span class="overlay"></span></span><strong class="name">A Tribe Called Quest</strong></a>                        <a href="/user/sensimilla88/library/music/A+Tribe+Called+Quest" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/A+Tribe+Called+Quest?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
+                                            <a href="/music/A+Tribe+Called+Quest"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/4790596.jpg" /></span><span class="overlay"></span></span><strong class="name">A Tribe Called Quest</strong></a>                        <a href="/user/sensimilla88/library/music/A+Tribe+Called+Quest" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/A+Tribe+Called+Quest?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li><li  id="r6_868">
-                                            <a href="/music/The+Roots"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/5010.jpg" /></span><span class="overlay"></span></span><strong class="name">The Roots</strong></a>                        <a href="/user/sensimilla88/library/music/The+Roots" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/The+Roots?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
+                                            <a href="/music/The+Roots"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/8526611.jpg" /></span><span class="overlay"></span></span><strong class="name">The Roots</strong></a>                        <a href="/user/sensimilla88/library/music/The+Roots" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/The+Roots?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li><li  id="r6_5270">
-                                            <a href="/music/RJD2"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/300721.jpg" /></span><span class="overlay"></span></span><strong class="name">RJD2</strong></a>                        <a href="/user/sensimilla88/library/music/RJD2" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/RJD2?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
+                                            <a href="/music/RJD2"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/84319.jpg" /></span><span class="overlay"></span></span><strong class="name">RJD2</strong></a>                        <a href="/user/sensimilla88/library/music/RJD2" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/RJD2?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li><li  class=" last" id="r6_1257123">
-                                            <a href="/music/Madvillain"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/168442.jpg" /></span><span class="overlay"></span></span><strong class="name">Madvillain</strong></a>                        <a href="/user/sensimilla88/library/music/Madvillain" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/Madvillain?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
+                                            <a href="/music/Madvillain"><span class="pictureFrame"><span class="image"><img width="126" alt="" src="http://userserve-ak.last.fm/serve/126s/72313.jpg" /></span><span class="overlay"></span></span><strong class="name">Madvillain</strong></a>                        <a href="/user/sensimilla88/library/music/Madvillain" class="plays" rel="nofollow">(2&nbsp;execuções)</a>                <a class="playbutton" href="/music/Madvillain?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>            
         </li>
 </ul>
 
                 
                 <div id="tasteCocktail">
                     <div class="twoCols">
-                                                    <div class="lovedTracks leftColumn">
+                                                    
+                            <div class="lovedTracks leftColumn">
                                 <div class="wrapper">
                                     <h3><a href="/user/sensimilla88/library/loved" class="icon" title=""><img class="loved_indicator_icon transparent_png" width="11" height="9" src="http://cdn.last.fm/flatness/global/icon_loved_indicator.2.png" /><span>Faixas preferidas (1)</span></a></h3>
                                     <p>
@@ -757,7 +782,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                             </div><!-- .twoCols -->
                     
                                             <div class="tags wrapper">
-                            <h3><a href="/user/sensimilla88/library/tags" class="icon" title=""><img class="tag_icon transparent_png" width="15" height="9" src="http://cdn.last.fm/flatness/global/icon_tag.png" /><span>Tags (1)</span></a></h3>
+                            <h3><a href="/user/sensimilla88/library/tags" class="icon" title=""><img class="tag_icon transparent_png" width="14" height="14" src="http://cdn.last.fm/flatness/global/icon_tag3.png" /><span>Tags (1)</span></a></h3>
                                                             
                                 <p>
                                 <a href="/user/sensimilla88/library/tags?tag=sex">sex</a>                                                        </p>
@@ -768,8 +793,8 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
         </div><!-- #taste -->
             
             
-                                                                <div id="charts522893" class="module modulechartsartists">
-                                <div id="charts522893Buttons" class="moduleButtons">
+                                                                <div id="charts608002" class="module modulechartsartists">
+                                <div id="charts608002Buttons" class="moduleButtons">
                                 <a class="mEmbed" href="#">Incorporar</a> |
                 <a class="mFeeds" href="#">Feeds</a>
             </div>
@@ -793,7 +818,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/El-P" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/El-P" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -809,7 +837,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Jurassic+5" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Jurassic+5" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -825,7 +856,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/MF+DOOM" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/MF+DOOM" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -841,7 +875,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Sole" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Sole" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -857,7 +894,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/A+Tribe+Called+Quest" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/A+Tribe+Called+Quest" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -873,7 +913,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/The+Roots" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/The+Roots" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -889,7 +932,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/RJD2" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/RJD2" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -905,7 +951,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Madvillain" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Madvillain" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -921,7 +970,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Blackalicious" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Blackalicious" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -937,7 +989,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Aesop+Rock" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Aesop+Rock" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -953,7 +1008,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Handsome+Boy+Modeling+School" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Handsome+Boy+Modeling+School" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -969,7 +1027,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Mos+Def" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Mos+Def" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>2</span></div>    </td>
 
@@ -985,7 +1046,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Sage+Francis" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Sage+Francis" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:50%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1001,7 +1065,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Mr.+Lif" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Mr.+Lif" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:50%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1017,7 +1084,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                 </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Ben+Harper+and+The+Blind+Boys+of+Alabama" class="mAddToLibrary mSend  mAddTags lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Ben+Harper+and+The+Blind+Boys+of+Alabama" class="             mAddToLibrary         mSend
+        mAddTags
+            lfmButton lfmMultiButton lfmButtonForartist lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:50%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1026,11 +1096,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
 </table>                    </div>
                         <span class="moduleOptions">
                 <a href="/user/sensimilla88/charts?rangetype=overall&amp;subtype=artists" title="">Ver mais</a>            </span>
-            </div><!-- #chartscharts522893 -->
+            </div><!-- #chartscharts608002 -->
         
                             <script>
             if (!LFM.Page || !LFM.Page.ChartSwitchers) LFM.set("Page", {ChartSwitchers: {}});
-            LFM.Page.ChartSwitchers["charts522893"] = new LFM.Charts.Switch("charts522893", {
+            LFM.Page.ChartSwitchers["charts608002"] = new LFM.Charts.Switch("charts608002", {
                                 restype: 4,
                 resid: 5114054,
                 name: 'charts',
@@ -1038,18 +1108,18 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
             });
         </script>
                             <script>
-                new LFM.Module.Buttons("charts522893Buttons", {
+                new LFM.Module.Buttons("charts608002Buttons", {
                     moduleName: "chartsartists",
                     embedURL: "/widgets/chart/?chartType=topartists",
                     onComplete: function() {
-                        LFM.Page.ChartSwitchers["charts522893"].refresh.bind(LFM.Page.ChartSwitchers["charts522893"])();
+                        LFM.Page.ChartSwitchers["charts608002"].refresh.bind(LFM.Page.ChartSwitchers["charts608002"])();
                     }
                 });
             </script>
                         
                 
-                                                    <div id="charts924314" class="module modulechartstracks">
-                                <div id="charts924314Buttons" class="moduleButtons">
+                                                    <div id="charts261468" class="module modulechartstracks">
+                                <div id="charts261468Buttons" class="moduleButtons">
                                 <a class="mEmbed" href="#">Incorporar</a> |
                 <a class="mFeeds" href="#">Feeds</a>
             </div>
@@ -1066,14 +1136,18 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
         1
     </td>
         <td class="playbuttonCell">
-        <a class="playbutton" href="/music/Sixtoo/_/The%2BMile-end%2BArtsike%252FSuicide%2BM?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
-                                                        <td class="subjectCell" title="The Mile-end Artsike/Suicide M, executada uma vez">
+        <a class="playbutton" href="/music/Sixtoo/_/The+mile-end+artbike?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
+                                                        <td class="subjectCell" title="The mile-end artbike, executada uma vez">
             <div>
-                                        <a href="/music/Sixtoo">Sixtoo</a> – <a href="/music/Sixtoo/_/The%2BMile-end%2BArtsike%252FSuicide%2BM">The Mile-end Artsike/Suicide M</a>                        
+                                        <a href="/music/Sixtoo">Sixtoo</a> – <a href="/music/Sixtoo/_/The+mile-end+artbike">The mile-end artbike</a>                        
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Sixtoo/_/The%2BMile-end%2BArtsike%252FSuicide%2BM" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Sixtoo/_/The+mile-end+artbike" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1082,14 +1156,18 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
         1
     </td>
         <td class="playbuttonCell">
-        <a class="playbutton" href="/music/Looptroop/_/Unsigned+Hype+%28feat.+Wagie%29?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
-                                                        <td class="subjectCell" title="Unsigned Hype (feat. Wagie), executada uma vez">
+        <a class="playbutton" href="/music/Looptroop/_/Unsigned+Hype?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
+                                                        <td class="subjectCell" title="Unsigned Hype, executada uma vez">
             <div>
-                                        <a href="/music/Looptroop">Looptroop</a> – <a href="/music/Looptroop/_/Unsigned+Hype+%28feat.+Wagie%29">Unsigned Hype (feat. Wagie)</a>                        
+                                        <a href="/music/Looptroop">Looptroop</a> – <a href="/music/Looptroop/_/Unsigned+Hype">Unsigned Hype</a>                        
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Looptroop/_/Unsigned+Hype+%28feat.+Wagie%29" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Looptroop/_/Unsigned+Hype" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1105,7 +1183,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Josh+Martinez/_/God+Bless+America+%28Instrumental%29" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Josh+Martinez/_/God+Bless+America+%28Instrumental%29" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1121,7 +1203,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Mos+Def/_/Know+That" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Mos+Def/_/Know+That" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1137,7 +1223,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Platinum+Pied+Pipers/_/One+Minute+More" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Platinum+Pied+Pipers/_/One+Minute+More" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1153,7 +1243,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Mr.+Lif/_/The+Unorthodox" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Mr.+Lif/_/The+Unorthodox" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1169,7 +1263,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Beck/_/Waiting+for+a+Train" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Beck/_/Waiting+for+a+Train" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1185,7 +1283,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Sole/_/Pawn+in+the+Game+Pt+1" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Sole/_/Pawn+in+the+Game+Pt+1" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1194,14 +1296,18 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
         1
     </td>
         <td class="playbuttonCell">
-        <a class="playbutton" href="/music/The+Roots/_/Table%2BOf%2BContents%2B%2528Parts%2B1%2B%2526%2B2?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
-                                                        <td class="subjectCell" title="Table Of Contents (Parts 1 &amp; 2, executada uma vez">
+        <a class="playbutton" href="/music/The+Roots/_/Table%2Bof%2BContents%2B%2528Parts%2B1%2B%2526%2B2%2529?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
+                                                        <td class="subjectCell" title="Table of Contents (Parts 1 &amp; 2), executada uma vez">
             <div>
-                                        <a href="/music/The+Roots">The Roots</a> – <a href="/music/The+Roots/_/Table%2BOf%2BContents%2B%2528Parts%2B1%2B%2526%2B2">Table Of Contents (Parts 1 &amp; 2</a>                        
+                                        <a href="/music/The+Roots">The Roots</a> – <a href="/music/The+Roots/_/Table%2Bof%2BContents%2B%2528Parts%2B1%2B%2526%2B2%2529">Table of Contents (Parts 1 &amp; 2)</a>                        
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/The+Roots/_/Table%2BOf%2BContents%2B%2528Parts%2B1%2B%2526%2B2" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/The+Roots/_/Table%2Bof%2BContents%2B%2528Parts%2B1%2B%2526%2B2%2529" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1217,7 +1323,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/A+Tribe+Called+Quest/_/If+The" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/A+Tribe+Called+Quest/_/If+The" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1233,7 +1343,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Themselves/_/Dark+Sky+Demo" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Themselves/_/Dark+Sky+Demo" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1242,14 +1356,18 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
         1
     </td>
         <td class="playbuttonCell">
-        <a class="playbutton" href="/music/NTM/_/Paris+sous+les+bombes?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
+        <a class="playbutton" href="/music/Supr%C3%AAme+NTM/_/Paris+sous+les+bombes?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
                                                         <td class="subjectCell" title="Paris sous les bombes, executada uma vez">
             <div>
-                                        <a href="/music/NTM">NTM</a> – <a href="/music/NTM/_/Paris+sous+les+bombes">Paris sous les bombes</a>                        
+                                        <a href="/music/Supr%C3%AAme+NTM">Suprême NTM</a> – <a href="/music/Supr%C3%AAme+NTM/_/Paris+sous+les+bombes">Paris sous les bombes</a>                        
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/NTM/_/Paris+sous+les+bombes" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Supr%C3%AAme+NTM/_/Paris+sous+les+bombes" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1265,23 +1383,31 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/A+Tribe+Called+Quest/_/Hot+Sex" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/A+Tribe+Called+Quest/_/Hot+Sex" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
-                </tr><tr class="streamable" >
+                </tr><tr class="" >
                                                                                                                                             <td class="positionCell">
         1
     </td>
         <td class="playbuttonCell">
-        <a class="playbutton" href="/music/Madvillain/_/Bistro?autostart" rel="nofollow"><img class="play_icon transparent_png" width="17" height="17" alt="Tocar" src="http://cdn.last.fm/flatness/global/icon_play.png" /></a>    </td>
+        &nbsp;    </td>
                                                         <td class="subjectCell" title="Bistro, executada uma vez">
             <div>
                                         <a href="/music/Madvillain">Madvillain</a> – <a href="/music/Madvillain/_/Bistro">Bistro</a>                        
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/Madvillain/_/Bistro" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/Madvillain/_/Bistro" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1297,7 +1423,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     </div>
     </td>
     <td class="multibuttonCell">
-        <a href="/music/The+Beatles/_/The+Fool+on+the+Hill" class="mAddToLibrary mSend  mAddToPlaylist mAddTags lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton "><span></span></a>    </td>
+        <a href="/music/The+Beatles/_/The+Fool+on+the+Hill" class="             mAddToLibrary         mSend
+        mAddTags
+                mAddToPlaylist
+                lfmButton lfmMultiButton lfmButtonFortrack lfmSmallButton lfmSmallMultiButton lfmMultiButtonFull
+" forcelink="1"><span></span></a>    </td>
     <td class="chartbarCell">
     <div style="width:100%;" class="chartbar"><span>1</span></div>    </td>
 
@@ -1306,11 +1436,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
 </table>                    </div>
                         <span class="moduleOptions">
                 <a href="/user/sensimilla88/charts?rangetype=overall&amp;subtype=tracks" title="">Ver mais</a>            </span>
-            </div><!-- #chartscharts924314 -->
+            </div><!-- #chartscharts261468 -->
         
                             <script>
             if (!LFM.Page || !LFM.Page.ChartSwitchers) LFM.set("Page", {ChartSwitchers: {}});
-            LFM.Page.ChartSwitchers["charts924314"] = new LFM.Charts.Switch("charts924314", {
+            LFM.Page.ChartSwitchers["charts261468"] = new LFM.Charts.Switch("charts261468", {
                                 restype: 4,
                 resid: 5114054,
                 name: 'charts',
@@ -1318,11 +1448,11 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
             });
         </script>
                             <script>
-                new LFM.Module.Buttons("charts924314Buttons", {
+                new LFM.Module.Buttons("charts261468Buttons", {
                     moduleName: "chartstracks",
                     embedURL: "/widgets/chart/?chartType=toptracks",
                     onComplete: function() {
-                        LFM.Page.ChartSwitchers["charts924314"].refresh.bind(LFM.Page.ChartSwitchers["charts924314"])();
+                        LFM.Page.ChartSwitchers["charts261468"].refresh.bind(LFM.Page.ChartSwitchers["charts261468"])();
                     }
                 });
             </script>
@@ -1333,14 +1463,17 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     <div class="shoutboxInput">
 
                     
-            <div class="infoMessage messageBox
+            <div class=" infoMessage messageBox 
 ">
             <strong class="messageWrapper">                <strong>Deixe um comentário.</strong>
                 <a href="/login/">Faça login na Last.fm</a> ou <a href="/join/">cadastre-se agora</a> (é gratuito).
             </strong>
     </div>            
             </div>                                        <ul id="shoutList" class='shouts'><li style="display:none;visibility:hidden;">we don’t like empty shoutboxes</li></ul>
-                                            
+                        <span class="moduleOptions">
+                <a href="/user/sensimilla88/shoutbox" title="">                    Ver todas as  mensagens
+                </a>            </span>
+                    
 
             </div></div>
                                     
@@ -1352,10 +1485,10 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
         <div id="flashContainer">
             <div id="lfmPlayer_container">
 <noscript>
-<object type="application/x-shockwave-flash" data="http://cdn.last.fm/webclient/s12n/s/3/lfmPlayer.swf" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+<object type="application/x-shockwave-flash" data="http://cdn.last.fm/webclient/s12n/s/12/lfmPlayer.swf" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
         id="lfmPlayer" name="lfmPlayer" align="middle"
         width="300" height="221">
-    <param name="movie" value="http://cdn.last.fm/webclient/s12n/s/3/lfmPlayer.swf" />
+    <param name="movie" value="http://cdn.last.fm/webclient/s12n/s/12/lfmPlayer.swf" />
     <param name="flashvars" value="lang=pt&amp;lfmMode=playlist&amp;FOD=true&amp;resourceID=5114054&amp;resname=sensimilla88&amp;restype=user" />
     <param name="allowScriptAccess" value="always" />
     <param name="allowNetworking" value="all" />
@@ -1367,14 +1500,18 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
 </object></noscript>
 </div>
 
-
 <script>
-var lfmPlayer_params = {"movie":"http:\/\/cdn.last.fm\/webclient\/s12n\/s\/3\/lfmPlayer.swf","flashvars":"lang=pt&lfmMode=playlist&FOD=true&resourceID=5114054&resname=sensimilla88&restype=user","width":300,"height":221,"majorversion":7,"build":"0","allowscriptaccess":"always","allownetworking":"all","allowfullscreen":"true","quality":"high","bgcolor":"#fff","wmode":"transparent","menu":"true","id":"lfmPlayer","setcontainercss":false,"swliveconnect":"true","name":"lfmPlayer","align":"middle"};
-UFO.create(lfmPlayer_params, "lfmPlayer_container");
+if (LFM.get('Flash', 'UFO')) {
+    LFM.Flash.UFO.last_params = {"movie":"http:\/\/cdn.last.fm\/webclient\/s12n\/s\/12\/lfmPlayer.swf","flashvars":"lang=pt&lfmMode=playlist&FOD=true&resourceID=5114054&resname=sensimilla88&restype=user","width":300,"height":221,"majorversion":7,"build":"0","allowscriptaccess":"always","allownetworking":"all","allowfullscreen":"true","quality":"high","bgcolor":"#fff","wmode":"transparent","menu":"true","id":"lfmPlayer","setcontainercss":false,"swliveconnect":"true","name":"lfmPlayer","align":"middle"};
+    LFM.Flash.UFO.params.push(LFM.Flash.UFO.last_params);
+    if (!LFM.Flash.UFO.wait) {
+        UFO.create(LFM.Flash.UFO.last_params, LFM.Flash.UFO.last_params.id + "_container");
+    }
+}
 </script>        </div>
     </div>                <!-- Adserving start -->
 
-                                                    <div id="LastAd_TopRight" class="LastAd"><div class="wrapper">
+                                                    <div id="LastAd_TopRight" class="LastAd"><div align="center">
             <script type="text/javascript">
                                 if(typeof writeTopRight == 'function') writeTopRight();
                             </script>
@@ -1388,8 +1525,8 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
                         <div class="module">
         <h2 class="heading"><span class="h2Wrapper"><a href="/user/sensimilla88/friends" title="">Amigos (1)</a></span></h2>                    <ul class="usersSmall clearit">
     <li class="first last odd user">
-                                                    <div>
-                    <strong><a href="/user/comeonandvogue7" title="Sophie, 18, Feminino, Estados Unidos"><span class="userImage"><img height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/1888772.jpg" /></span>comeonandvogue7</a></strong>
+                                                                                    <div class="vcard ">
+                                                                                                        <strong><a href="/user/comeonandvogue7" title="Sophie, 18, Feminino, Estados Unidos" rel="acquaintance" class="url"><span class="userImage"><img class="photo fn" alt="Sophie" height="34" width="34" src="http://userserve-ak.last.fm/serve/34s/1888772.jpg" /></span><span class="nickname">comeonandvogue7</span></a></strong>
                                          
                                     </div>
             
@@ -1406,7 +1543,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
             </div><!-- .rightCol -->
         <!-- Adserving start -->
 
-                                                    <div id="LastAd_Mid" class="LastAd"><div class="wrapper">
+                                                    <div id="LastAd_Mid" class="LastAd"><div align="center">
             <script type="text/javascript">
                                 if(typeof writeMid == 'function') writeMid();
                             </script>
@@ -1420,7 +1557,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
             
             <!-- Adserving start -->
 
-                                                    <div id="LastAd_Footer1" class="LastAd"><div class="wrapper">
+                                                    <div id="LastAd_Footer1" class="LastAd"><div align="center">
             <script type="text/javascript">
                                     if ($("footer_ads")) $("footer_ads").show();
                                 if(typeof writeFooter1 == 'function') writeFooter1();
@@ -1428,7 +1565,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
             </div></div>
                         <!-- Adserving end -->            <!-- Adserving start -->
 
-                                                    <div id="LastAd_Footer2" class="LastAd"><div class="wrapper">
+                                                    <div id="LastAd_Footer2" class="LastAd"><div align="center">
             <script type="text/javascript">
                                     if ($("footer_ads")) $("footer_ads").show();
                                 if(typeof writeFooter2 == 'function') writeFooter2();
@@ -1436,7 +1573,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
             </div></div>
                         <!-- Adserving end -->            <!-- Adserving start -->
 
-                                                    <div id="LastAd_Footer3" class="LastAd"><div class="wrapper">
+                                                    <div id="LastAd_Footer3" class="LastAd"><div align="center">
             <script type="text/javascript">
                                     if ($("footer_ads")) $("footer_ads").show();
                                 if(typeof writeFooter3 == 'function') writeFooter3();
@@ -1444,7 +1581,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
             </div></div>
                         <!-- Adserving end -->            <!-- Adserving start -->
 
-                                                    <div id="LastAd_Footer4" class="LastAd last"><div class="wrapper">
+                                                    <div id="LastAd_Footer4" class="LastAd last"><div align="center">
             <script type="text/javascript">
                                     if ($("footer_ads")) $("footer_ads").show();
                                 if(typeof writeFooter4 == 'function') writeFooter4();
@@ -1481,7 +1618,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
                     <dd><a href="/help/faq">Perguntas freqüentes</a></dd>
                     <dd><a href="/forum/85186">Suporte ao site</a></dd>
                     <dd><a href="/forum/85187">Suporte ao scrobbler</a></dd>
-                    <dd><a href="/group/Last.fm+for+iPhone+and+iPod+Touch">Suporte a iPod e iPhone</a></dd>
+                    <dd><a href="/group/Last.fm+for+iPhone+and+iPod+Touch">Suporte ao iPhone</a></dd>
                 </dl>
             </li>
         
@@ -1493,7 +1630,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
                     <dd><a href="/forum">Fóruns</a></dd>
                     <dd><a href="/help/guidelines">Diretrizes da comunidade</a></dd>
                     <dd><a href="/about/moderators">Moderadores</a></dd>
-                    <dd><a href="/promotions">Concursos e promoções</a></dd>
+                    <dd><a href="/promotions">Concursos &amp; Promoções</a></dd>
                 </dl>
             </li>
             <li class="last">
@@ -1506,21 +1643,27 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
                     <dd><a href="/hardware">Hardware</a></dd>
                     <dd><a href="/widgets">Widgets</a></dd>                    <dd><a href="/tools/charts">Imagens de tabelas</a></dd>
                     <dd><a href="/subscribe">Assinatura</a></dd>
-                    
+                    <dd><a href="/api">API</a></dd>
                 </dl>
             </li>
         </ul><!-- #footerLinks -->
         
         <div id="justCantGetEnough" class="clearit">
-            <blockquote>“A Glass and a Half in Every Last.fm.”</blockquote>
+            <blockquote>“Last.fm - Have you tried it wet yet?”</blockquote>
             <p>
-            <strong>Outros sites da Last.fm: </strong> <a href="http://blog.last.fm/">Blog</a> | <a href="http://musicmanager.last.fm">Music Manager</a> | <a href="http://build.last.fm">Build Last.fm</a> | <a href="http://playground.last.fm">Playground</a> | <a href="/api">API</a>
-            </p>
+                <strong>Outros sites da Last.fm:</strong>
+                <a href="http://blog.last.fm/">Blog</a>
+                | <a href="http://musicmanager.last.fm">Music Manager</a>
+                | <a href="http://build.last.fm">Build Last.fm</a>
+                | <a href="http://playground.last.fm">Playground</a>
+                            </p>
         </div>
         
         <div id="legalities">
                             <p id="copy">
-                    &copy; 2008 Last.fm Ltd. <a href="/popups/terms/" onclick="window.open('/popups/terms/','faq','toolbar=no, location=no, directories=no, status=no,menubar=no, scrollbars=yes, resizable=yes, width=450, height=600'); return false">Condições de Uso</a><br />
+                    &copy; 2009 Last.fm Ltd. | 
+                    <a href="/legal/terms" target="_blank">Termos de uso</a> 
+                    e <a href="/legal/privacy" target="_blank">Política de privacidade</a> | <span class="date">Atualizado em agosto de 2008</span><br />
                         
                                     </p>
         </div><!-- #legalities -->
@@ -1576,8 +1719,8 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
             
             <li class="mLove"><a href="#">Adicionar como favorita</a></li>
             <li class="mUnlove"><a href="#">Remover das favoritas</a></li>
-            <li class="mBan"><a href="#">Banir faixa</a></li>
-            <li class="mUnban"><a href="#">Cancelar exclusão da faixa</a></li>
+            <li class="mBan"><a href="#">Banir faixa do rádio</a></li>
+            <li class="mUnban"><a href="#">Cancelar banimento da faixa da rádio</a></li>
 
                                     
             <li class="mAddTags"><a href="#">Adicionar tags</a></li>
@@ -1605,7 +1748,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
     DW.clear();
 </script>
 <noscript>
-    <img src="http://dw.com.com/clear/c.gif?ts=1227296234&amp;sid=196" />
+    <img src="http://dw.com.com/clear/c.gif?ts=1233842581&amp;sid=196" />
 </noscript>
 
 

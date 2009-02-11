@@ -8,21 +8,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                         <title>Perfil musical de Fargaroth – Usuários na Last.fm</title>                
         <link rel="search" type="application/opensearchdescription+xml" href="http://cdn.last.fm/opensearch_desc.xml" title="Last.fm" />
-        <meta name="description" content="A maior plataforma social de música do mundo. Mostre suas preferências, veja o que seus amigos estão ouvindo, ouça músicas novas e ganhe uma rádio pessoal com recomendações, tudo isso gratuitamente."/>
+                        <meta name="description" content="A maior plataforma social de música do mundo. Mostre suas preferências, veja o que seus amigos estão ouvindo, ouça músicas novas e ganhe uma rádio pessoal com recomendações, tudo isso gratuitamente."/>
         <meta http-equiv="content-language" content="pt" />
+                                <meta name="robots" content="NOODP" />
                             <link rel="icon" href="http://cdn.last.fm/flatness/favicon.2.ico" />
-            <link rel="icon" type="image/png" href="http://cdn.last.fm/flatness/nice_favicon.2.png" />
+            <link rel="icon" type="image/png" href="http://cdn.last.fm/flatness/favicon.2.png" />
             <link rel="apple-touch-icon" href="http://cdn.last.fm/flatness/apple-touch-icon.png" />
             
                 
-                <link type="text/html" rel="alternate" hreflang="en" href="http://www.last.fm/user/Fargaroth" />
+                        <link type="text/html" rel="alternate" hreflang="en" href="http://www.last.fm/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="de" href="http://www.lastfm.de/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="es" href="http://www.lastfm.es/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="fr" href="http://www.lastfm.fr/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="it" href="http://www.lastfm.it/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="ja" href="http://www.lastfm.jp/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="pl" href="http://www.lastfm.pl/user/Fargaroth" />
-                                                <link type="text/html" rel="alternate" hreflang="" href="http://www.lastfm.ru/user/Fargaroth" />
+                                                <link type="text/html" rel="alternate" hreflang="ru" href="http://www.lastfm.ru/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="sv" href="http://www.lastfm.se/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="tr" href="http://www.lastfm.com.tr/user/Fargaroth" />
                                 <link type="text/html" rel="alternate" hreflang="cn" href="http://cn.last.fm/user/Fargaroth" />
@@ -35,19 +36,20 @@
         }
         </style>
         <![endif]-->
-                                    <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/user/overview.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/main.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/components.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/dialog.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/form/typeahead.css" type="text/css" />
-                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/111498/dev/console.css" type="text/css" />
+                                    <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/user/overview.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/main.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/components.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/dialog.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/form/typeahead.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/118490/dev/console.css" type="text/css" />
                                     
                     <!-- The libraries—thank God for those! -->
-        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/lib/prototype.js"></script>
-        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/lib/scriptaculous.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/lib/prototype.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/lib/scriptaculous.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/lib/ufo.js"></script>
         
         <!-- Create our namespace -->
-        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/LFM.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/LFM.js"></script>
         
                 
         <script type="text/javascript">
@@ -110,8 +112,6 @@
             
             setLocationTitle: "Defina sua localização",
             
-            moderationVoteTitle: "O que está errado?",
-            
                                                 
             uploadMessages: {
                 mayTakeLonger: "Desculpe, isso poderá levar mais tempo do que o habitual. Aguarde alguns segundos.",
@@ -136,19 +136,18 @@
         });
                                         LFM.set("Element", {
             icon_loved_indicator: "<img class=\"loved_indicator_icon transparent_png\" width=\"11\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_loved_indicator.2.png\" \/>",
-            icon_tag: "<img class=\"tag_icon transparent_png\" width=\"15\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_tag.png\" \/>",
+            icon_tag: "<img class=\"tag_icon transparent_png\" width=\"14\" height=\"14\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_tag3.png\" \/>",
             icon_dismiss: "<img class=\"dismiss_icon transparent_png\" width=\"13\" height=\"13\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_delete.2.png\" \/>",
             icon_play: "<img class=\"play_icon transparent_png\" width=\"17\" height=\"17\" alt=\"Tocar\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_play.png\" \/>"
         });
                 </script>
         
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/user/overview.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/components.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/flash.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/dialog.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/form/typeahead.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/dev/console.js"></script>
-                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/111499/lib/ufo.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/user/overview.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/components.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/flash.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/dialog.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/form/typeahead.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/118274/dev/console.js"></script>
                 
         <script type="text/javascript">
 
@@ -188,6 +187,7 @@ s.prop3="";       // action
 
 
 
+
 s.prop10="Anonymous";       // logged in/out
 
 s.prop12="lastfm.com.br";        // url extension
@@ -197,8 +197,8 @@ s.prop13="";        // Member user id
 s.prop14="";        // Ad source
 s.prop15="";        // Ad id
 s.prop16="";        // Ad size
-s.prop18=s.getTimeParting('h',0,2008);     // Set hour
-s.prop19=s.getTimeParting('d',0,2008);     // Set day
+s.prop18=s.getTimeParting('h',0,2009);     // Set hour
+s.prop19=s.getTimeParting('d',0,2009);     // Set day
 
 
 
@@ -277,7 +277,7 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
 <noscript>
     <a href="http://www.quantcast.com/p-51jhoCdjGFIVU" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-51jhoCdjGFIVU.gif?labels=LastFM" height="1" width="1" alt="" /></a>
 </noscript>        
-            <div id="page" class="                     altHeadings ">
+            <div id="page" class="                ">
         <div class="fiflufi">
                 
 <!-- Includes needed for this app only -->
@@ -315,7 +315,9 @@ google_color_link = "D01F3C";
 google_color_url = "564B42";
 google_color_text = "564B42";
 google_ad_output = "html";
-document.write('<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"><\/script>');};function writeTopLeaderboard(){};function writeFooter1(){};function writeFooter2(){ document.write('<a href="http://www.last.fm/delivery.php?id=3028&zoneId=129" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2731/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter3(){ document.write('<a href="http://www.last.fm/delivery.php?id=3639&zoneId=130" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3359/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter4(){ document.write('<a href="http://www.last.fm/delivery.php?id=2998&zoneId=131" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/2707/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeSkin(){};;var aZoneCreativeTypeAssoc={"11":"468x60","9":"300x250","129":"192x64","130":"192x64","131":"192x64"};</script>
+document.write('<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"><\/script>');};function writeTopLeaderboard(){};function writeFooter1(){ document.write('<a href="http://www.last.fm/delivery.php?id=3701&zoneId=128" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3417/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter2(){ document.write('<a href="http://www.last.fm/delivery.php?id=3713&zoneId=129" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3429/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter3(){ document.write('<a href="http://www.last.fm/delivery.php?id=3715&zoneId=130" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3425/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeFooter4(){ document.write('<a href="http://www.last.fm/delivery.php?id=3700&zoneId=131" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3415/Mini-Footer.gif" width="192" alt="Advertise on Last.fm" title="Advertise on Last.fm" height="64" style="border:none;" \/><\/a>');};function writeSkin(){};;var aZoneCreativeTypeAssoc={"11":"468x60","9":"300x250","128":"192x64","129":"192x64","130":"192x64","131":"192x64"};</script>
+
+
 
 
     <div id="header" class="clearit">
@@ -354,7 +356,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                         </select>
                         <input id="siteSearchBox" placeholder="Procurar" type="text" autosave="fm.last.searchhistory" results="5" name="q" size="16" />
                         
-                        <input class="submit" type="submit" value="" title="Enviar" />
+                        <input class="submit" type="submit" value="" title="Enviar" id="siteSearchSubmit" />
                     </form>
                 </li>
             </ul>
@@ -418,7 +420,7 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                     <p class="userInfo adr"><strong class="fn">Faruk</strong>, 21, Masculino, <span class="country-name">Turquia</span><br /><a href="http://fargaroth.deviantart.com" rel="me" title="http://fargaroth.deviantart.com" class="url homepage">fargaroth.deviantart.com</a><small class="userLastseen">Última visita: fevereiro de 2008</small></p>
                     
                     <div class="userData">
-                                                <span class="userPlays" title="Média de 0 faixas por dia">Registrado em: 27 Fev 2006 <small>(Reiniciado em 5 Fev 2008)</small></span><p class="userActivity"><a href="/user/Fargaroth/library/loved" title="">0 Faixas preferidas</a> | <a href="/user/Fargaroth/grapevine" title="">0 Posts</a> | <a href="/user/Fargaroth/playlists" title="">1 Lista</a> | <span class="shoutCount" title="Há 2 mensagens">
+                                                <span class="userPlays" title="Média de 0 faixas por dia"><strong>Nenuma execução</strong> <small>desde 27 Fev 2006</small> <small>(Reiniciado em 5 Fev 2008)</small></span><p class="userActivity"><a href="/user/Fargaroth/library/loved" title="">0 Faixas preferidas</a> | <a href="/user/Fargaroth/grapevine" title="">0 Posts</a> | <a href="/user/Fargaroth/playlists" title="">1 Lista</a> | <span class="shoutCount" title="Há 2 mensagens">
 
     <a href="#shoutbox" id="shoutBoxLink" onclick="if (s) { s.eVar26 = 'shoutsBtn'; }" class="icon">
         <img class="comment_icon transparent_png" width="13" height="11" src="http://cdn.last.fm/flatness/global/icon_comment.png" /><span>2 mensagens</span>
@@ -497,11 +499,8 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                         
         
         <div class="module-body">
-            <div class="libraryStation">
-                                
-            </div><!-- .libraryStation -->
-            
-                                            <div class="infoMessage messageBox
+                        
+                                            <div class=" infoMessage messageBox 
 ">
             <strong class="messageWrapper">Fargaroth ainda não adicionou nenhuma música à sua biblioteca.</strong>
     </div>                    </div>
@@ -514,15 +513,15 @@ document.write('<script type="text/javascript" src="http://pagead2.googlesyndica
                                     <div class="shoutboxInput">
 
                     
-            <div class="infoMessage messageBox
+            <div class=" infoMessage messageBox 
 ">
             <strong class="messageWrapper">                <strong>Deixe um comentário.</strong>
                 <a href="/login/">Faça login na Last.fm</a> ou <a href="/join/">cadastre-se agora</a> (é gratuito).
             </strong>
     </div>            
-            </div>                                        <ul debug="1" class="shouts" id="shoutList">    <li class=" first clearit" id="r72_91966695_28554627">
+            </div>                                        <ul debug="1" class="shouts" id="shoutList">    <li class=" first clearit" id="r72_91966695_762018709">
             <strong class="author user">
-                            <a href="/user/FReeJamboree" title="Onur, 23, Masculino, Turquia">                    <span class="userImage"><img width="64" alt="" src="http://userserve-ak.last.fm/serve/64/687378.jpg" /></span>                    FReeJamboree                </a>                        escreveu:
+                            <a href="/user/FReeJamboree" title="Onur, 24, Masculino, Turquia">                    <span class="userImage"><img width="64" alt="" src="http://userserve-ak.last.fm/serve/64/687378.jpg" /></span>                    FReeJamboree                </a>                        escreveu:
         </strong>
         
         <div class="meta">
@@ -537,12 +536,12 @@ Destek&gt;OPETH&lt;
                     </blockquote>
         
                     <p class="actions">
-                <a href="/user/FReeJamboree" title="Onur, 23, Masculino, Turquia">Exibir perfil</a> | 
-                <a href="/user/FReeJamboree#shoutbox" title="Onur, 23, Masculino, Turquia">                                                Responder
+                <a href="/user/FReeJamboree" title="Onur, 24, Masculino, Turquia">Exibir perfil</a> | 
+                <a href="/user/FReeJamboree#shoutbox" title="Onur, 24, Masculino, Turquia">                                                Responder
                                         </a>            </p>
-                </li><li class=" last clearit" id="r72_91966694_2134858844">
+                </li><li class=" last clearit" id="r72_91966694_1990034040">
             <strong class="author user">
-                            <a href="/user/Gottverlassen" title="Totenziegenkopf">                    <span class="userImage"><img width="64" alt="" src="http://userserve-ak.last.fm/serve/64/11016851.gif" /></span>                    Gottverlassen                </a>                        escreveu:
+                            <a href="/user/Gottverlassen" title="Totenziegenkopf">                    <span class="userImage"><img width="64" alt="" src="http://userserve-ak.last.fm/serve/64/18649379.jpg" /></span>                    Gottverlassen                </a>                        escreveu:
         </strong>
         
         <div class="meta">
@@ -560,7 +559,10 @@ Destek&gt;OPETH&lt;
                 <a href="/user/Gottverlassen#shoutbox" title="Totenziegenkopf">                                                Responder
                                         </a>            </p>
                 </li>
-</ul>                                            
+</ul>                        <span class="moduleOptions">
+                <a href="/user/Fargaroth/shoutbox" title="">                    Ver todas as 2 mensagens
+                </a>            </span>
+                    
 
             </div></div>
                                     
@@ -568,31 +570,7 @@ Destek&gt;OPETH&lt;
     </div><!-- .leftCol -->
     
     <div class="rightCol">
-                <div id="player">
-        <div id="flashContainer">
-            <div id="lfmPlayer_container">
-<noscript>
-<object type="application/x-shockwave-flash" data="http://cdn.last.fm/webclient/s12n/s/3/lfmPlayer.swf" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
-        id="lfmPlayer" name="lfmPlayer" align="middle"
-        width="300" height="221">
-    <param name="movie" value="http://cdn.last.fm/webclient/s12n/s/3/lfmPlayer.swf" />
-    <param name="flashvars" value="lang=pt&amp;lfmMode=playlist&amp;FOD=true&amp;resourceID=3383697&amp;resname=Fargaroth&amp;restype=user" />
-    <param name="allowScriptAccess" value="always" />
-    <param name="allowNetworking" value="all" />
-    <param name="allowFullScreen" value="true" />
-    <param name="quality" value="high" />
-    <param name="bgcolor" value="fff" />
-    <param name="wmode" value="transparent" />
-    <param name="menu" value="true" />
-</object></noscript>
-</div>
-
-
-<script>
-var lfmPlayer_params = {"movie":"http:\/\/cdn.last.fm\/webclient\/s12n\/s\/3\/lfmPlayer.swf","flashvars":"lang=pt&lfmMode=playlist&FOD=true&resourceID=3383697&resname=Fargaroth&restype=user","width":300,"height":221,"majorversion":7,"build":"0","allowscriptaccess":"always","allownetworking":"all","allowfullscreen":"true","quality":"high","bgcolor":"#fff","wmode":"transparent","menu":"true","id":"lfmPlayer","setcontainercss":false,"swliveconnect":"true","name":"lfmPlayer","align":"middle"};
-UFO.create(lfmPlayer_params, "lfmPlayer_container");
-</script>        </div>
-    </div>                <!-- Adserving start -->
+                                <!-- Adserving start -->
 
                                                     <div id="LastAd_TopRight" class="LastAd"><div align="center">
             <script type="text/javascript">
@@ -606,7 +584,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
         
         
                         <div class="module">
-        <h2 class="heading"><span class="h2Wrapper"><a href="/user/Fargaroth/friends" title="">Amigos</a></span></h2>                    <div class="infoMessage messageBox
+        <h2 class="heading"><span class="h2Wrapper"><a href="/user/Fargaroth/friends" title="">Amigos</a></span></h2>                    <div class=" infoMessage messageBox 
 ">
             <strong class="messageWrapper">Veja o que seus amigos estão ouvindo. <a href="/users">Encontrar pessoas na Last.fm</a></strong>
     </div>            </div>
@@ -622,13 +600,13 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
 ">
                         <a href="/group/Dark+Ambient">                <strong><span class="groupImg"><img class="groupImage imagesmallsquare" height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/1856890.gif" /></span>Dark Ambient</strong>
                 <span class="info">
-                    1.876 membros                                                                                </span>
+                    2.056 membros                                                                                </span>
             </a>        
         </li><li class="last clearit
 ">
                         <a href="/group/Turkish+Metal+Division">                <strong><span class="groupImg"><img class="groupImage imagesmallsquare" height="34" width="34" alt="" src="http://userserve-ak.last.fm/serve/34s/1873975.jpg" /></span>Turkish Metal Division</strong>
                 <span class="info">
-                    385 membros                                                                                </span>
+                    380 membros                                                                                </span>
             </a>        
         </li>
 </ul>        
@@ -658,9 +636,6 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
                                 if(typeof writeFooter1 == 'function') writeFooter1();
                             </script>
             </div></div>
-                            <script>
-                    $("LastAd_Footer1").hide();
-                </script>
                         <!-- Adserving end -->            <!-- Adserving start -->
 
                                                     <div id="LastAd_Footer2" class="LastAd"><div align="center">
@@ -716,7 +691,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
                     <dd><a href="/help/faq">Perguntas freqüentes</a></dd>
                     <dd><a href="/forum/85186">Suporte ao site</a></dd>
                     <dd><a href="/forum/85187">Suporte ao scrobbler</a></dd>
-                    <dd><a href="/group/Last.fm+for+iPhone+and+iPod+Touch">Suporte a iPod &amp; iPhone</a></dd>
+                    <dd><a href="/group/Last.fm+for+iPhone+and+iPod+Touch">Suporte ao iPhone</a></dd>
                 </dl>
             </li>
         
@@ -741,21 +716,25 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
                     <dd><a href="/hardware">Hardware</a></dd>
                     <dd><a href="/widgets">Widgets</a></dd>                    <dd><a href="/tools/charts">Imagens de tabelas</a></dd>
                     <dd><a href="/subscribe">Assinatura</a></dd>
-                    
+                    <dd><a href="/api">API</a></dd>
                 </dl>
             </li>
         </ul><!-- #footerLinks -->
         
         <div id="justCantGetEnough" class="clearit">
-            <blockquote>“The Science Of Last.fm.”</blockquote>
+            <blockquote>“Wouldn't You Like To Be a Last.fm Too?”</blockquote>
             <p>
-            <strong>Outros sites da Last.fm: </strong> <a href="http://blog.last.fm/">Blog</a> | <a href="http://musicmanager.last.fm">Music Manager</a> | <a href="http://build.last.fm">Build Last.fm</a> | <a href="http://playground.last.fm">Playground</a> | <a href="/api">API</a>
-            </p>
+                <strong>Outros sites da Last.fm:</strong>
+                <a href="http://blog.last.fm/">Blog</a>
+                | <a href="http://musicmanager.last.fm">Music Manager</a>
+                | <a href="http://build.last.fm">Build Last.fm</a>
+                | <a href="http://playground.last.fm">Playground</a>
+                            </p>
         </div>
         
         <div id="legalities">
                             <p id="copy">
-                    &copy; 2008 Last.fm Ltd. | 
+                    &copy; 2009 Last.fm Ltd. | 
                     <a href="/legal/terms" target="_blank">Termos de uso</a> 
                     e <a href="/legal/privacy" target="_blank">Política de privacidade</a> | <span class="date">Atualizado em agosto de 2008</span><br />
                         
@@ -813,8 +792,8 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
             
             <li class="mLove"><a href="#">Adicionar como favorita</a></li>
             <li class="mUnlove"><a href="#">Remover das favoritas</a></li>
-            <li class="mBan"><a href="#">Banir faixa</a></li>
-            <li class="mUnban"><a href="#">Cancelar exclusão da faixa</a></li>
+            <li class="mBan"><a href="#">Banir faixa do rádio</a></li>
+            <li class="mUnban"><a href="#">Cancelar banimento da faixa da rádio</a></li>
 
                                     
             <li class="mAddTags"><a href="#">Adicionar tags</a></li>
@@ -842,7 +821,7 @@ UFO.create(lfmPlayer_params, "lfmPlayer_container");
     DW.clear();
 </script>
 <noscript>
-    <img src="http://dw.com.com/clear/c.gif?ts=1228432434&amp;sid=196" />
+    <img src="http://dw.com.com/clear/c.gif?ts=1233842636&amp;sid=196" />
 </noscript>
 
 
