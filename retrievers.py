@@ -496,7 +496,9 @@ def get_protobuffered_profile(user_data):
             user.gender = lastfm_pb2.User.MALE
         elif gender[0] == 'F':
             user.gender = lastfm_pb2.User.FEMALE
-
+        else:
+            raise Exception("Unknown gender '%s' for user %s" % (gender,
+                                                                 username))
     if country:
         user.country = country
     if executions:
@@ -517,11 +519,11 @@ def get_protobuffered_profile(user_data):
 
     user_tracks = user_data["tracks"]
 
-    for track in user_tracks:
+    for artist, trackName, playcount in user_tracks:
         t = user.tracks.add()
-        t.artist = track[0]
-        t.trackName = track[1]
-        t.playcount = int(track[2])
+        t.artist = artist
+        t.trackName = trackName
+        t.playcount = int(playcount)
     
     user_groups = user_data["groups"]
 
@@ -529,7 +531,6 @@ def get_protobuffered_profile(user_data):
         user.groups.add().groupName = group
 
     return user.SerializeToString()
-
 
 
 def get_user_encoded_profile(username):
