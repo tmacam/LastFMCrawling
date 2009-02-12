@@ -118,6 +118,22 @@ class ObstinatedRetriever(object):
 
 
 ######################################################################
+# ENCODING HELPER FUNCTIONS
+######################################################################
+
+def fixXMLContent(msg):
+    """Convert content obtained from WebServices calls / XML to unicode."""
+    return unicode(msg, 'UTF-8')
+
+def fixURLContent(msg):
+    """Convert content obtained from a URL to unicode."""
+    return unicode(unquote_plus(msg), 'UTF-8')
+
+def fixHTMLContent(msg):
+    """Convert content extracted from Lastfm web pages to unicode."""
+    return unicode(msg, 'UTF-8')
+
+######################################################################
 # LASTFM-SPECIFIC RETRIEVERS
 ######################################################################
 
@@ -240,8 +256,8 @@ class TracksRetriever(ObstinatedRetriever):
                 # LastFM are percent encoded, but we want UTF-8
                 track_url = str(track.find("url").contents[0])
                 artist, _, name = track_url.split("/")[-3:]
-                artist = unicode(unquote_plus(artist), 'UTF-8')
-                name = unicode(unquote_plus(name), 'UTF-8')
+                artist = fixXMLContent(artist)
+                name = fixXMLContent(name)
                 track_list.append((artist, name, playcount))
             # Track information can be splitted across several pages.
             # Get the number of pages.
@@ -485,10 +501,10 @@ def get_protobuffered_profile(user_data):
         (username, name, age, gender, country, executions,
             average, homepage, user_since) = user_info 
 
-    user.username = username
-
+    # General user information - not sanitized
+    user.username = fixURLContent(username)
     if name:
-        user.name = name
+        user.name = fixHTMLContent(name)
     if age:
         user.age = int(age)
     if gender:
@@ -500,25 +516,25 @@ def get_protobuffered_profile(user_data):
             raise Exception("Unknown gender '%s' for user %s" % (gender,
                                                                  username))
     if country:
-        user.country = country
+        user.country = fixHTMLContent(country)
     if executions:
         user.executions = int(executions)
     if average:
         user.average = float(average)
     if homepage:
-        user.homepage = homepage
+        user.homepage = fixHTMLContent(homepage)
     if user_since:
         user.userSince = user_since
     if reseted_date:
         user.resetedDate = reseted_date
 
+    # Friendship information - not sanitized
     user_friends = user_data["friends"]
-
     for friend in user_friends:
-        user.friends.add().friendName = friend
+        user.friends.add().friendName = fixXMLContent(friend)
 
+    # Track information -- already sanitized
     user_tracks = user_data["tracks"]
-
     for artist, trackName, playcount in user_tracks:
         t = user.tracks.add()
         t.artist = artist
