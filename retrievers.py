@@ -460,6 +460,48 @@ class UserInfoRetriever(ObstinatedRetriever):
         return datetime.date(year, month, day).isoformat()
 
 
+class LibrarySnapshotsRetriever(ObstinatedRetriever):
+
+    LIBRARY_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/tracks?page=%s"
+
+    def get_library(self, username):
+        "Get the parsed user library."
+
+        cur_page = 1
+        lastpage = 1
+        track_list = []
+        log = logging.getLogger("LibrarySnapshotsRetriever")
+
+        while cur_page <= lastpage:
+            log.info("Retrieving page %i of %i", cur_page, lastpage)
+            url = self.LIBRARY_URL_TEMPLATE % (username, cur_page)
+            print url
+            html = self.get_url(url)
+            soup = BeautifulSoup(html)
+            tracks_table = soup.find("table", "candyStriped tracklist")
+            tracks = tracks_table.findAll("tr")
+
+            for track in tracks:
+                track_artist_name = track.find("td", "subjectCell").findAll("a")
+                
+                artist = track_artist_name[0].contents[0]
+                track_name = track_artist_name[0].contents[0]
+                listened_date = track.find("td", "dateCell last").contents[0]
+
+                print artist, track_name, listened_date
+
+            # Track information can be splitted across several pages.
+            # Get the number of pages.
+            if cur_page == 1:
+                lastpage = int(soup.find("a", "lastpage").contents[0])
+
+            cur_page += 1
+
+        #return track_list
+
+
+        
+
 
 def retrieve_full_user_profile(username):
     """Get the full user profile from a LastFM user.
@@ -578,15 +620,19 @@ def main(user):
     logging.basicConfig(level=logging.DEBUG, flushlevel=logging.NOTSET)
     print "User:", user
 
+    lsr = LibrarySnapshotsRetriever()
+
+    lsr.get_library(sys.argv[1])
+
     #print retrieve_full_user_profile(user)
-    p,_ = get_user_encoded_profile(user)
+    #p,_ = get_user_encoded_profile(user)
 
     
-    user = lastfm_pb2.User()
+    #user = lastfm_pb2.User()
 
-    user.ParseFromString(zlib.decompress(p))
+    #user.ParseFromString(zlib.decompress(p))
 
-    print user
+    #print user
 
     #print UserInfoRetriever().get_user(user)
 
