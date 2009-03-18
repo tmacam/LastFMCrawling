@@ -1,7 +1,7 @@
 
 .PHONY: clean java python
 
-all: java python lastfm.jar
+all: cpp java python lastfm.jar
 
 PROTOC = /home/speed/tmacam/tmp/protobuf-2.0.3/bin/protoc
 JAVA_EXTRA_CLASSPATH = ./protobuf-java-2.0.3.jar
@@ -9,14 +9,16 @@ CLASSPATH=$(JAVA_EXTRA_CLASSPATH)
 
 
 protoc_middleman: lastfm.proto
-	#$(PROTOC) --cpp_out=. --java_out=. --python_out=. lastfm.proto
-	$(PROTOC) --java_out=. --python_out=. lastfm.proto
+	$(PROTOC) --cpp_out=. --java_out=. --python_out=. lastfm.proto
+	#$(PROTOC) --java_out=. --python_out=. lastfm.proto
 	@touch protoc_middleman
 
 python: protoc_middleman
 
 java: protoc_middleman
 	CLASSPATH=$(CLASSPATH) javac lastfm/Lastfm.java
+
+cpp: protoc_middleman
 
 lastfm.jar: java
 	jar cvf $@ lastfm/
