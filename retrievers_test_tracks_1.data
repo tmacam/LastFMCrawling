@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<tracks user="georgeteodoro" page="1" perPage="50" totalPages="1">
+<track>
+    <name>Semáforo</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Vanguart/_/Sem%C3%A1foro</url>
+    <streamable fulltrack="1">1</streamable>
+        <artist>
+        <name>Vanguart</name>
+        <mbid></mbid>
+        <url>http://www.last.fm/music/Vanguart</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/7564929.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/7564929.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/7564929.jpg</image>
+    </track>
+<track>
+    <name>Chegou a Bonitona</name>
+    <playcount>2</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Luiz+Melodia/_/Chegou+a+Bonitona</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Luiz Melodia</name>
+        <mbid>40bee6cd-8f0c-407e-8e90-d5bdb9231a2d</mbid>
+        <url>http://www.last.fm/music/Luiz+Melodia</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/15768569.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/15768569.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/15768569.jpg</image>
+    </track>
+<track>
+    <name>Acabou chorare</name>
+    <playcount>2</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Arnaldo+Antunes/_/Acabou+chorare</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Arnaldo Antunes</name>
+        <mbid>d3a71b82-e2e3-4dce-85c2-ce1271912426</mbid>
+        <url>http://www.last.fm/music/Arnaldo+Antunes</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/15667975.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/15667975.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/15667975.jpg</image>
+    </track>
+<track>
+    <name>A Wink and a Smile</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Harry+Connick%2C+Jr./_/A+Wink+and+a+Smile</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Harry Connick, Jr.</name>
+        <mbid>fd23e684-270f-4507-9cb0-a0e0d7854d16</mbid>
+        <url>http://www.last.fm/music/Harry+Connick%2C+Jr.</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/21669465.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/21669465.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/21669465.jpg</image>
+    </track>
+<track>
+    <name>Running</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Eliane+Elias/_/Running</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Eliane Elias</name>
+        <mbid>9974cbc1-6a00-4a97-8a36-e4a25bfe0293</mbid>
+        <url>http://www.last.fm/music/Eliane+Elias</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/17465127.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/17465127.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/17465127.jpg</image>
+    </track>
+<track>
+    <name>You're Gonna Make Me Lonesome When You Go</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Madeleine+Peyroux/_/You%27re+Gonna+Make+Me+Lonesome+When+You+Go</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Madeleine Peyroux</name>
+        <mbid>7f260b9c-bea7-469b-9ba8-0daec7d2c85c</mbid>
+        <url>http://www.last.fm/music/Madeleine+Peyroux</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/15678773.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/15678773.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/15678773.jpg</image>
+    </track>
+<track>
+    <name>Sr. Tempo Bom</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Thaide%2B%2526%2BDJ%2BHum/_/Sr.+Tempo+Bom</url>
+    <streamable fulltrack="1">1</streamable>
+        <artist>
+        <name>Thaide &amp; DJ Hum</name>
+        <mbid>29424fde-8e0c-4ce3-873e-6fb2d1f27b30</mbid>
+        <url>http://www.last.fm/music/Thaide%2B%2526%2BDJ%2BHum</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/4834765.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/4834765.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/4834765.jpg</image>
+    </track>
+<track>
+    <name>Recado que Maria Mandou</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Luiz+Melodia/_/Recado+que+Maria+Mandou</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Luiz Melodia</name>
+        <mbid>40bee6cd-8f0c-407e-8e90-d5bdb9231a2d</mbid>
+        <url>http://www.last.fm/music/Luiz+Melodia</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/15768569.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/15768569.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/15768569.jpg</image>
+    </track>
+<track>
+    <name>Chocolate</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Tim+Maia/_/Chocolate</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Tim Maia</name>
+        <mbid>446ac261-09ae-43f4-a7e1-2c753c0813ce</mbid>
+        <url>http://www.last.fm/music/Tim+Maia</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/12211409.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/12211409.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/12211409.jpg</image>
+    </track>
+<track>
+    <name>Viva la Vida</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Coldplay/_/Viva+la+Vida</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Coldplay</name>
+        <mbid>cc197bad-dc9c-440d-a5b5-d52ba2e14234</mbid>
+        <url>http://www.last.fm/music/Coldplay</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/14349365.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/14349365.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/14349365.jpg</image>
+    </track>
+<track>
+    <name>O Telefone Tocou Novamente</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Jorge+Ben/_/O+Telefone+Tocou+Novamente</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Jorge Ben</name>
+        <mbid>a64448e7-8936-430c-ae77-9f556481a56b</mbid>
+        <url>http://www.last.fm/music/Jorge+Ben</url>
+    </artist>
+            <image size="small">http://ec1.images-amazon.com/images/P/B00008ACIR.02._SCMZZZZZZZ_.jpg</image>
+    <image size="medium">http://ec1.images-amazon.com/images/P/B00008ACIR.02._SCMZZZZZZZ_.jpg</image>
+    <image size="large">http://ec1.images-amazon.com/images/P/B00008ACIR.02._SCMZZZZZZZ_.jpg</image>
+    </track>
+<track>
+    <name>Some Kind of Wonderful</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Peter+Cincotti/_/Some+Kind+of+Wonderful</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Peter Cincotti</name>
+        <mbid>e670db87-f910-4286-bfc6-d7ddd0b0bfbd</mbid>
+        <url>http://www.last.fm/music/Peter+Cincotti</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8729699.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8729699.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8729699.jpg</image>
+    </track>
+<track>
+    <name>Cotidiano</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Chico+Buarque/_/Cotidiano</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Chico Buarque</name>
+        <mbid>3a5d1cc7-627e-48ea-aba3-fdd20d782c33</mbid>
+        <url>http://www.last.fm/music/Chico+Buarque</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B000008AHA.01.MZZZZZZZ.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B000008AHA.01.MZZZZZZZ.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B000008AHA.01.MZZZZZZZ.jpg</image>
+    </track>
+<track>
+    <name>Christmas Time Is Here</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Dianne+Reeves/_/Christmas+Time+Is+Here</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Dianne Reeves</name>
+        <mbid>069c1f30-fd2a-4342-924a-cca7c605807f</mbid>
+        <url>http://www.last.fm/music/Dianne+Reeves</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/14121465.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/14121465.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/14121465.jpg</image>
+    </track>
+<track>
+    <name>Caldo de Cana</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Na%C3%A7%C3%A3o+Zumbi/_/Caldo+de+Cana</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Nação Zumbi</name>
+        <mbid>e3954b21-0d05-45ea-a057-e8cc4c9b1ab5</mbid>
+        <url>http://www.last.fm/music/Na%C3%A7%C3%A3o+Zumbi</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B00008O75J.01.MZZZZZZZ.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B00008O75J.01.MZZZZZZZ.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B00008O75J.01.MZZZZZZZ.jpg</image>
+    </track>
+<track>
+    <name>Cry Me a River</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Ella+Fitzgerald/_/Cry+Me+a+River</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Ella Fitzgerald</name>
+        <mbid>54799c0e-eb45-4eea-996d-c4d71a63c499</mbid>
+        <url>http://www.last.fm/music/Ella+Fitzgerald</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8774023.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8774023.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8774023.jpg</image>
+    </track>
+<track>
+    <name>Wind Cries Mary</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Jamie+Cullum/_/Wind+Cries+Mary</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Jamie Cullum</name>
+        <mbid>b10806de-2198-4313-af6a-13df4acb912f</mbid>
+        <url>http://www.last.fm/music/Jamie+Cullum</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8626371.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8626371.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8626371.jpg</image>
+    </track>
+<track>
+    <name>Triste</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Elis+Regina/_/Triste</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Elis Regina</name>
+        <mbid>e9e85a54-074c-4d29-a886-bcaaa9d44f9f</mbid>
+        <url>http://www.last.fm/music/Elis+Regina</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/10401679.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/10401679.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/10401679.jpg</image>
+    </track>
+<track>
+    <name>A Love That Will Last</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Renee+Olstead/_/A+Love+That+Will+Last</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Renee Olstead</name>
+        <mbid>1f1ce989-bf0e-421b-bd71-a2a33fdbc7b6</mbid>
+        <url>http://www.last.fm/music/Renee+Olstead</url>
+    </artist>
+            <image size="small">http://cdn.last.fm/depth/catalogue/noimage/cover_med.gif</image>
+    <image size="medium">http://cdn.last.fm/depth/catalogue/noimage/cover_med.gif</image>
+    <image size="large">http://cdn.last.fm/depth/catalogue/noimage/cover_med.gif</image>
+    </track>
+<track>
+    <name>This Will Be (An Everlasting Love)</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Natalie+Cole/_/This+Will+Be+%28An+Everlasting+Love%29</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Natalie Cole</name>
+        <mbid>eb45032c-80da-469c-be20-1d09f08ef37f</mbid>
+        <url>http://www.last.fm/music/Natalie+Cole</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/14166931.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/14166931.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/14166931.jpg</image>
+    </track>
+<track>
+    <name>Dee Dee</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Dee+Dee+Bridgewater/_/Dee+Dee</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Dee Dee Bridgewater</name>
+        <mbid>43826bcf-2c17-4bf5-92cf-671c184e215f</mbid>
+        <url>http://www.last.fm/music/Dee+Dee+Bridgewater</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/10065443.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/10065443.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/10065443.jpg</image>
+    </track>
+<track>
+    <name>Shoot the Moon</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Norah+Jones/_/Shoot+the+Moon</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Norah Jones</name>
+        <mbid>985c709c-7771-4de3-9024-7bda29ebe3f9</mbid>
+        <url>http://www.last.fm/music/Norah+Jones</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/7040419.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/7040419.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/7040419.jpg</image>
+    </track>
+<track>
+    <name>I Got My Baby</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Faith+Hill/_/I+Got+My+Baby</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Faith Hill</name>
+        <mbid>406552d4-5ba1-4226-b7c0-367bc50fc767</mbid>
+        <url>http://www.last.fm/music/Faith+Hill</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B00002SSRE.01.THUMBZZZ.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B00002SSRE.01.MZZZZZZZ.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B00002SSRE.01.LZZZZZZZ.jpg</image>
+    </track>
+<track>
+    <name>Fim de caso</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Nana+Caymmi/_/Fim+de+caso</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Nana Caymmi</name>
+        <mbid>c5597943-f7bc-48de-b00e-4b34c9f8558c</mbid>
+        <url>http://www.last.fm/music/Nana+Caymmi</url>
+    </artist>
+            <image size="small">http://www.7digital.com/shops/assets/sleeveart/0094633632158_182.JPEG</image>
+    <image size="medium">http://www.7digital.com/shops/assets/sleeveart/0094633632158_182.JPEG</image>
+    <image size="large">http://www.7digital.com/shops/assets/sleeveart/0094633632158_182.JPEG</image>
+    </track>
+<track>
+    <name>Taking a Chance on Love</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Jane+Monheit/_/Taking+a+Chance+on+Love</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Jane Monheit</name>
+        <mbid>75d98827-d476-4112-84b4-44b5495581c6</mbid>
+        <url>http://www.last.fm/music/Jane+Monheit</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/19709513.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/19709513.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/19709513.jpg</image>
+    </track>
+<track>
+    <name>Sampa</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Caetano+Veloso/_/Sampa</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Caetano Veloso</name>
+        <mbid>f07dbc2f-317b-470f-bad4-5f1b0eb6faf1</mbid>
+        <url>http://www.last.fm/music/Caetano+Veloso</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B0000046MU.01._SCMZZZZZZZ_.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B0000046MU.01._SCMZZZZZZZ_.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B0000046MU.01._SCMZZZZZZZ_.jpg</image>
+    </track>
+<track>
+    <name>O meu guri</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Chico+Buarque/_/O+meu+guri</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Chico Buarque</name>
+        <mbid>3a5d1cc7-627e-48ea-aba3-fdd20d782c33</mbid>
+        <url>http://www.last.fm/music/Chico+Buarque</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B00000I79M.01._SCMZZZZZZZ_.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B00000I79M.01._SCMZZZZZZZ_.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B00000I79M.01._SCMZZZZZZZ_.jpg</image>
+    </track>
+<track>
+    <name>Pavão Mysteriozo (Live)</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Fernanda+Takai/_/Pav%C3%A3o+Mysteriozo+%28Live%29</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Fernanda Takai</name>
+        <mbid></mbid>
+        <url>http://www.last.fm/music/Fernanda+Takai</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/11419513.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/11419513.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/11419513.jpg</image>
+    </track>
+<track>
+    <name>Time After Time</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Cassandra+Wilson/_/Time+After+Time</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Cassandra Wilson</name>
+        <mbid>eb6595d3-e559-4bcc-a516-843bfdba82e9</mbid>
+        <url>http://www.last.fm/music/Cassandra+Wilson</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/11589285.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/11589285.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/11589285.jpg</image>
+    </track>
+<track>
+    <name>Samba Rasgado</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Ney+Matogrosso/_/Samba+Rasgado</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Ney Matogrosso</name>
+        <mbid>67e97898-3bb5-412a-a51e-95a7b59a1bef</mbid>
+        <url>http://www.last.fm/music/Ney+Matogrosso</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8711059.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8711059.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8711059.jpg</image>
+    </track>
+<track>
+    <name>Este seu olhar</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Nara+Le%C3%A3o/_/Este+seu+olhar</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Nara Leão</name>
+        <mbid>3a13549a-9578-4547-9308-4167816c51df</mbid>
+        <url>http://www.last.fm/music/Nara+Le%C3%A3o</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B0000677LE.01.MZZZZZZZ.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B0000677LE.01.MZZZZZZZ.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B0000677LE.01.MZZZZZZZ.jpg</image>
+    </track>
+<track>
+    <name>Preta Pretinha</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Novos+Baianos/_/Preta+Pretinha</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Novos Baianos</name>
+        <mbid>7b543eba-995a-4c30-a37e-f8cac424f167</mbid>
+        <url>http://www.last.fm/music/Novos+Baianos</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/3577790.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/3577790.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/3577790.jpg</image>
+    </track>
+<track>
+    <name>Maré</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Adriana+Calcanhotto/_/Mar%C3%A9</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Adriana Calcanhotto</name>
+        <mbid>bd4d397a-849a-48bf-be24-52eec87feeee</mbid>
+        <url>http://www.last.fm/music/Adriana+Calcanhotto</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/23731069.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/23731069.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/23731069.jpg</image>
+    </track>
+<track>
+    <name>I've Never Seen Anything Like You</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Lisa+Ekdahl/_/I%27ve+Never+Seen+Anything+Like+You</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Lisa Ekdahl</name>
+        <mbid>560c4706-0868-4c89-be8b-b26fb7754aba</mbid>
+        <url>http://www.last.fm/music/Lisa+Ekdahl</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B000050G2Q.01.MZZZZZZZ.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B000050G2Q.01.MZZZZZZZ.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B000050G2Q.01.MZZZZZZZ.jpg</image>
+    </track>
+<track>
+    <name>Toda Menina Baiana</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Gilberto+Gil/_/Toda+Menina+Baiana</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Gilberto Gil</name>
+        <mbid>cf6b70f6-2616-481c-912c-0263cabfc974</mbid>
+        <url>http://www.last.fm/music/Gilberto+Gil</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B000002IXR.01.MZZZZZZZ.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B000002IXR.01.MZZZZZZZ.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B000002IXR.01.MZZZZZZZ.jpg</image>
+    </track>
+<track>
+    <name>Insensatez</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Nara+Le%C3%A3o/_/Insensatez</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Nara Leão</name>
+        <mbid>3a13549a-9578-4547-9308-4167816c51df</mbid>
+        <url>http://www.last.fm/music/Nara+Le%C3%A3o</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8814599.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8814599.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8814599.jpg</image>
+    </track>
+<track>
+    <name>Another Angel</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Lizz+Wright/_/Another+Angel</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Lizz Wright</name>
+        <mbid>31303fcd-f78d-4693-aafa-9b274061b032</mbid>
+        <url>http://www.last.fm/music/Lizz+Wright</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/10260729.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/10260729.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/10260729.jpg</image>
+    </track>
+<track>
+    <name>When Did You Leave Heaven?</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Diane+Schuur/_/When+Did+You+Leave+Heaven%3F</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Diane Schuur</name>
+        <mbid>d224a365-0356-40ef-92ba-b09140e07364</mbid>
+        <url>http://www.last.fm/music/Diane+Schuur</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8707983.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8707983.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8707983.jpg</image>
+    </track>
+<track>
+    <name>Two Sleepy People</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Silje+Nergaard/_/Two+Sleepy+People</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Silje Nergaard</name>
+        <mbid>d422e9c0-b492-4cb2-8267-ccd5973e8a54</mbid>
+        <url>http://www.last.fm/music/Silje+Nergaard</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8707535.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8707535.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8707535.jpg</image>
+    </track>
+<track>
+    <name>Lover Man</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Sarah+Vaughan/_/Lover+Man</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Sarah Vaughan</name>
+        <mbid>351d8bdf-33a1-45e2-8c04-c85fad20da55</mbid>
+        <url>http://www.last.fm/music/Sarah+Vaughan</url>
+    </artist>
+            <image size="small">http://images.amazon.com/images/P/B000001OBE.01._SCMZZZZZZZ_.jpg</image>
+    <image size="medium">http://images.amazon.com/images/P/B000001OBE.01._SCMZZZZZZZ_.jpg</image>
+    <image size="large">http://images.amazon.com/images/P/B000001OBE.01._SCMZZZZZZZ_.jpg</image>
+    </track>
+<track>
+    <name>But for Now</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Jamie+Cullum/_/But+for+Now</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Jamie Cullum</name>
+        <mbid>b10806de-2198-4313-af6a-13df4acb912f</mbid>
+        <url>http://www.last.fm/music/Jamie+Cullum</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8626371.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8626371.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8626371.jpg</image>
+    </track>
+<track>
+    <name>If I Were a Bell</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Holly+Cole/_/If+I+Were+a+Bell</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Holly Cole</name>
+        <mbid>08160a8d-d768-4664-9afa-5720196d16e9</mbid>
+        <url>http://www.last.fm/music/Holly+Cole</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/14606379.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/14606379.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/14606379.jpg</image>
+    </track>
+<track>
+    <name>Strange Transmissions</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/The+Peter+Malick+Group/_/Strange+Transmissions</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>The Peter Malick Group</name>
+        <mbid>baeb409b-87ef-465e-97c4-496290fd3fcd</mbid>
+        <url>http://www.last.fm/music/The+Peter+Malick+Group</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8728247.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8728247.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8728247.jpg</image>
+    </track>
+<track>
+    <name>It Never Entered My Mind (Featuring Al McKibbon &amp; Steve Williams)</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Shirley+Horn/_/It%2BNever%2BEntered%2BMy%2BMind%2B%2528Featuring%2BAl%2BMcKibbon%2B%2526%2BSteve%2BWilliams%2529</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Shirley Horn</name>
+        <mbid>1f72d108-f2dc-44cd-8213-8d3426cc2c9a</mbid>
+        <url>http://www.last.fm/music/Shirley+Horn</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/25716017.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/25716017.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/25716017.jpg</image>
+    </track>
+<track>
+    <name>Sentimental</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Zizi+Possi/_/Sentimental</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Zizi Possi</name>
+        <mbid>d9f6e182-8551-417b-95fe-a53c75a0c183</mbid>
+        <url>http://www.last.fm/music/Zizi+Possi</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/5266614.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/5266614.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/5266614.jpg</image>
+    </track>
+<track>
+    <name>I Want Your Love</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Chris+Isaak/_/I+Want+Your+Love</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Chris Isaak</name>
+        <mbid>479497d4-e7c2-4e78-972e-56e78fac3995</mbid>
+        <url>http://www.last.fm/music/Chris+Isaak</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8626941.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8626941.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8626941.jpg</image>
+    </track>
+<track>
+    <name>Voce E Linda</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Caetano+Veloso/_/Voce+E+Linda</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Caetano Veloso</name>
+        <mbid>f07dbc2f-317b-470f-bad4-5f1b0eb6faf1</mbid>
+        <url>http://www.last.fm/music/Caetano+Veloso</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/10093117.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/10093117.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/10093117.jpg</image>
+    </track>
+<track>
+    <name>What Goes Around</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Dionne+Warwick/_/What+Goes+Around</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Dionne Warwick</name>
+        <mbid>6784ee31-6d79-4a37-9e1f-01d6ef31940e</mbid>
+        <url>http://www.last.fm/music/Dionne+Warwick</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/8607249.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/8607249.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/8607249.jpg</image>
+    </track>
+<track>
+    <name>You Don't Know What Love Is</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Cassandra+Wilson/_/You+Don%27t+Know+What+Love+Is</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Cassandra Wilson</name>
+        <mbid>eb6595d3-e559-4bcc-a516-843bfdba82e9</mbid>
+        <url>http://www.last.fm/music/Cassandra+Wilson</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/15177775.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/15177775.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/15177775.jpg</image>
+    </track>
+<track>
+    <name>The Shadow Of Your Smile</name>
+    <playcount>1</playcount>
+    <tagcount></tagcount>
+    <mbid></mbid>
+    <url>http://www.last.fm/music/Tony+Bennett/_/The+Shadow+Of+Your+Smile</url>
+    <streamable fulltrack="0">1</streamable>
+        <artist>
+        <name>Tony Bennett</name>
+        <mbid>8be0594f-8c13-46bb-ab06-f93ffba5c776</mbid>
+        <url>http://www.last.fm/music/Tony+Bennett</url>
+    </artist>
+            <image size="small">http://userserve-ak.last.fm/serve/34s/22353983.jpg</image>
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/22353983.jpg</image>
+    <image size="large">http://userserve-ak.last.fm/serve/126/22353983.jpg</image>
+    </track>
+</tracks></lfm>

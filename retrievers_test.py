@@ -10,7 +10,7 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 import unittest
-from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever, get_protobuffered_profile, lastfm_pb2
+from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever, TracksRetriever, get_protobuffered_profile, lastfm_pb2
 
 
 ######################################################################
@@ -44,6 +44,9 @@ class FakeGroupRetrievers(FakeRetrievers, GroupRetrievers):
 
 
 class FakeUserInfoRetriever(FakeRetrievers, UserInfoRetriever):
+    pass
+
+class FakeTracksRetrievers(FakeRetrievers, TracksRetriever):
     pass
 
 
@@ -146,7 +149,10 @@ class UserInfoRetrieverTest(unittest.TestCase):
 
         userdata = UserInfoRetriever().parse_user_data(username, data)
     
-        fake_data = {"info" : userdata, "groups" : (), "friends" : (), "tracks" : ()}
+        fake_data = {"info" : userdata,
+                     "groups" : (),
+                     "friends" : (),
+                     "tracks" : ()}
 
         serialized = get_protobuffered_profile(fake_data)
 
@@ -229,9 +235,19 @@ class GroupRetrieverTest(unittest.TestCase):
         fake_data = open(self.GROUP_DATA_EMPTY_GROUP, 'r').read()
         retriever = FakeGroupRetrievers(fake_data)
         returned = retriever.get_user_groups("FakeGroupRetrieversDontCare")
-        expected = ["New+Order"]
+        expected = [u"New Order"]
         self.assertEqual(expected, returned)
 
+class TracksRetrieverTest(unittest.TestCase):
+    TRACK_DATA_ACCENTED = "retrievers_test_tracks_1.data"
+
+    def testTracksWithAccentedData(self):
+        "Tests if we correctly handle data outside the ASCII range."
+        fake_data = open(self.TRACK_DATA_ACCENTED, 'r').read()
+        retriever = FakeTracksRetrievers(fake_data)
+        returned = retriever.get_tracks("FakeTracksRetrievers don't care")
+        expected = (u'Adriana Calcanhotto', u'Mar\xe9', 1)
+        self.assertEqual(expected, returned[0])
 
 if __name__ == '__main__':
     unittest.main()

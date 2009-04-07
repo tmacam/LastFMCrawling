@@ -211,7 +211,7 @@ class GroupRetrievers(ObstinatedRetriever):
                     group_link = group.find("a")
                     if group_link:
                         group_name = group_link['href'].split('/')[-1]
-                        groups.append(group_name.encode("utf-8"))
+                        groups.append(fixURLContent(group_name.encode("utf-8")))
                 # Group information can be splited across several pages
                 # Get the number of pages
                 if cur_page == 1:
@@ -256,8 +256,8 @@ class TracksRetriever(ObstinatedRetriever):
                 # LastFM are percent encoded, but we want UTF-8
                 track_url = str(track.find("url").contents[0])
                 artist, _, name = track_url.split("/")[-3:]
-                artist = fixXMLContent(artist)
-                name = fixXMLContent(name)
+                artist = fixURLContent(artist)
+                name = fixURLContent(name)
                 track_list.append((artist, name, playcount))
             # Track information can be splitted across several pages.
             # Get the number of pages.
@@ -294,7 +294,7 @@ class FriendsRetriever(ObstinatedRetriever):
 
         for f_url in friends_urls:
             friend_name = f_url.contents[0].split("/")[-1]
-            friends_list.append(friend_name.encode("utf8"))
+            friends_list.append(fixURLContent(friend_name.encode("utf8")))
 
         return friends_list
 
@@ -543,7 +543,7 @@ def get_protobuffered_profile(user_data):
         (username, name, age, gender, country, executions,
             average, homepage, user_since) = user_info 
 
-    # General user information - not sanitized
+    # General user information - FIXME not sanitized
     user.username = fixURLContent(username)
     if name:
         user.name = fixHTMLContent(name)
@@ -570,10 +570,10 @@ def get_protobuffered_profile(user_data):
     if reseted_date:
         user.resetedDate = reseted_date
 
-    # Friendship information - not sanitized
+    # Friendship information -- already sanitized
     user_friends = user_data["friends"]
     for friend in user_friends:
-        user.friends.add().friendName = fixXMLContent(friend)
+        user.friends.add().friendName = friend
 
     # Track information -- already sanitized
     user_tracks = user_data["tracks"]
@@ -620,11 +620,10 @@ def main(user):
     logging.basicConfig(level=logging.DEBUG, flushlevel=logging.NOTSET)
     print "User:", user
 
-    lsr = LibrarySnapshotsRetriever()
+    #lsr = LibrarySnapshotsRetriever()
+    #lsr.get_library(sys.argv[1])
 
-    lsr.get_library(sys.argv[1])
-
-    #print retrieve_full_user_profile(user)
+    print retrieve_full_user_profile(user)
     #p,_ = get_user_encoded_profile(user)
 
     
