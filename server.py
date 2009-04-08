@@ -13,7 +13,7 @@ __license__ = "X11"
 import itertools
 import os
 import gdbm
-from DistributedCrawler.server import GdbmBaseControler, \
+from DistributedCrawler.server import GdbmBaseControler, BsddbBaseControler \
         BaseDistributedCrawlingServer
 from twisted.python import log
 from twisted.python.logfile import DailyLogFile
@@ -120,7 +120,7 @@ class FindUsersController(GdbmBaseControler):
 
 
 
-class GetProfileController(GdbmBaseControler):
+class GetProfileController(BsddbBaseControler):
     """Retrieve user profile information.
     
     Remember: we are NOT CONNECTED to FindUsersController. This mean you must
@@ -136,12 +136,14 @@ class GetProfileController(GdbmBaseControler):
             sched: Scheduler instance being used by the server.
             prefix: location where all DBs are kept.
             client_reg: ClientRegistry instance being used by the server.
-            profile_db: GDBM file where the list of discovered users is kept.
+            profile_db: Filename Berkeley DB where the list of discovered
+                users is kept.
         """
-        GdbmBaseControler.__init__(self, sched, prefix, client_reg)
+        # Missing java's super, already?
+        BsddbBaseControler.__init__(self, sched, prefix, client_reg)
         # Setup a GDBM file where we store discovered users.
         # It is opened for synchronized R/W and created if it doesn't exist.
-        self.profile_db = gdbm.open(profile_db, "cs")
+        self.profile_db = self._openDB(profile_db)
 
     def render_POST(self, request):
         """Process the user profile data returned by a client."""
@@ -160,6 +162,7 @@ class GetProfileController(GdbmBaseControler):
             self.addJob(f)
         # Save user profile
         self.profile_db[username] = profile_data
+        self.syncAllDBs()
         # Job done
         self.markJobAsDone(username)
         self.client_reg.updateClientStats(request, job_done=True)
@@ -171,6 +174,7 @@ class GetProfileController(GdbmBaseControler):
         client_id = self.client_reg.updateClientStats(request)
         username = request.postpath[0]
         self.markJobAsErroneus(username)
+        self.syncAllDBs()
         log.msg("GETPROFILE %s reported as erroneus by client %s." % (
                                                     username, client_id))
         self.client_reg.updateClientStats(request, job_done=True)
