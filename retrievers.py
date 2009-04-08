@@ -273,7 +273,12 @@ class TracksRetriever(ObstinatedRetriever):
 
 
 class FriendsRetriever(ObstinatedRetriever):
-    """Friendship information is returned percent-encoded."""
+    """Friendship information is returned percent-encoded, UTF-8 content.
+    
+    Notice that friendship information is used both in user's profile encoding
+    into Profocol Buffers (which requires unicode or utf-8 encoded content) and
+    send into HTTP headers (and thus should be preferably in ACII).
+    """
 
     GET_USER_FRIENDS_TEMPLATE = 'http://ws.audioscrobbler.com/2.0/?method=user.getfriends&user=%s&api_key=%s'
 
@@ -294,7 +299,7 @@ class FriendsRetriever(ObstinatedRetriever):
 
         for f_url in friends_urls:
             friend_name = f_url.contents[0].split("/")[-1]
-            friends_list.append(fixURLContent(friend_name.encode("utf8")))
+            friends_list.append(friend_name.encode("utf8"))
 
         return friends_list
 
