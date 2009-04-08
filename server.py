@@ -13,7 +13,7 @@ __license__ = "X11"
 import itertools
 import os
 import gdbm
-from DistributedCrawler.server import GdbmBaseControler, BsddbBaseControler \
+from DistributedCrawler.server import GdbmBaseControler, BsddbBaseControler, \
         BaseDistributedCrawlingServer
 from twisted.python import log
 from twisted.python.logfile import DailyLogFile
