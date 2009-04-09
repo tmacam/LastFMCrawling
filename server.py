@@ -18,6 +18,7 @@ from DistributedCrawler.server import GdbmBaseControler, BsddbBaseControler, \
 from twisted.python import log
 from twisted.python.logfile import DailyLogFile
 from twisted.web import resource
+from twisted.web.static import File as StaticFile
 from common import FINDUSERS_PAGE_COUNT, FINDUSERS_SEPARATOR
 
 
@@ -182,7 +183,10 @@ class GetProfileController(BsddbBaseControler):
 
 
 class PageNotFoundController(resource.Resource):
-    """Deals with "Nothing for you to see" error reports."""
+    """Deals with erroneus profiles.
+    
+    Its name, though strange, is a reminiscent of our old Slashdot crawler.
+    """
 
     isLeaf = True
 
@@ -210,7 +214,9 @@ def main():
     INTERVAL = 60
 
     FINDUSERS_DB = PREFIX + '/users.db'
-    GETPROFILE_DB = PREFIX + '/profiles.gdbm'
+    GETPROFILE_DB = PREFIX + '/profiles.bsddb'
+
+    STATIC_DIR = './DistributedCrawler/server/static/'
 
     # Setup logging
     logfile = DailyLogFile('lastfmcrawler.log', '.')
@@ -236,6 +242,11 @@ def main():
                                  'getprofile',
                                  'Profiles')
     server.root.putChild('notfound', notfound_controller)
+
+    # Serving static content from the static directory
+    static_dir_controller = StaticFile(STATIC_DIR)
+    server.root.putChild('static', static_dir_controller)
+    
 
     print "\nServer setup done.\n"
     log.msg("Server setup done.")
