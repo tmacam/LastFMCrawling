@@ -9,8 +9,11 @@ __author__ = "Tiago Alves Macambira & Rafael Sachetto"
 __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
+import datetime
 import unittest
-from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever, TracksRetriever, get_protobuffered_profile, lastfm_pb2
+from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever,\
+TracksRetriever, LibrarySnapshotsRetriever, get_protobuffered_profile,\
+lastfm_pb2
 
 
 ######################################################################
@@ -47,6 +50,10 @@ class FakeUserInfoRetriever(FakeRetrievers, UserInfoRetriever):
     pass
 
 class FakeTracksRetrievers(FakeRetrievers, TracksRetriever):
+    pass
+
+
+class FakeLibrarySnapshotRetrievers(FakeRetrievers, LibrarySnapshotsRetriever):
     pass
 
 
@@ -227,6 +234,7 @@ class UserInfoRetrieverTest(unittest.TestCase):
         returned = retriever.get_user(username)
         self.assertEqual(expected, returned)
 
+
 class GroupRetrieverTest(unittest.TestCase):
     GROUP_DATA_EMPTY_GROUP = "retrievers_test_groups_1.data"
 
@@ -238,6 +246,7 @@ class GroupRetrieverTest(unittest.TestCase):
         expected = [u"New Order"]
         self.assertEqual(expected, returned)
 
+
 class TracksRetrieverTest(unittest.TestCase):
     TRACK_DATA_ACCENTED = "retrievers_test_tracks_1.data"
 
@@ -248,6 +257,66 @@ class TracksRetrieverTest(unittest.TestCase):
         returned = retriever.get_tracks("FakeTracksRetrievers don't care")
         expected = (u'Adriana Calcanhotto', u'Mar\xe9', 1)
         self.assertEqual(expected, returned[0])
+
+
+class LibrarySnapshotsRetrieverTest(unittest.TestCase):
+    LIBRARY_DATA_1 = "retrievers_test_library_1.data"
+    LIBRARY_DATA_1_LEN_FULL = 50
+    LIBRARY_DATA_1_LEN_DAY_1 = 50, datetime.date(2009, 05, 27)
+    LIBRARY_DATA_1_LEN_DAY_2 = 42, datetime.date(2009, 05, 28)
+    LIBRARY_DATA_1_LEN_DAY_END = 0, datetime.date(2009, 05, 30)
+    LIBRARY_DATA_1_LEN_DAY_END_PLUS_ONE = datetime.date(2009, 05, 31)
+
+    def testParseDateTimeWrongFormat(self):
+        retriever = LibrarySnapshotsRetriever()
+        date_time_str = "20090531 T 06:32:54 lakjdkjasdkladjZ"
+        self.assertRaises(ValueError,
+                LibrarySnapshotsRetriever.parse_date_time,
+                retriever,
+                date_time_str)
+
+    def testParseDateTimeMissingZ(self):
+        retriever = LibrarySnapshotsRetriever()
+        date_time_str = "2009-05-31T06:32:54"
+        self.assertRaises(AssertionError,
+                LibrarySnapshotsRetriever.parse_date_time,
+                retriever,
+                date_time_str)
+
+    def testParseDateTimeOKStr(self):
+        retriever = LibrarySnapshotsRetriever()
+        date_time_str = "2009-05-31T06:32:54Z"
+        expected = (2009, 05, 31, 06, 32, 54)
+        returned = retriever.parse_date_time(date_time_str)
+        self.assertEqual(expected, returned)
+
+    def testFullLibraryDownload(self):
+        day_one = LibrarySnapshotsRetriever.DAY_ONE
+        fake_data = open(self.LIBRARY_DATA_1, 'r').read()
+        retriever = FakeLibrarySnapshotRetrievers(fake_data)
+        ret_lib, ret_date = retriever.get_library('dontcare', day_one,
+                today = self.LIBRARY_DATA_1_LEN_DAY_END_PLUS_ONE)
+        self.assert_(self.LIBRARY_DATA_1_LEN_FULL, len(ret_lib))
+
+        # don't return anything if "today" is the smallest date in lib.
+        _, exp_date = self.LIBRARY_DATA_1_LEN_DAY_1
+        ret_lib, ret_date = retriever.get_library('dontcare', exp_date,
+                                                  today=exp_date)
+        self.assertEqual(0, len(ret_lib))
+        self.assertEqual(exp_date, ret_date)
+
+        # Ok, suppose we had already done a download of this library
+        # and that there was some musics listened just today in the collection
+        exp_len, exp_date = self.LIBRARY_DATA_1_LEN_DAY_2
+        end_len, end_date = self.LIBRARY_DATA_1_LEN_DAY_END
+        ret_lib, ret_date = retriever.get_library('dontcare', exp_date,
+                today=end_date)
+        self.assertEqual(34, len(ret_lib))
+        self.assertEqual(end_date, ret_date)
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -470,14 +470,39 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
 
     LIBRARY_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/tracks?page=%s"
 
-    def get_library(self, username):
-        "Get the parsed user library."
+    DAY_ONE = datetime.date(1,1,1)
+
+    def parse_date_time(self, date_time_str):
+        """Get a date and time from a string.
+        
+        String must be in the format 2009-05-31T06:32:54Z
+
+        Returns: a tuple of int containing (year, month, day, hour, minute,
+            second)
+        """
+        assert date_time_str[-1] == "Z"
+        date_str, time_str = date_time_str[:-1].split("T")
+        year, month, day = date_str.split("-")
+        hour, minute, second = time_str.split(":")
+        return ( int(year), int(month), int(day),
+                int(hour), int(minute), int(second) )
+
+    def get_library(self, username, listened_date_threshold, today=None):
+        """Get the parsed user library.
+        
+        Args:
+            username: LastFM's username
+            listened_date_threshold: We will ignore musics listened
+                before this date. Must be a datetime.date object.
+            today: Overwrite our notion of time just to ease testing.
+        """
 
         cur_page = 1
         lastpage = 1
         listened_tracks = []
         log = logging.getLogger("LibrarySnapshotsRetriever")
-        today = datetime.date.today()
+        if not today:
+            today = datetime.date.today()
 
         while cur_page <= lastpage:
             log.info("Retrieving page %i of %i", cur_page, lastpage)
@@ -501,20 +526,17 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
                 raw_listened_date = track.find("abbr")["title"]
 
                 #Parsing date and time from the text
-                year, month, day = raw_listened_date.split("-")
-                day = day.split("T")[0]
-                #Discard musics listened today
-                listened_date = datetime.date(int(year), int(month), int(day))
-                if listened_date < today:
-                    hour, minute, second = raw_listened_date.split("T")[-1].split(":")
-                    second = second[:-1]
-                    
+                parsed_date_time = self.parse_date_time(raw_listened_date)
+                (year, month, day, hour, minute, second) = parsed_date_time
+                #Discard musics already crawled and musics listened today
+                listened_date = datetime.date(year, month, day)
+                if listened_date_threshold <= listened_date < today:
                     #a time_tuple contains (year, month, day, hour, minute, 
-                    #                      second, weekday, yearday, daylightSavingAdjustment)
-                    time_tuple = (int(year), int(month), int(day), int(hour),
-                                    int(minute), int(second), -1, -1, -1)
-
-                    #conver time_tuple to seconds since epoch
+                    #                      second, weekday, yearday,
+                    #                       daylightSavingAdjustment)
+                    time_tuple = (year, month, day, hour, minute, second,
+                                  -1, -1, -1)
+                    #convert time_tuple to seconds since epoch
                     listened_date = time.mktime(time_tuple)
                     
                     listened_tracks.append((artist, track_name, listened_date))
