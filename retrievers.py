@@ -487,6 +487,12 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
         return ( int(year), int(month), int(day),
                 int(hour), int(minute), int(second) )
 
+    def validate(self, data):
+        soup = BeautifulSoup(data)
+        tracks_table = soup.find("table", "candyStriped tracklist")
+        if not tracks_table:
+            raise InvalidPage()
+
     def get_library(self, username, listened_date_threshold, today=None):
         """Get the parsed user library.
         
@@ -500,46 +506,51 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
         cur_page = 1
         lastpage = 1
         listened_tracks = []
+        reached_previous_snapshot = False
         log = logging.getLogger("LibrarySnapshotsRetriever")
         if not today:
             today = datetime.date.today()
 
-        while cur_page <= lastpage:
+        while cur_page <= lastpage and not reached_previous_snapshot:
             log.info("Retrieving page %i of %i", cur_page, lastpage)
             url = self.LIBRARY_URL_TEMPLATE % (username, cur_page)
-            html = self.get_url(url)
-            soup = BeautifulSoup(html)
+            data = self.get_url(url)
+            soup = BeautifulSoup(data)
             tracks_table = soup.find("table", "candyStriped tracklist")
-
-            if tracks_table:
-                tracks = tracks_table.findAll("tr")
-            else:
-                #The user does not have any music in the lybrary
-                #we will return a empty list
-                break
+            # tracks_table exists because we check for it in validate()
+            tracks = tracks_table.findAll("tr")
 
             for track in tracks:
+                # Parsing artist and track_name from 
                 track_artist_name = track.find("td", "subjectCell").findAll("a")
-                
                 artist = track_artist_name[0].contents[0]
                 track_name = track_artist_name[1].contents[0]
+                # Parsing date and time from the text
                 raw_listened_date = track.find("abbr")["title"]
-
-                #Parsing date and time from the text
                 parsed_date_time = self.parse_date_time(raw_listened_date)
                 (year, month, day, hour, minute, second) = parsed_date_time
-                #Discard musics already crawled and musics listened today
+                # Discard musics already crawled and musics listened today
                 listened_date = datetime.date(year, month, day)
+                if listened_date_threshold > listened_date:
+                    # Found a song we already retried.
+                    # Past this point all musics will be known and there
+                    # is no point in keep crawling it anymore. 
+                    print "Exiting for I reached_previous_snapshot" # XXX
+                    reached_previous_snapshot = True # break out of the while...
+                    break # Get out of the for loop. 
                 if listened_date_threshold <= listened_date < today:
-                    #a time_tuple contains (year, month, day, hour, minute, 
-                    #                      second, weekday, yearday,
-                    #                       daylightSavingAdjustment)
+                    # a time_tuple contains (year, month, day, hour, minute, 
+                    #                        second, weekday, yearday,
+                    #                        daylightSavingAdjustment)
                     time_tuple = (year, month, day, hour, minute, second,
                                   -1, -1, -1)
-                    #convert time_tuple to seconds since epoch
+                    # convert time_tuple to seconds since epoch
                     listened_date = time.mktime(time_tuple)
                     
                     listened_tracks.append((artist, track_name, listened_date))
+                else: ### FIXME remove this debuging if...
+                    print "Descartei ", artist, track_name
+            print len(listened_tracks) # XXX FIXME
 
             # Track information can be splitted across several pages.
             # Get the number of pages.
@@ -670,7 +681,9 @@ def main(user):
     print "User:", user
 
     lsr = LibrarySnapshotsRetriever()
-    print lsr.get_library(sys.argv[1])
+    lib, date = lsr.get_library(sys.argv[1], lsr.DAY_ONE)
+    print lib, date
+    print len(lib)
 
     #print retrieve_full_user_profile(user)
     #p,_ = get_user_encoded_profile(user)
