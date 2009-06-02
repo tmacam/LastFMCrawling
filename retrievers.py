@@ -17,6 +17,7 @@ import httplib
 import logging
 import cPickle
 import zlib
+import time
 from socket import gethostname
 from DistributedCrawler.client.BeautifulSoup import BeautifulSoup, \
         BeautifulStoneSoup
@@ -474,26 +475,49 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
 
         cur_page = 1
         lastpage = 1
-        track_list = []
+        listened_tracks = []
         log = logging.getLogger("LibrarySnapshotsRetriever")
+        today = datetime.date.today()
 
         while cur_page <= lastpage:
             log.info("Retrieving page %i of %i", cur_page, lastpage)
             url = self.LIBRARY_URL_TEMPLATE % (username, cur_page)
-            print url
             html = self.get_url(url)
             soup = BeautifulSoup(html)
             tracks_table = soup.find("table", "candyStriped tracklist")
-            tracks = tracks_table.findAll("tr")
+
+            if tracks_table:
+                tracks = tracks_table.findAll("tr")
+            else:
+                #The user does not have any music in the lybrary
+                #we will return a empty list
+                break
 
             for track in tracks:
                 track_artist_name = track.find("td", "subjectCell").findAll("a")
                 
                 artist = track_artist_name[0].contents[0]
-                track_name = track_artist_name[0].contents[0]
-                listened_date = track.find("td", "dateCell last").contents[0]
+                track_name = track_artist_name[1].contents[0]
+                raw_listened_date = track.find("abbr")["title"]
 
-                print artist, track_name, listened_date
+                #Parsing date and time from the text
+                year, month, day = raw_listened_date.split("-")
+                day = day.split("T")[0]
+                #Discard musics listened today
+                listened_date = datetime.date(int(year), int(month), int(day))
+                if listened_date < today:
+                    hour, minute, second = raw_listened_date.split("T")[-1].split(":")
+                    second = second[:-1]
+                    
+                    #a time_tuple contains (year, month, day, hour, minute, 
+                    #                      second, weekday, yearday, daylightSavingAdjustment)
+                    time_tuple = (int(year), int(month), int(day), int(hour),
+                                    int(minute), int(second), -1, -1, -1)
+
+                    #conver time_tuple to seconds since epoch
+                    listened_date = time.mktime(time_tuple)
+                    
+                    listened_tracks.append((artist, track_name, listened_date))
 
             # Track information can be splitted across several pages.
             # Get the number of pages.
@@ -501,11 +525,9 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
                 lastpage = int(soup.find("a", "lastpage").contents[0])
 
             cur_page += 1
-
-        #return track_list
-
-
         
+        return (listened_tracks, today)
+
 
 
 def retrieve_full_user_profile(username):
@@ -625,10 +647,10 @@ def main(user):
     logging.basicConfig(level=logging.DEBUG, flushlevel=logging.NOTSET)
     print "User:", user
 
-    #lsr = LibrarySnapshotsRetriever()
-    #lsr.get_library(sys.argv[1])
+    lsr = LibrarySnapshotsRetriever()
+    print lsr.get_library(sys.argv[1])
 
-    print retrieve_full_user_profile(user)
+    #print retrieve_full_user_profile(user)
     #p,_ = get_user_encoded_profile(user)
 
     
