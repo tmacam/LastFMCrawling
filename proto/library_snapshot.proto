@@ -9,7 +9,6 @@ message Track {
 message LibrarySnapshot {
   required string username = 1;
   repeated Track library = 2;
+  required int32 lastCrawledDate = 3; 
 }
-
-
 
