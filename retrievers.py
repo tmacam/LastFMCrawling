@@ -26,7 +26,7 @@ from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR, \
 
 from urllib import unquote_plus
 
-import lastfm_pb2
+import lastfm_pb2, library_snapshot_pb2
 
 # FIXME add logging information through retrievers
 
@@ -522,7 +522,7 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
             
             #table tracks may not exists
             if not tracks_table and cur_page == 1:
-                return (listened_tracks, today)
+                return (listened_tracks, time.mktime(today.timetuple()))
 
             tracks = tracks_table.findAll("tr")
 
@@ -561,7 +561,7 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
 
             cur_page += 1
         
-        return (listened_tracks, today)
+        return (listened_tracks, time.mktime(today.timetuple()))
 
 
 
@@ -673,6 +673,48 @@ def get_user_encoded_profile(username):
 
     return (compressed, friends)
 
+def retrieve_encoded_user_library_snapshot(username, listened_date_threshold):
+    """Get the libraty snaphshot from a LastFM user.
+    
+    Returns:
+        A compressed protobuffered user snapshot library
+    """
+
+    lsr = LibrarySnapshotsRetriever()
+    data = lsr.get_library(username, listened_date_threshold)
+    serialized = get_protobuffered_library(username, data)
+    compressed = zlib.compress(serialized, 9)
+
+    return compressed
+
+
+def get_protobuffered_library(username, user_data):
+    """Get the user library information serialized using Protobuffers.
+
+    The returned user profile data will be in a format suitable for processing
+    in Java, python or C++
+
+    Returns:
+        a string (the serialized user library snapshot)
+    """
+
+    snapshot = library_snapshot_pb2.LibrarySnapshot()
+
+    snapshot.username = username
+
+    user_tracks = user_data[0]
+    last_crawled_date = user_data[1]
+
+    for artist, trackName, date in user_tracks:
+        l = snapshot.library.add()
+        l.artist = artist
+        l.trackName = trackName
+        l.listenedDate = int(date)
+
+    snapshot.lastCrawledDate = int(last_crawled_date)
+
+    return snapshot.SerializeToString()
+
 
 ######################################################################
 # MAIN
@@ -683,9 +725,11 @@ def main(user):
     print "User:", user
 
     lsr = LibrarySnapshotsRetriever()
-    lib, date = lsr.get_library(sys.argv[1], lsr.DAY_ONE)
-    print lib, date
-    print len(lib)
+    #lib, date = lsr.get_library(sys.argv[1], lsr.DAY_ONE)
+    #print lib, date
+    #print len(lib)
+
+    print retrieve_encoded_user_library_snapshot("hsr", lsr.DAY_ONE)
 
     #print retrieve_full_user_profile(user)
     #p,_ = get_user_encoded_profile(user)
