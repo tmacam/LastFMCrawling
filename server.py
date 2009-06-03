@@ -206,6 +206,60 @@ class PageNotFoundController(resource.Resource):
         return self.getprofile_controler.render_notfound_error(request)
 
 
+class GetLibraryController(BsddbBaseControler):
+    """Retrieve user's music library.
+    
+    Remember: we are NOT CONNECTED to anything and nothing is connected to us.
+              This is an isolated controller.
+
+    TODO: we should've encoded the command/job as "username#last_crawled_ts"
+          but this will be left as a pending work for the next crawling...
+    """
+    ACTION_NAME = "GETLIBRARY"
+    PREFIX_BASE = "getlibrary"
+
+    def __init__(self, sched, prefix, client_reg, library_db, next_crawling_db):
+        """Constructor.
+
+        Args:
+            sched: Scheduler instance being used by the server.
+            prefix: location where all DBs are kept.
+            client_reg: ClientRegistry instance being used by the server.
+            library_db: Filename Berkeley DB where the list of discovered
+                users is kept.
+        """
+        # Missing java's super, already?
+        BsddbBaseControler.__init__(self, sched, prefix, client_reg)
+        # Setup a GDBM file where we store discovered users.
+        # It is opened for synchronized R/W and created if it doesn't exist.
+        self.library_db = self._openDB(library_db)
+        self.next_crawling_db = self._openDB(next_crawling_db)
+
+    def syncAllDBs(self):
+        """Synchronizes all DBs - both local DBs and job-control-related DBs."""
+        BsddbBaseControler.syncAllDBs(self)
+        self.library_db.sync()
+        self.next_crawling_db.sync()
+
+    def render_POST(self, request):
+        """Process the user's music library data returned by a client."""
+        client_id = self.client_reg.updateClientStats(request)
+        # get the profile identification and the list of users found
+        username = request.args['username'][0]
+        library_data = request.args['library'][0]
+        last_crawled_ts_data = request.args['last-crawled-ts'][0]
+        # Save user library
+        next_crawling_command = "%s#%s" % (username, last_crawled_ts_data)
+        self.library_db[username] = library_data
+        self.next_crawling_db[next_crawling_command] = '1' 
+        self.syncAllDBs()
+        # Job done
+        self.markJobAsDone(username)
+        self.client_reg.updateClientStats(request, job_done=True)
+        log.msg("GETLIBRARY %s done by client %s." % (username, client_id))
+        return self.scheduler.renderPing(client_id, just_ping=True)
+
+
 def main():
     print "\nInitializing server...\n"
 
@@ -215,6 +269,8 @@ def main():
 
     FINDUSERS_DB = PREFIX + '/users.db'
     GETPROFILE_DB = PREFIX + '/profiles.bsddb'
+    GETLIBRARY_DB = PREFIX + '/library-20090603.bsddb'
+    NEXTCRAWLING_DB = PREFIX + '/library-next-crawling.bsddb'
 
     STATIC_DIR = './DistributedCrawler/server/static/'
 
@@ -233,6 +289,12 @@ def main():
                                                  server.getClientRegistry(),
                                                  GETPROFILE_DB)
     notfound_controller  = PageNotFoundController(getprofile_controller)
+    getlibrary_controller = GetLibraryController(server.getScheduler(),
+                                                 PREFIX,
+                                                 server.getClientRegistry(),
+                                                 GETLIBRARY_DB,
+                                                 NEXTCRAWLING_DB)
+
 
     # Registering Controllers
     server.registerTaskController(findusers_controller,
@@ -242,6 +304,9 @@ def main():
                                  'getprofile',
                                  'Profiles')
     server.root.putChild('notfound', notfound_controller)
+    server.registerTaskController(getlibrary_controller,
+                                 'getlibrary',
+                                 'Libraries')
 
     # Serving static content from the static directory
     static_dir_controller = StaticFile(STATIC_DIR)

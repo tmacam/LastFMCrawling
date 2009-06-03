@@ -682,15 +682,17 @@ def retrieve_encoded_user_library_snapshot(username, listened_date_threshold):
     """Get the libraty snaphshot from a LastFM user.
     
     Returns:
-        A compressed protobuffered user snapshot library
+        A tuple, containing the compressed protobuffered user snapshot library
+	and the last (full-day) crawled timestamp (seconds after epoch).
     """
 
     lsr = LibrarySnapshotsRetriever()
     data = lsr.get_library(username, listened_date_threshold)
+    crawled_ts = data[1]
     serialized = get_protobuffered_library(username, data)
     compressed = zlib.compress(serialized, 9)
 
-    return compressed
+    return (compressed, crawled_ts)
 
 
 def get_protobuffered_library(username, user_data):

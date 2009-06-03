@@ -22,6 +22,7 @@ from DistributedCrawler.client.daemonize import createDaemon, reconfigStdout
 #        __version__ as articleretriever_version
 from common import FINDUSERS_VALID_GENDERS, FINDUSERS_SEPARATOR 
 from retrievers import FindUsersRetriver, get_user_encoded_profile, \
+    retrieve_encoded_user_library_snapshot, LibrarySnapshotsRetriever, \
     PageNotFound, __version__ as articleretriever_version
 
 
@@ -44,6 +45,7 @@ class LastFMClient(BaseClient):
         # Registering Command Handlers
         self.handlers["FINDUSERS"] = self.findusers
         self.handlers["GETPROFILE"] = self.getprofile
+        self.handlers["GETLIBRARY"] = self.getlibrary
 
     def _write_to_store(self, article_id, data):
         """Write a (compressed) article to store.
@@ -115,6 +117,51 @@ class LastFMClient(BaseClient):
         # Command MUST be SLEEP. We will sleep for at least self.MIN_SLEEP
         command = response.read()
         self._handleCommand(command, do_sleep=True)
+
+    def getlibrary(self, params):
+        """Retrive a user's music library.
+
+        TODO: we should've encoded the command/job as "username#last_crawled_ts"
+              but this will be left as pending work for the next crawling...
+
+        Encoded params:
+            username, as string
+        """
+        log = logging.getLogger("GETLIBRARY")
+        # The only parameter we get is the user name
+        username = params
+        # XXX The listened_time_threshold was supposed to come encoded with
+        # the username but we had to change too much stuff in the server-side
+        # to make this happen. See above todo.
+        listened_time_threshold = LibrarySnapshotsRetriever.DAY_ONE
+        # Download search result pages
+        log.info("BEGIN %s", params)
+        try:
+            result = retrieve_encoded_user_library_snapshot(username,
+                listened_time_threshold)
+            library, last_crawled_ts = result
+            log.info("GOT LIBRARY FOR USER %s", username)
+            # Setup form and headers
+            #    Although we used "upload" code, this is a plain POST
+            upload_headers = dict(self.headers)
+            form_data = {'username' : username,
+                         'library' : library, 
+                         'last-crawled-ts' : str(int(last_crawled_ts)), 
+                         'client-id'    : self.id}
+            # Upload the article
+            logging.info("UPLOADING TO SERVER %s", params)
+            upload_url = self.base_url + '/getlibrary/' + username
+            response = upload_aux.upload_form(upload_url, form_data,
+                                              upload_headers)
+        # XXX We are not handling errors -- 
+        logging.info("END %s", params)
+        # Ok. Command, handled. Now what?
+        # Do what the server told us to.
+        # Command MUST be SLEEP. We will sleep for at least self.MIN_SLEEP
+        command = response.read()
+        self._handleCommand(command, do_sleep=True)
+
+
 
     def report_not_found_user(self, username, log):
         log.info("REPORTING 404 ERROR BACK TO SERVER FOR USER '%s'", username)
