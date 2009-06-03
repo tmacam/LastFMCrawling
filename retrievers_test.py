@@ -261,6 +261,7 @@ class TracksRetrieverTest(unittest.TestCase):
 
 class LibrarySnapshotsRetrieverTest(unittest.TestCase):
     LIBRARY_DATA_1 = "retrievers_test_library_1.data"
+    EMPTY_LIBRARY_DATA = "retrievers_test_library_2.data"
     LIBRARY_DATA_1_LEN_FULL = 50
     LIBRARY_DATA_1_LEN_DAY_1 = 50, datetime.date(2009, 05, 27)
     LIBRARY_DATA_1_LEN_DAY_2 = 42, datetime.date(2009, 05, 28)
@@ -314,8 +315,12 @@ class LibrarySnapshotsRetrieverTest(unittest.TestCase):
         self.assertEqual(34, len(ret_lib))
         self.assertEqual(end_date, ret_date)
 
-
-
+    def testEmptyLibraryDownload(self):
+        day_one = LibrarySnapshotsRetriever.DAY_ONE
+        fake_data = open(self.EMPTY_LIBRARY_DATA, 'r').read()
+        retriever = FakeLibrarySnapshotRetrievers(fake_data)
+        ret_lib, ret_date = retriever.get_library('dontcare', day_one)
+        self.assertEqual([], ret_lib)
 
 
 if __name__ == '__main__':

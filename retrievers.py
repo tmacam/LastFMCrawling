@@ -490,7 +490,9 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
     def validate(self, data):
         soup = BeautifulSoup(data)
         tracks_table = soup.find("table", "candyStriped tracklist")
-        if not tracks_table:
+        empty_message = soup.find("span", "messageWrapper")
+        
+        if not tracks_table and not empty_message:
             raise InvalidPage()
 
     def get_library(self, username, listened_date_threshold, today=None):
@@ -517,7 +519,11 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
             data = self.get_url(url)
             soup = BeautifulSoup(data)
             tracks_table = soup.find("table", "candyStriped tracklist")
-            # tracks_table exists because we check for it in validate()
+            
+            #table tracks may not exists
+            if not tracks_table and cur_page == 1:
+                return (listened_tracks, today)
+
             tracks = tracks_table.findAll("tr")
 
             for track in tracks:
@@ -535,7 +541,6 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
                     # Found a song we already retried.
                     # Past this point all musics will be known and there
                     # is no point in keep crawling it anymore. 
-                    print "Exiting for I reached_previous_snapshot" # XXX
                     reached_previous_snapshot = True # break out of the while...
                     break # Get out of the for loop. 
                 if listened_date_threshold <= listened_date < today:
@@ -548,9 +553,6 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
                     listened_date = time.mktime(time_tuple)
                     
                     listened_tracks.append((artist, track_name, listened_date))
-                else: ### FIXME remove this debuging if...
-                    print "Descartei ", artist, track_name
-            print len(listened_tracks) # XXX FIXME
 
             # Track information can be splitted across several pages.
             # Get the number of pages.
