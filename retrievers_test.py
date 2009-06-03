@@ -10,6 +10,7 @@ __copyright__ = "Copyright (c) 2006-2008 Tiago Alves Macambira"
 __license__ = "X11"
 
 import datetime
+import time
 import unittest
 from retrievers import UserInfoRetriever, GroupRetrievers, ObstinatedRetriever,\
 TracksRetriever, LibrarySnapshotsRetriever, get_protobuffered_profile,\
@@ -263,10 +264,10 @@ class LibrarySnapshotsRetrieverTest(unittest.TestCase):
     LIBRARY_DATA_1 = "retrievers_test_library_1.data"
     EMPTY_LIBRARY_DATA = "retrievers_test_library_2.data"
     LIBRARY_DATA_1_LEN_FULL = 50
-    LIBRARY_DATA_1_LEN_DAY_1 = 50, datetime.date(2009, 05, 27)
-    LIBRARY_DATA_1_LEN_DAY_2 = 42, datetime.date(2009, 05, 28)
-    LIBRARY_DATA_1_LEN_DAY_END = 0, datetime.date(2009, 05, 30)
-    LIBRARY_DATA_1_LEN_DAY_END_PLUS_ONE = datetime.date(2009, 05, 31)
+    LIBRARY_DATA_1_LEN_DAY_1 = 50, time.mktime(datetime.date(2009, 05, 27).timetuple())
+    LIBRARY_DATA_1_LEN_DAY_2 = 42, time.mktime(datetime.date(2009, 05, 28).timetuple())
+    LIBRARY_DATA_1_LEN_DAY_END = 0, time.mktime(datetime.date(2009, 05, 30).timetuple())
+    LIBRARY_DATA_1_LEN_DAY_END_PLUS_ONE = time.mktime(datetime.date(2009, 05, 31).timetuple())
 
     def testParseDateTimeWrongFormat(self):
         retriever = LibrarySnapshotsRetriever()

@@ -470,7 +470,7 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
 
     LIBRARY_URL_TEMPLATE = "http://www.lastfm.com.br/user/%s/tracks?page=%s"
 
-    DAY_ONE = datetime.date(1,1,1)
+    DAY_ONE = time.mktime(datetime.date(1,1,1).timetuple())
 
     def parse_date_time(self, date_time_str):
         """Get a date and time from a string.
@@ -495,13 +495,14 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
         if not tracks_table and not empty_message:
             raise InvalidPage()
 
-    def get_library(self, username, listened_date_threshold, today=None):
+    def get_library(self, username, time_threshold, today=None):
         """Get the parsed user library.
         
         Args:
             username: LastFM's username
-            listened_date_threshold: We will ignore musics listened
-                before this date. Must be a datetime.date object.
+            time_threshold: We will ignore musics listened
+                before this date. Must be a in representing seconds
+                since epoch.
             today: Overwrite our notion of time just to ease testing.
         """
 
@@ -512,6 +513,10 @@ class LibrarySnapshotsRetriever(ObstinatedRetriever):
         log = logging.getLogger("LibrarySnapshotsRetriever")
         if not today:
             today = datetime.date.today()
+        else:
+            today = datetime.date.fromtimestamp(today)
+
+        listened_date_threshold = datetime.date.fromtimestamp(time_threshold)
 
         while cur_page <= lastpage and not reached_previous_snapshot:
             log.info("Retrieving page %i of %i", cur_page, lastpage)
