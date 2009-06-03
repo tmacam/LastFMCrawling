@@ -105,13 +105,13 @@ class LastFMClient(BaseClient):
                          'friends-list-count'  : str(len(friends)),
                          'client-id'    : self.id}
             # Upload the article
-            logging.info("UPLOADING TO SERVER %s", params)
+            log.info("UPLOADING TO SERVER %s", params)
             upload_url = self.base_url + '/getprofile/' + username
             response = upload_aux.upload_form(upload_url, form_data,
                                               upload_headers)
         except PageNotFound:
             response = self.report_not_found_user(username, log)
-        logging.info("END %s", params)
+        log.info("END %s", params)
         # Ok. Command, handled. Now what?
         # Do what the server told us to.
         # Command MUST be SLEEP. We will sleep for at least self.MIN_SLEEP
@@ -149,12 +149,14 @@ class LastFMClient(BaseClient):
                          'last-crawled-ts' : str(int(last_crawled_ts)), 
                          'client-id'    : self.id}
             # Upload the article
-            logging.info("UPLOADING TO SERVER %s", params)
+            log.info("UPLOADING TO SERVER %s", params)
             upload_url = self.base_url + '/getlibrary/' + username
             response = upload_aux.upload_form(upload_url, form_data,
                                               upload_headers)
-        # XXX We are not handling errors -- 
-        logging.info("END %s", params)
+        finally:
+            # XXX We are not handling errors -- 
+            pass
+        log.info("END %s", params)
         # Ok. Command, handled. Now what?
         # Do what the server told us to.
         # Command MUST be SLEEP. We will sleep for at least self.MIN_SLEEP
