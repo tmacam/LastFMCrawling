@@ -1,0 +1,15 @@
+package lastfm;
+
+message Track {
+  required string artist = 1;
+  required string trackName = 2;
+  required int32 listenedDate = 3;
+}
+
+message LibrarySnapshot {
+  required string username = 1;
+  repeated Track library = 2;
+}
+
+
+
