@@ -19,8 +19,8 @@ java: protoc_middleman
 
 cpp: protoc_middleman
 
-snapshot_proto: library_snap.proto
-	$(PROTOC) --python_out=. library_snap.proto
+snapshot_proto: library_snapshot.proto
+	$(PROTOC) --python_out=. library_snapshot.proto
 	@touch snapshot_proto
 
 lastfm.jar: java
