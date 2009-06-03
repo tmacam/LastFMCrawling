@@ -1,0 +1,631 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head profile="http://purl.org/uF/2008/03/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                        <title>Perfil musical de Teodoro – Usuários na Last.fm</title>                
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        
+        <link rel="search" type="application/opensearchdescription+xml" href="http://cdn.last.fm/opensearch_desc.xml" title="Last.fm" />
+                        <meta name="description" content="O maior catálogo musical on-line do mundo, com transmissões gratuitas de músicas, além de vídeos, fotos, letras de músicas, tabelas, biografias de artistas, shows e rádios via Internet."/>
+        <meta http-equiv="content-language" content="pt" />
+                                <meta name="robots" content="NOODP" />
+                
+                    <link rel="icon" href="http://cdn.last.fm/flatness/favicon.2.ico" />
+            <link rel="icon" type="image/png" href="http://cdn.last.fm/flatness/favicon.2.png" />
+            <link rel="apple-touch-icon" href="http://cdn.last.fm/flatness/apple-touch-icon.png" />
+            
+                
+                
+                        <link type="text/html" rel="alternate" hreflang="en" href="http://www.last.fm/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="de" href="http://www.lastfm.de/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="es" href="http://www.lastfm.es/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="fr" href="http://www.lastfm.fr/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="it" href="http://www.lastfm.it/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="ja" href="http://www.lastfm.jp/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="pl" href="http://www.lastfm.pl/user/teodoro/tracks?page=1" />
+                                                <link type="text/html" rel="alternate" hreflang="ru" href="http://www.lastfm.ru/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="sv" href="http://www.lastfm.se/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="tr" href="http://www.lastfm.com.tr/user/teodoro/tracks?page=1" />
+                                <link type="text/html" rel="alternate" hreflang="cn" href="http://cn.last.fm/user/teodoro/tracks?page=1" />
+                        
+        
+            <!--[if LT IE 7]>
+        <style type="text/css">
+        .transparent_png {
+        	behavior: url('/pngbehavior2.htc');
+        }
+        </style>
+        <![endif]-->
+                                    <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/130871/main.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/130871/components.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/130871/dialog.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/130871/form/typeahead.css" type="text/css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/release-i18n/130871/dev/console.css" type="text/css" />
+                                    
+                            <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/lib/prototype.js"></script>
+                <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/lib/scriptaculous.js"></script>
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/lib/ufo.js"></script>
+        
+        <!-- Create our namespace -->
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/LFM.js"></script>
+        
+                
+        <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/console.js"></script>
+        
+        <script type="text/javascript">
+          
+            LFM.set("config", { FOD_TRACKING: false });
+                            LFM.set("ParentResource", {"id":3605978,"type":4,"name":"Teodoro","url":"\/user\/Teodoro"});
+                
+                    LFM.Adserver.showAds = true;
+                
+        LFM.set("Session", {"cookieHost":".lastfm.com.br","host":"www.lastfm.com.br","staticHost":"http:\/\/cdn.last.fm","formtoken":"2bcd67b944b9e63a7fd1b2c0c95a8d55947c66b3","location":"br","language":"pt","loggedIn":false});
+        
+        
+
+LFM.set("String", {
+    toRedStr: "Barão Vermelho",
+    toBlackStr: "Fuscão Preto",
+    
+    okText: "OK",
+    cancelText: "Cancelar",
+    clickToEditText: "Clique para editar",
+    savingText: "Salvando…",
+    loadingText: "Carregando…",
+    deletingText: "Excluindo…",
+    thereWasAnError: "Ocorreu um erro.",
+    dialogLoadError: "Ocorreu um erro ao carregar esta caixa de diálogo.",
+    fileTooBig: "Desculpe, o arquivo é muito grande.",
+    noFile: "Escolha um arquivo.",
+    uploadCancelled: "Upload cancelado.",
+    deleteMessageTitle: "Excluir mensagem",
+    deleteMessagePrompt: "Tem certeza de que deseja excluir esta mensagem?",
+    deleteFriendPrompt: "Tem certeza de que deseja excluir este amigo?",
+    deleteImage: "Tem certeza de que deseja excluir esta imagem?",
+    deleteButtonText: "Excluir",
+    done: "Concluído",
+    
+    
+    backText: "Retornar",
+    
+    yesText: "Sim",
+    noText: "Não",
+    
+    saveText: "Salvar",
+    saveTitle: "Adicionar ao perfil",
+    
+    sendText: "Enviar",
+    sendTitle: "Recomendar a amigos",
+    
+    addTitle: "Adicionar à biblioteca",
+    
+    tagTitle: "Adicionar tags",
+    
+    playlistTitle: "Adicionar à lista",
+    
+    obsessionTitle: "Personalize sua obsessão",
+    
+    befriendTitle: "Adicionar um amigo",
+    
+    joinTitle: "Juntar-se a este grupo",
+    
+    loved: "Favorito",
+    
+    RemoveFromLibraryTitle: "Remover da biblioteca",
+    
+    uploadImageTitle: "Carregar imagem",
+    uploadVideoTitle: "Carregar vídeo",
+    
+    usernoteTitle: "Add a note",
+    
+    flageventTitle: "Sinalizar para revisão",
+    
+    setLocationTitle: "Defina sua localização",
+    
+    newWindowTooltip: "Este link será aberto em uma nova janela",
+    unloadWarningMessage: "Isto interromperá a execução da rádio",
+    trackLoved: "Você adicionou esta faixa aos favoritos",
+    playbackStopped: "Reprodução interrompida",
+    loadingTrackInfo: "Carregando informações sobre a faixa",
+    errorLoadingTrackInfo: "Erro ao carregar informações sobre a faixa",
+    
+    uploadMessages: {
+        mayTakeLonger: "Desculpe, isso poderá levar mais tempo do que o habitual. Aguarde alguns segundos.",
+        uploading: "Carregando…",
+        endUploading: "Concluído",
+        progressDisplay: "PERCENTUPLOADED% concluído (TRANSFERRATE kb/s) – TIMEREMAINING segundos restantes",
+        progressComplete: "100% concluído",
+        failedRetrying: "Falha ao recuperar upload, descartado.",
+        processingMedia: "Processando mídia…",
+        unsupportedFormat: "Desculpe, o arquivo que você carregou não está codificado em um formato compatível. Tente novamente.",
+        uploadError: "Ocorreu um erro ao carregar o vídeo, por favor verifique se o arquivo que você está carregando não é muito grande ou está em um formato incorreto e tente novamente."
+    }
+});
+
+LFM.set("Element", {
+    icon_loved_indicator: "<img class=\"loved_indicator_icon transparent_png\" width=\"11\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_loved_indicator.2.png\" \/>",
+    icon_tag: "<img class=\"tag_icon transparent_png\" width=\"14\" height=\"14\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_tag3.png\" \/>",
+    icon_dismiss: "<img class=\"dismiss_icon transparent_png\" width=\"13\" height=\"13\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_delete.2.png\" \/>",
+    icon_play: "<img class=\"play_icon transparent_png\" width=\"17\" height=\"17\" alt=\"Tocar\" src=\"http:\/\/cdn.last.fm\/flatness\/global\/icon_play.png\" \/>"
+});        </script>
+        
+                            <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/components.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/flash.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/dialog.js"></script>
+                    <script type="text/javascript" src="http://cdn.last.fm/javascript/release-i18n/131397/form/typeahead.js"></script>
+                
+        <script type="text/javascript">
+
+document.observe("dom:loaded", function () {
+    if (typeof ieHover !== 'undefined') {
+        ieHover.setUp();
+    }
+});
+
+        </script>
+        
+    </head>
+
+
+<body class="r-user a-overview">
+                
+    
+            
+<!-- SiteCatalyst code version: H.16.
+Copyright 1997-2008 Omniture, Inc. More info available at
+http://www.omniture.com -->
+
+<script>var s = false, s_gi = false;</script>
+<script src="http://cdn.last.fm/omniture/9/omniture-core.js"></script>
+<script>
+
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+if (s) {
+s.pageName="User/Tracks/Overview";
+s.server="";
+s.channel="";
+s.pageType="other";
+
+s.prop1="user";       // namespace
+s.prop2="tracks";       // controller
+s.prop3="overview";       // action
+
+
+
+
+s.prop10="Anonymous";       // logged in/out
+
+s.prop12="lastfm.com.br";        // url extension
+
+s.prop13="";        // Member user id
+
+s.prop14="";        // Ad source
+s.prop15="";        // Ad id
+s.prop16="";        // Ad size
+s.prop18=s.getTimeParting('h',0,2009);     // Set hour
+s.prop19=s.getTimeParting('d',0,2009);     // Set day
+
+
+
+
+
+s.prop32 = ""; // TODO: 1st day of visit
+s.prop33 = "pt";
+
+
+
+/* Success Events */
+s.events="";
+
+/* E-commerce Variables */
+// s.campaign="";
+s.state="";
+s.zip="";
+s.products="";
+s.purchaseID="";
+s.eVar1="";
+s.eVar2 = s.pageName; // Page name
+s.eVar3="";
+
+
+s.eVar10="Anonymous";       // logged in/out
+
+
+
+
+
+s.eVar26=""; // OnClick Location
+s.eVar27=""; // Download Platform
+s.eVar28=""; // Buy/Download Location
+
+s.eVar29=""; // TODO: 1st day of visit
+s.eVar30=s.prop12;        // url extension
+
+s.eVar31=s.getNewRepeat();          // new/repeat visitor
+s.eVar32=s.getDaysSinceLastVisit(); // Days since last visit
+
+s.eVar33="";        // Ad source
+s.eVar34="";        // Ad id
+s.eVar35="";        // Ad size
+
+s.eVar36=""; // Member user id
+
+s.eVar37=s.prop33; // User language
+
+
+
+// Set vars to pass with exit/download/custom links called by s.tl()
+// * Click location
+s.linkTrackVars="eVar26";
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code = s.t(); if (s_code) document.write(s_code);
+}
+
+</script>
+<script type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.11. -->
+        
+        <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">
+
+    var _qoptions = {
+        labels: "LastFM"
+    };
+    var _qacct="p-51jhoCdjGFIVU";
+    quantserve();
+
+</script>
+<noscript>
+    <a href="http://www.quantcast.com/p-51jhoCdjGFIVU" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-51jhoCdjGFIVU.gif?labels=LastFM" height="1" width="1" alt="" /></a>
+</noscript>        
+            <div id="page" class="                ">
+        <div class="sic">
+                
+
+
+    <script type="text/javascript">var dartORD = Math.round(Math.random()*100000000);function writeTop(){};Event.observe(window,'load',function(event){ if($('userLastAd')) {Element.hide('userLastAd');}});function writeTopRight(){};function writeSkyscraperRight(){ var ord=Math.random()*10000000; document.write('<script language="JavaScript" src="http://ad.br.doubleclick.net/adj/lastfm.subrede/grupo;ptile=2;sz=160x600;ord='+ord+'?">');document.write('<\/SCRIPT>');document.write('<a href="http://www.last.fm/delivery.php?id=5676&zoneId=134" target="_blank"><img src="http://www.last.fm/show_ads.php?id=5676&zoneId=134&tracker=true&y=1244038649" width="1px" alt="" height="1px" border="0" /><\/a>');};function writeTopTopRight(){};function writeTopTopTopRight(){};function writeMid(){};function writeTopLeaderboard(){};function writeFooter1(){ document.write('<a href="http://www.last.fm/delivery.php?id=3701&zoneId=128" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3417/Mini-Footer.gif" width="192" title="Advertise on Last.fm" height="64" border="0" \/><\/a>');};function writeFooter2(){ document.write('<a href="http://www.last.fm/delivery.php?id=3713&zoneId=129" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3429/Mini-Footer.gif" width="192" title="Advertise on Last.fm" height="64" border="0" \/><\/a>');};function writeFooter3(){ document.write('<a href="http://www.last.fm/delivery.php?id=5590&zoneId=130" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/4929/Mini-Footer.gif" width="192" title="Advertise on Last.fm" height="64" border="0" \/><\/a>');};function writeFooter4(){ document.write('<a href="http://www.last.fm/delivery.php?id=3700&zoneId=131" target="_blank"><img src="http://cdn.last.fm/adserver/campaign/3415/Mini-Footer.gif" width="192" title="Advertise on Last.fm" height="64" border="0" \/><\/a>');};function writeSkin(){};function writePreRoll(){};;var aZoneCreativeTypeAssoc={"134":"120x600","128":"192x64","129":"192x64","130":"192x64","131":"192x64"};</script>
+
+
+
+    
+        <div id="header" class="clearit">
+        <div id="headerWrapper">
+                        <h1><a href="/" id="lastfmLogo">
+                                    <img src="http://cdn.last.fm/flatness/logo.6.png" width="103" height="50" alt="Last.fm" />
+                    <img src="http://cdn.last.fm/flatness/logo_black.3.png" width="103" height="50" style="display: none;" alt="Last.fm" />
+                                <span>Last.fm</span>
+            </a></h1>
+            <ul id="primaryNav" class="clearit">
+                <li id="musicNav">
+                    <a href="/music">Músicas</a>
+                </li>
+                <li id="videosNav">
+                    <a href="/videos">Vídeos</a>
+                </li>
+                <li id="listenNav">
+                    <a href="/listen">Rádio</a>
+                </li>
+                <li id="eventsNav">
+                    <a href="/events">Eventos</a>
+                </li>
+                <li id="chartsNav">
+                    <a href="/charts">Tabelas</a>
+                </li>
+                <li>
+                    <form id="siteSearch" method="get" action="/search">
+                    
+                        <select name="m" id="siteSearchSelect">
+                            <option value="all">Música</option>
+                                                        <option value="event">Evento</option>
+                            <option value="tag">Tag</option>
+                                                        <option value="user">Usuário</option>
+                            <option value="group">Grupo</option>
+                            <option value="label">Gravadora</option>
+                        </select>
+                        <input id="siteSearchBox" placeholder="Procurar" type="text" autosave="fm.last.searchhistory" results="5" name="q" size="16" />
+                        
+                        <input class="submit" type="submit" value="" title="Enviar" id="siteSearchSubmit" />
+                    </form>
+                </li>
+            </ul>
+            
+            <div id="idBadger">
+                                    <a href="/login">Fazer login</a> | <a href="/join">Inscrever-se</a>
+                              </div>
+             <div id="headLinks">
+                <p>
+                                                            <a href="/help">Ajuda</a>
+                                        |
+        <img src="http://cdn.last.fm/depth/flags/mini/pt.gif" id="langToggleFlag" alt="Alterar idioma" />
+    <a href="/user/teodoro/tracks?page=1&amp;change=language" title="Clique aqui para alterar o idioma" rel="nofollow" id="headerLangToggle">Português</a>
+    
+                </p>
+            </div>
+        </div><!-- #headerWrapper -->
+    </div>
+    
+    <script>
+    LFM.Display.setupHeader();    new LFM.Activityfeed.DeleteListener();
+</script>
+    <!-- Adserving start -->
+
+                                                    <div id="LastAd_Skin" class="LastAd">
+            <div align="center">
+            <script type="text/javascript">
+                                if(typeof writeSkin == 'function') writeSkin();
+                            </script>
+            </div>
+            </div>
+                            <script>
+                    $("LastAd_Skin").hide();
+                </script>
+                        <!-- Adserving end -->
+<div id="content">
+    <div><!-- This containing div fixes an IE bug where the absolutely positioned element disappears randomly. Don’t ask me why. -->
+    <div id="secondaryNavigation">
+                                            <ul>
+        <li class=" current  first "><a href="/user/Teodoro">Perfil</a></li>    <li><a href="/user/Teodoro/library">Biblioteca</a></li>        <li><a href="/user/Teodoro/charts">Tabelas</a></li>    <li><a href="/user/Teodoro/events">Eventos</a></li>    <li><a href="/user/Teodoro/friends">Amigos</a></li>        <li><a href="/user/Teodoro/neighbours">Vizinhos</a></li>    <li><a href="/user/Teodoro/groups">Grupos</a></li>    <li><a href="/user/Teodoro/journal">Blog</a></li>    <li><a href="/user/Teodoro/library/tags">Tags</a></li>    
+</ul>                                </div>
+</div>    <!-- Adserving start -->
+    
+                                                    <div id="LastAd_Top" class="LastAd">
+            <div align="center">
+            <script type="text/javascript">
+                                if(typeof writeTop == 'function') writeTop();
+                            </script>
+            </div>
+            </div>
+                            <script>
+                    $("LastAd_Top").hide();
+                </script>
+                        <!-- Adserving end -->    
+        <div class="pagehead clearit">
+    <p><a href="/user/Teodoro" title=""><span class="userImage"><img height="34" width="34" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_user_small.png" /></span>Teodoro</a> &raquo; <a href="/user/Teodoro/overview" title="">Faixas</a></p>
+
+    <h1>Faixas</h1>
+        </div>        
+        
+                
+                
+                            <div class="    messageBox
+    infoMessage 
+    ">
+            <span class="messageWrapper">Nenhuma faixa foi executada recentemente.</span>
+    </div> 
+                    </div>
+
+
+<div id="LastFooter">
+     
+    <div id="footer_ads" style="display: none;" class="clearit">
+        <div class="footer_ad_wrapper">
+            
+            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer1" class="LastAd">
+            <div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter1 == 'function') writeFooter1();
+                            </script>
+            </div>
+            </div>
+                        <!-- Adserving end -->            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer2" class="LastAd">
+            <div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter2 == 'function') writeFooter2();
+                            </script>
+            </div>
+            </div>
+                        <!-- Adserving end -->            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer3" class="LastAd">
+            <div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter3 == 'function') writeFooter3();
+                            </script>
+            </div>
+            </div>
+                        <!-- Adserving end -->            <!-- Adserving start -->
+
+                                                    <div id="LastAd_Footer4" class="LastAd last">
+            <div align="center">
+            <script type="text/javascript">
+                                    if ($("footer_ads")) $("footer_ads").show();
+                                if(typeof writeFooter4 == 'function') writeFooter4();
+                            </script>
+            </div>
+            </div>
+                        <!-- Adserving end -->            
+        </div><!-- .footer_ad_wrapper -->
+    </div><!-- #footer_ads --> 
+        
+    <ul id="footerStuff" class="clearit">
+        <li></li>
+
+        <li><p id="uploadYourMusic">
+            <strong>Você faz música? Carregue-a aqui!</strong><br /><a href="/uploadmusic?accountType=artist">Artistas</a> ou <a href="/uploadmusic?accountType=label">Gravadoras</a>
+        </p></li>
+    </ul><!-- #footerStuff -->
+
+    <div id="footer_content">
+        <ul id="footerLinks" class="clearit">
+            <li class="first">
+                <dl>
+                    <dt>Saiba quem somos</dt>
+                    <dd><a href="/about/contact">Contato</a></dd>
+                    <dd><a href="/about">Sobre nós</a></dd>
+                    <dd><a href="/about/team">Equipe</a></dd>
+                    <dd><a href="/about/jobs">Vagas de emprego</a></dd>
+                    <dd><a href="/resources">Kit de mídia</a></dd>
+                    <dd><a href="/advertise">Anuncie</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>Obter ajuda</dt>
+                    <dd><a href="/help/faq">Perguntas freqüentes</a></dd>
+                    <dd><a href="/forum/85186">Suporte ao site</a></dd>
+                    <dd><a href="/forum/85187">Suporte ao scrobbler</a></dd>
+                    <dd><a href="/group/Last.fm+for+iPhone+and+iPod+Touch">Suporte ao iPhone</a></dd>
+                </dl>
+            </li>
+        
+            <li>
+                <dl>
+                    <dt>Associar-se</dt>
+                    <dd><a href="/join">Inscrever-se</a></dd>                    <dd><a href="/users">Encontrar pessoas</a></dd>
+                    <dd><a href="/users/groups">Encontrar grupos</a></dd>
+                    <dd><a href="/forum">Fóruns</a></dd>
+                    <dd><a href="/help/guidelines">Diretrizes da comunidade</a></dd>
+                    <dd><a href="/about/moderators">Moderadores</a></dd>
+                    <dd><a href="/promotions">Concursos &amp; Promoções</a></dd>
+                </dl>
+            </li>
+            <li class="last">
+                <dl>
+                    <dt>Mais</dt>
+                    <dd><a href="/download">Scrobbler da Last.fm</a></dd>
+                    <dd><a href="/download#content_ipod">Scrobbler de iPod </a></dd>
+                    <dd><a href="/download#content_iphone">Aplicativo iPhone </a></dd>
+                    <dd><a href="http://build.last.fm">Outros aplicativos</a></dd>
+                    <dd><a href="/music/+free-music-downloads">Downloads gratuitos de músicas</a></dd>
+                    <dd><a href="/hardware">Hardware</a></dd>
+                    <dd><a href="/widgets">Widgets</a></dd>                    <dd><a href="/tools/charts">Imagens de tabelas</a></dd>
+                    <dd><a href="/subscribe">Assinatura</a></dd>
+                    <dd><a href="/api">API</a></dd>
+                </dl>
+            </li>
+        </ul><!-- #footerLinks -->
+        
+        <div id="justCantGetEnough" class="clearit">
+            <blockquote>“When It Absolutely, Positively Has To Be Last.fm Overnight.”</blockquote>
+            <p>
+                <strong>Outros sites da Last.fm:</strong>
+                <a href="http://blog.last.fm/">Blog</a>
+                | <a href="http://musicmanager.last.fm">Music Manager</a>
+                | <a href="http://build.last.fm">Build Last.fm</a>
+                | <a href="http://playground.last.fm">Playground</a>
+                            </p>
+        </div>
+        
+        <div id="legalities">
+                            <p id="copy">
+                    &copy; 2009 Last.fm Ltd. | 
+                    <a href="/legal/terms" target="_blank">Termos de uso</a> 
+                    e <a href="/legal/privacy" target="_blank">Política de privacidade</a> | <span class="date">Atualizado em agosto de 2008</span><br />
+                        
+                                    </p>
+        </div><!-- #legalities -->
+        
+                    </div>
+</div><!-- #LastFooter -->
+
+    <ul id="langSelector" style="display: none; visibility: hidden;" class="nojs">
+            
+        <li><a href="http://www.last.fm/user/teodoro/tracks?page=1&amp;setlang=en" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/uk.gif" /> <span>English</span></a></li>
+        
+                <li><a href="http://www.lastfm.de/user/teodoro/tracks?page=1&amp;setlang=de" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/de.gif" /> <span>Deutsch</span></a></li>
+                    <li><a href="http://www.lastfm.es/user/teodoro/tracks?page=1&amp;setlang=es" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/es.gif" /> <span>Español</span></a></li>
+                    <li><a href="http://www.lastfm.fr/user/teodoro/tracks?page=1&amp;setlang=fr" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/fr.gif" /> <span>Français</span></a></li>
+                    <li><a href="http://www.lastfm.it/user/teodoro/tracks?page=1&amp;setlang=it" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/it.gif" /> <span>Italiano</span></a></li>
+                    <li><a href="http://www.lastfm.jp/user/teodoro/tracks?page=1&amp;setlang=jp" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/jp.gif" /> <span>日本語</span></a></li>
+                    <li><a href="http://www.lastfm.pl/user/teodoro/tracks?page=1&amp;setlang=pl" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/pl.gif" /> <span>Polski</span></a></li>
+                            <li><a href="http://www.lastfm.ru/user/teodoro/tracks?page=1&amp;setlang=ru" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/ru.gif" /> <span>Руccкий</span></a></li>
+                    <li><a href="http://www.lastfm.se/user/teodoro/tracks?page=1&amp;setlang=sv" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/se.gif" /> <span>Svenska</span></a></li>
+                    <li><a href="http://www.lastfm.com.tr/user/teodoro/tracks?page=1&amp;setlang=tr" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/tr.gif" /> <span>Türkçe</span></a></li>
+                    <li><a href="http://cn.last.fm/user/teodoro/tracks?page=1&amp;setlang=zh" class="icon"><img src="http://cdn.last.fm/depth/flags/mini/zh.gif" /> <span>简体中文</span></a></li>
+        
+</ul>
+
+<script>
+
+    $("langSelector").className = "js";
+    LFM.set("Page", {
+        navDropDown: new LFM.Display.DropDown(
+            "headerLangToggle",
+            "headerLangToggle",
+            "langSelector",
+            {
+                align: "right",
+                onShow: function (dropdown) {
+                    dropdown.ddbody.setStyle({
+                        top: (dropdown.ddbody.getStyle("top").toPixels() + 3) + "px"
+                    });
+                }
+            }
+        )
+    });
+
+</script>
+<div id="multiButtonMenu" style="display: none;">
+    <div>
+        <ul class="lfmDropDownBody">
+            <li class="mAddToLibrary"><a href="#">Adicionar à minha biblioteca</a></li>
+            <li class="mAddToFriends"><a href="#">Adicionar a amigos</a></li>
+            
+            <!-- <li class="save"><a href="#">Marcar</a></li> -->
+            <li class="mSend"><a href="#">Recomendar</a></li>
+            
+            <li class="mLove"><a href="#">Adicionar como favorita</a></li>
+            <li class="mUnlove"><a href="#">Remover das favoritas</a></li>
+            <li class="mBan"><a href="#">Banir faixa do rádio</a></li>
+            <li class="mUnban"><a href="#">Cancelar banimento da faixa da rádio</a></li>
+
+                                    
+            <li class="mAddTags"><a href="#">Adicionar tags</a></li>
+            <li class="mAddToPlaylist"><a href="#">Adicionar à lista</a></li>
+                        <li class="mMessage"><a href="#">Enviar mensagem</a></li>
+                        <li class="mEditDetails"><a href="#">Editar detalhes</a></li>
+            <li class="mMessageAll"><a href="#">Enviar mensagem a todos os usuários</a></li>
+            <li class="mEditPermissions"><a href="#">Editar permissões</a></li>
+            <li class="mAbdicate"><a href="#">Abdicar</a></li>
+            <li class="mLeave"><a href="#">Sair do grupo</a></li>
+            
+            <li class="mRemoveFromLibrary"><a href="#">Excluir da biblioteca</a></li>
+            
+            <li class="mLoading"><a href="#">&nbsp;</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="http://dw.com.com/js/dw.js"></script>
+<script type="text/javascript">
+    DW.pageParams = {
+        siteid: '196',
+        ptid: '',
+        onid: '19486'
+    };
+    DW.clear();
+</script>
+<noscript>
+    <img src="http://dw.com.com/clear/c.gif?ts=1244038649&amp;sid=" />
+</noscript>
+
+        
+
+<script>
+
+    LFM.Button.MultiButton.setup();
+    LFM.Display.setMinHeight();
+
+</script>
+
+
+        </div>
+    </div>
+            </body>
+</html>
