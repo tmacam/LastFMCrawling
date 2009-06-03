@@ -235,12 +235,6 @@ class GetLibraryController(BsddbBaseControler):
         self.library_db = self._openDB(library_db)
         self.next_crawling_db = self._openDB(next_crawling_db)
 
-    def syncAllDBs(self):
-        """Synchronizes all DBs - both local DBs and job-control-related DBs."""
-        BsddbBaseControler.syncAllDBs(self)
-        self.library_db.sync()
-        self.next_crawling_db.sync()
-
     def render_POST(self, request):
         """Process the user's music library data returned by a client."""
         client_id = self.client_reg.updateClientStats(request)
@@ -252,7 +246,10 @@ class GetLibraryController(BsddbBaseControler):
         next_crawling_command = "%s#%s" % (username, last_crawled_ts_data)
         self.library_db[username] = library_data
         self.next_crawling_db[next_crawling_command] = '1' 
+        # Sync everything
         self.syncAllDBs()
+        self.library_db.sync()
+        self.next_crawling_db.sync()
         # Job done
         self.markJobAsDone(username)
         self.client_reg.updateClientStats(request, job_done=True)
@@ -265,7 +262,7 @@ def main():
 
     PORT = 8700
     PREFIX = './db/'
-    INTERVAL = 60
+    INTERVAL = 0.50
 
     FINDUSERS_DB = PREFIX + '/users.db'
     GETPROFILE_DB = PREFIX + '/profiles.bsddb'
