@@ -1,0 +1,3 @@
+[submodule "DistributedCrawler"]
+	path = DistributedCrawler
+	url = git://github.com/tmacam/DistributedCrawler.git
