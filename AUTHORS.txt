@@ -1,0 +1,4 @@
+# Authors ordered by first contribution.
+
+Tiago Alves Macambira <tmacam@burocrata.org>
+Rafael Sachetto <rsachetto@gmail.com>
